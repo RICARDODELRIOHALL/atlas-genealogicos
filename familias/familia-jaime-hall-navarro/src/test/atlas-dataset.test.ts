@@ -49,6 +49,14 @@ describe("Generated genealogy application", () => {
     expect(toGedcom(ds, d)).toContain("0 TRLR");
   });
 
+  it("uses the four requested family surnames for the colored grandparent branches", async () => {
+    const d = derive(await seedDataset());
+    expect(d.branches.get("ancestor-0006")).toContain("Hall");
+    expect(d.branches.get("ancestor-0005")).toContain("Navarro");
+    expect(d.branches.get("ancestor-0009")).toContain("Huidobro");
+    expect(d.branches.get("ancestor-0004")).toContain("Llamas");
+  });
+
   it("imports rows, picks a child as root and traces kinship", async () => {
     const base = blankDataset();
     const frag = parseRows([

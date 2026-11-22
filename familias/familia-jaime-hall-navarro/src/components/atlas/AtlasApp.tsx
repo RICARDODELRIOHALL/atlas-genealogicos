@@ -95,6 +95,12 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
           data: { p, gen: rootAppearance.gen, isRef: false, branch: "Central", flagged: false, color: BRANCH_COLORS.Central, nameOnly: true } });
       });
     }
+    for (const a of visibleApps) if (a.depth === 2 && a.group === "main") {
+      const branch = appBranch.get(a.key)!;
+      n.push({ id: `b${a.key}`, type: "blabel", position: { x: layout.bounds.minX - BRANCH_LABEL_W - 180, y: a.y - BRANCH_LABEL_H / 2 },
+        width: BRANCH_LABEL_W, height: BRANCH_LABEL_H, draggable: false, selectable: false,
+        data: { label: branch, color: BRANCH_COLORS[branch] ?? "var(--branch-other)" } });
+    }
     for (const u of visibleUnions) n.push({ id: u.key, type: "union", position: { x: u.x - 4, y: u.y - 4 }, draggable: false, selectable: false, data: {} });
     return n;
   }, [layout, d, visibleApps, visibleUnions, appBranch, BRANCH_COLORS]);
