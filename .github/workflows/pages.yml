@@ -35,6 +35,7 @@ jobs:
           set -euo pipefail
           mkdir -p public
           found=0
+          export ATLAS_PAGES_REPO="${GITHUB_REPOSITORY#*/}"
           for app in familias/*; do
             [ -d "$app" ] || continue
             found=1
