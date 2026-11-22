@@ -3,9 +3,9 @@ import type { Dataset, Derived, Issue, ParentLink, Person, Union } from "./types
 
 /** Etiquetas de rama por abuelo/a de la persona central (solo etiquetas; la estructura sale de los datos). */
 export const BRANCH_LABELS: Record<string, string> = {
-  "ancestor-0006": "Hall",
+  "hallbranch-i4": "Hall",
   "ancestor-0005": "Navarro",
-  "ancestor-0009": "Huidobro",
+  "hallbranch-i6": "Huidobro",
   "ancestor-0004": "Llamas",
 };
 export const DERIVED_KINDS = new Set(["varias generaciones", "sin conexión", "cronología", "ciclo", "más de dos progenitores", "rol/sexo"]);

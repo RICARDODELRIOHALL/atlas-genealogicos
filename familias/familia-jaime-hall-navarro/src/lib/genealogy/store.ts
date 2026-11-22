@@ -8,6 +8,7 @@ export const DB_NAME = databaseNameFor(APP_CONFIG.id);
 const STORE = "kv";
 const KEY = "dataset";
 export const PUBLISHED_UPDATE_ID = PF1L_ROUTE_UPDATE_ID;
+export const HALL_BRANCH_UPDATE_ID = "jaime-hall-huidobro-shared-ancestors-v1";
 
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -43,10 +44,52 @@ export async function seedDataset(): Promise<Dataset> {
 }
 
 /** Merge this release's additive route update into older browser databases without replacing local edits. */
-export function applyPublishedUpdates(current: Dataset): Dataset {
-  if ((current.meta.appliedUpdates ?? []).includes(PUBLISHED_UPDATE_ID)) return current;
-
+export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> {
+  const existingUpdates = current.meta.appliedUpdates ?? [];
+  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID)) return current;
   const next = structuredClone(current);
+  const applied = new Set(next.meta.appliedUpdates ?? []);
+  if (!applied.has(HALL_BRANCH_UPDATE_ID) && next.meta.root === "person-root") {
+    // Migrate only the father's ancestor component in older IndexedDB copies.
+    // Maternal ancestry, root, sibling cards, and maternal route additions stay intact.
+    const targetModule = await import("@/data/atlas.json");
+    const target = (targetModule.default ?? targetModule) as unknown as Dataset;
+    const targetParents = new Map<string, string[]>();
+    for (const link of target.links) (targetParents.get(link.child) ?? targetParents.set(link.child, []).get(link.child)!).push(link.parent);
+    const targetBranch = new Set<string>();
+    const targetStack = ["ancestor-0003"];
+    while (targetStack.length) {
+      const id = targetStack.pop()!;
+      if (targetBranch.has(id)) continue;
+      targetBranch.add(id);
+      targetStack.push(...(targetParents.get(id) ?? []));
+    }
+    const currentParents = new Map<string, string[]>();
+    for (const link of next.links) (currentParents.get(link.child) ?? currentParents.set(link.child, []).get(link.child)!).push(link.parent);
+    const oldBranch = new Set<string>();
+    const oldStack = ["ancestor-0003"];
+    while (oldStack.length) {
+      const id = oldStack.pop()!;
+      if (oldBranch.has(id)) continue;
+      oldBranch.add(id);
+      oldStack.push(...(currentParents.get(id) ?? []));
+    }
+    const replacementIds = new Set([...targetBranch].filter((id) => id !== "person-root"));
+    const keepLinks = next.links.filter((link) => !oldBranch.has(link.child) && !oldBranch.has(link.parent) || link.child === "person-root" && link.parent === "ancestor-0003");
+    const keepUnions = (next.unions ?? []).filter((union) => !oldBranch.has(union.a) || !oldBranch.has(union.b));
+    next.persons = next.persons.filter((person) => !oldBranch.has(person.id));
+    const currentIds = new Set(next.persons.map((person) => person.id));
+    for (const person of target.persons) if (replacementIds.has(person.id) && !currentIds.has(person.id)) next.persons.push(structuredClone(person));
+    const targetLinks = target.links.filter((link) => replacementIds.has(link.child) && replacementIds.has(link.parent));
+    const linkKeys = new Set(keepLinks.map((link) => `${link.child}>${link.parent}`));
+    next.links = [...keepLinks, ...targetLinks.filter((link) => { const key = `${link.child}>${link.parent}`; if (linkKeys.has(key)) return false; linkKeys.add(key); return true; })];
+    const targetUnions = (target.unions ?? []).filter((union) => replacementIds.has(union.a) && replacementIds.has(union.b));
+    next.unions = [...keepUnions, ...targetUnions];
+    (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit = structuredClone((target.meta as typeof target.meta & { generationAudit?: Record<string, unknown> }).generationAudit!);
+    applied.add(HALL_BRANCH_UPDATE_ID);
+  }
+  if (!applied.has(HALL_BRANCH_UPDATE_ID) && next.meta.root !== "person-root") applied.add(HALL_BRANCH_UPDATE_ID);
+
   const personIds = new Set(next.persons.map((person) => person.id));
   const addedIds = new Set<string>();
   for (const person of PF1L_ROUTE_PERSONS) {
@@ -66,8 +109,7 @@ export function applyPublishedUpdates(current: Dataset): Dataset {
     addedLinks++;
   }
 
-  const applied = new Set(next.meta.appliedUpdates ?? []);
-  applied.add(PUBLISHED_UPDATE_ID);
+  if (!applied.has(PUBLISHED_UPDATE_ID)) applied.add(PUBLISHED_UPDATE_ID);
   next.meta.appliedUpdates = [...applied];
 
   const meta = next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> };
