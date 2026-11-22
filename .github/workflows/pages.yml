@@ -1,0 +1,83 @@
+name: Build and deploy Atlas Genealogicos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "familias/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout central repository
+        uses: actions/checkout@v4
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Test and build every family app
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p public
+          found=0
+          for app in familias/*; do
+            [ -d "$app" ] || continue
+            found=1
+            slug="${app##*/}"
+            if [[ ! "$slug" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
+              echo "Invalid family slug: $slug" >&2
+              exit 1
+            fi
+            base_path="$(node -e 'console.log(JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8")).basePath)' "$app/src/data/app-config.json")"
+            if [ "$base_path" != "/$slug/" ]; then
+              echo "Unexpected basePath in $app: $base_path" >&2
+              exit 1
+            fi
+            npm ci --prefix "$app"
+            npm audit --prefix "$app" --audit-level=high
+            npm test --prefix "$app"
+            npm run typecheck --prefix "$app"
+            npm run build --prefix "$app"
+            rm -rf "public/$slug"
+            mkdir -p "public/$slug"
+            cp -a "$app/dist/." "public/$slug/"
+          done
+          if [ "$found" -ne 1 ]; then
+            cat > public/index.html <<'HTML'
+          <!doctype html>
+          <html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>Atlas Genealógicos</title>
+          <main><h1>Atlas Genealógicos</h1><p>El alojamiento está configurado. Las aplicaciones familiares aparecerán aquí cuando se incorporen.</p></main>
+          HTML
+          fi
+          touch public/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
