@@ -108,9 +108,6 @@ export function Toolbar(props: {
           <input id="atlas-import-input" ref={fileRef} type="file" accept=".json,.csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.target.value = ""; }} />
         </div>
       </header>
-      <div className="pointer-events-none absolute bottom-3 left-3 z-10 max-w-[min(24rem,calc(100vw-1.5rem))] rounded-md border border-border bg-card/90 px-3 py-2 text-[11px] leading-snug text-muted-foreground shadow backdrop-blur" role="note">
-        Guardado solo en este navegador. iPhone y Windows no se sincronizan; conserva copias JSON. Borrar datos del navegador puede borrar el árbol.
-      </div>
       {props.mode.kind !== "none" && (
         <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold/50 bg-card/95 px-4 py-1.5 text-sm text-gold shadow-lg max-md:bottom-auto max-md:top-28">
           {props.mode.label}
@@ -123,3 +120,4 @@ export function Toolbar(props: {
     </>
   );
 }
+

@@ -2,7 +2,7 @@ import type { Dataset } from "@/lib/genealogy/types";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { derive, findPath } from "@/lib/genealogy/derive";
 import { computeLayout } from "@/lib/genealogy/layout";
-import { loadDataset, seedDataset, DB_NAME } from "@/lib/genealogy/store";
+import { loadDataset, seedDataset, DB_NAME, PUBLISHED_UPDATE_ID } from "@/lib/genealogy/store";
 import { ensureRoot, merge, parseJson, parseRows } from "@/lib/genealogy/importer";
 import { integrateSequence } from "@/lib/genealogy/sequence";
 import { displayDate, toGedcom } from "@/lib/genealogy/exporters";
@@ -23,10 +23,18 @@ describe("RootsMagic date display", () => {
 afterEach(() => vi.unstubAllGlobals());
 
 describe("Generated genealogy application", () => {
-  it("ships the complete generated Atlas as the startup dataset", async () => {
+  it("ships the complete Atlas plus the requested PF1L ancestor route", async () => {
     const ds = await seedDataset();
     const mod = await import("@/data/atlas.json");
-    expect(ds).toEqual(structuredClone((mod.default ?? mod) as unknown));
+    const base = structuredClone((mod.default ?? mod) as unknown as Dataset);
+    expect(ds.persons).toHaveLength(base.persons.length + 2);
+    expect(ds.links).toHaveLength(base.links.length + 2);
+    expect(ds.persons.map((person) => person.id)).toContain("route-pf1l-ltb");
+    expect(ds.persons.map((person) => person.id)).toContain("route-pf1l-ccp");
+    expect(ds.links).toContainEqual({ child: "ancestor-1266", parent: "route-pf1l-ltb", role: "", sources: [] });
+    expect(ds.links).toContainEqual({ child: "ancestor-1266", parent: "route-pf1l-ccp", role: "", sources: [] });
+    expect(ds.meta.appliedUpdates).toContain(PUBLISHED_UPDATE_ID);
+    expect((ds.meta as typeof ds.meta & { generationAudit: Record<string, unknown> }).generationAudit).toMatchObject({ totalPersons: 5357, includedPersons: 1337, includedParentLinkRecords: 1444 });
     expect(ds.persons.map((person) => person.id)).toContain(ds.meta.root);
   });
 
@@ -162,3 +170,4 @@ describe("Generated genealogy application", () => {
     expect(gedcom).toContain("2 PLAC Madrid");
   });
 });
+
