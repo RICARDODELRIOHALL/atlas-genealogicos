@@ -13,6 +13,12 @@
         "file": "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
         "kind": "JSON RootsMagic convertido",
         "note": "Conversión de campos padre_id, madre_id e hijos_que_son_antepasados_directos; JSON original conservado sin cambios."
+      },
+      {
+        "id": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+        "file": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+        "kind": "JSON de antepasados FamilySearch",
+        "note": "Rama integrada por IDs FamilySearch existentes; conserva registros fuente y las limitaciones declaradas por el archivo."
       }
     ],
     "conversion": {
@@ -43,13 +49,209 @@
     "generationAudit": {
       "mode": "componente parental conectado a la persona central",
       "root": "GQ89-7KB",
-      "totalPersons": 1201,
-      "includedPersons": 1201,
+      "totalPersons": 1218,
+      "includedPersons": 1218,
       "excludedPersons": 0,
-      "totalRelationships": 2214,
-      "includedRelationships": 2214,
+      "totalRelationships": 2236,
+      "includedRelationships": 2236,
       "excludedRelationships": 0
-    }
+    },
+    "sourceImports": [
+      {
+        "file": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+        "format": "FamilySearch ancestors route JSON",
+        "sourceMetadata": {
+          "title": "Antepasados de Capitán Santiago Treviño de los Santos Coy y Leonor de la Garza Falcon",
+          "roots": [
+            {
+              "name": "Capitán Santiago Treviño de los Santos Coy",
+              "familySearchId": "LVS3-DLN"
+            },
+            {
+              "name": "Leonor de la Garza Falcon",
+              "familySearchId": "L5VV-BHL"
+            }
+          ],
+          "targetGeneration": 17,
+          "generationDefinition": "Generation numbers follow the FamilySearch tree context: the starting couple is G11; their parents are G12; continue through G17.",
+          "source": "FamilySearch individual profile Family > Parents and Siblings cards, read in the open signed-in session. This is collaborative-tree data, not independent documentary verification.",
+          "checkedProfiles": [
+            "96CX-431",
+            "9WF4-9BH",
+            "G11C-V28",
+            "G244-7Q9",
+            "G4DX-NDN",
+            "G6RQ-SNP",
+            "G6YR-5MF",
+            "G6YR-TGG",
+            "G9QH-CS8",
+            "GC38-YJJ",
+            "GC3D-M46",
+            "GKFL-4JX",
+            "GKFW-Q43",
+            "GKFW-V1R",
+            "GNN7-2Y4",
+            "GSV6-BFC",
+            "GX4Q-PQQ",
+            "GZ7J-YGF",
+            "GZXN-6JJ",
+            "KG65-LG3",
+            "KN6C-789",
+            "L1V1-TTV",
+            "L1ZW-1PK",
+            "L297-YRL",
+            "L5VV-BHL",
+            "LBHY-VYR",
+            "LBHY-W8C",
+            "LBVY-2BD",
+            "LRDM-2LM",
+            "LRLC-8LT",
+            "LT7Q-JF6",
+            "LVS3-DLN",
+            "LVZ4-H8Z",
+            "M8X5-G5D",
+            "MC9S-ZS4",
+            "MQ4Y-GJB",
+            "P8TV-T48",
+            "PCJ2-BDD",
+            "PM9D-F3B",
+            "PS6D-BZN"
+          ],
+          "completion": "complete_through_G17",
+          "limitation": "Se recorrieron las fichas de todos los antepasados identificados hasta G17. Las fichas sin tarjetas de padres se registran como no_parents_visible; esto describe el árbol colaborativo consultado, no verifica documentos originales.",
+          "scope": "Todas las ramas de antepasados de ambos integrantes de la pareja, desde su generación G11 hasta G17; incluir toda persona registrada en el árbol y señalar filiaciones ausentes.",
+          "statusNote": "Recorrido completado hasta G17 para ambos integrantes. Las ramas sin padres visibles terminan en la última ficha consultada; G17 no contiene personas registradas en las ramas recorridas.",
+          "terminalBranches": [
+            "96CX-431",
+            "G244-7Q9",
+            "G4VG-WTT",
+            "G6RQ-SNP",
+            "G6YR-5MF",
+            "G6YR-TGG",
+            "GC38-YJJ",
+            "GC3D-M46",
+            "GKFL-4JX",
+            "GKFW-V1R",
+            "GX4Q-PQQ",
+            "GZXN-6JJ",
+            "L1V1-TTV",
+            "LBHY-VYR",
+            "LBHY-W8C",
+            "LBVY-2BD",
+            "LKYD-PMM",
+            "MC9S-ZS4",
+            "MQ4Y-GJB",
+            "PCJ2-BDD",
+            "PS6D-BZN"
+          ],
+          "pendingProfiles": [],
+          "generationCounts": {
+            "G13": 8,
+            "G16": 9,
+            "G12": 4,
+            "G15": 8,
+            "G14": 12,
+            "G17": 0,
+            "G11": 2
+          }
+        },
+        "sourceCouples": [
+          {
+            "personIds": [
+              "LVS3-DLN",
+              "L5VV-BHL"
+            ],
+            "marriage": {
+              "date": "1690-06-19",
+              "place": "Sagrario Metropolitano, Monterrey, Nuevo León, Mexico"
+            }
+          },
+          {
+            "personIds": [
+              "G9QH-CS8",
+              "G4DX-NDN"
+            ],
+            "marriage": {
+              "date": "1648-06-19",
+              "place": "Parras de la Fuente, Parras, Coahuila, Mexico"
+            }
+          },
+          {
+            "personIds": [
+              "LVZ4-H8Z",
+              "GNN7-2Y4"
+            ],
+            "marriage": null
+          },
+          {
+            "marriage": {
+              "place": "Tobarra, Albacete, Castilla-La Mancha, Spain",
+              "date": "ABT 1570"
+            },
+            "personIds": [
+              "96CX-431",
+              "PS6D-BZN"
+            ]
+          }
+        ],
+        "openBranches": [],
+        "incomingPeople": 43,
+        "matchedPeople": 26,
+        "newPeople": 17,
+        "sourceParentLinkPairs": 43,
+        "parentLinkPairsAlreadyPresent": 22,
+        "newParentLinkPairs": 21,
+        "spousePairs": 14,
+        "newUnionRecords": 1,
+        "includedSourceIds": [
+          "LVS3-DLN",
+          "L5VV-BHL",
+          "G9QH-CS8",
+          "G4DX-NDN",
+          "LVZ4-H8Z",
+          "GNN7-2Y4",
+          "G4VG-WTT",
+          "KG65-LG3",
+          "LT7Q-JF6",
+          "KN6C-789",
+          "LKYD-PMM",
+          "LRLC-8LT",
+          "9WF4-9BH",
+          "L297-YRL",
+          "LBHY-W8C",
+          "M8X5-G5D",
+          "LRDM-2LM",
+          "P8TV-T48",
+          "G244-7Q9",
+          "G11C-V28",
+          "LBVY-2BD",
+          "LBHY-VYR",
+          "PMCM-VYN",
+          "PCJ2-BDD",
+          "L1V1-TTV",
+          "MQ4Y-GJB",
+          "GKFW-Q43",
+          "L1ZW-1PK",
+          "PM9D-F3B",
+          "GZ7J-YGF",
+          "GSV6-BFC",
+          "GKFW-V1R",
+          "GC3D-M46",
+          "GC38-YJJ",
+          "G6YR-5MF",
+          "G6YR-TGG",
+          "GKFL-4JX",
+          "MC9S-ZS4",
+          "GZXN-6JJ",
+          "GX4Q-PQQ",
+          "G6RQ-SNP",
+          "96CX-431",
+          "PS6D-BZN"
+        ],
+        "excludedSourceIds": []
+      }
+    ],
+    "note": "Rama de antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json integrada. La fuente declara datos de árbol colaborativo, no verificación documental independiente."
   },
   "persons": [
     {
@@ -43971,8 +44173,10 @@
       "id": "LVS3-DLN",
       "fsId": "LVS3-DLN",
       "name": "Santiago Treviño de los Santos Coy",
-      "altNames": [],
-      "sex": "",
+      "altNames": [
+        "Capitán Santiago Treviño de los Santos Coy"
+      ],
+      "sex": "M",
       "birth": "1660",
       "death": "1746",
       "marriage": "",
@@ -43982,7 +44186,8 @@
       "deathPlace": "Cadereyta, Cadereyta Jiménez, Nuevo León, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -44063,6 +44268,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "LVS3-DLN",
+            "name": "Capitán Santiago Treviño de los Santos Coy",
+            "generation": 11,
+            "sex": "male",
+            "birth": "1660",
+            "death": "1746",
+            "parents": [
+              "G9QH-CS8",
+              "G4DX-NDN"
+            ],
+            "spouseIds": [
+              "L5VV-BHL"
+            ],
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LVS3-DLN",
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -44072,7 +44297,7 @@
       "fsId": "L5VV-BHL",
       "name": "Leonor de la Garza Falcon",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1660",
       "death": ".",
       "marriage": "",
@@ -44082,7 +44307,8 @@
       "deathPlace": "",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -44175,6 +44401,26 @@
               "F526"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "L5VV-BHL",
+            "name": "Leonor de la Garza Falcon",
+            "generation": 11,
+            "sex": "female",
+            "birth": "1660",
+            "death": null,
+            "parents": [
+              "LVZ4-H8Z",
+              "GNN7-2Y4"
+            ],
+            "spouseIds": [
+              "LVS3-DLN"
+            ],
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/L5VV-BHL",
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -57692,7 +57938,7 @@
       "fsId": "GNN7-2Y4",
       "name": "Juana García de Abrego",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1620",
       "death": "1682-07-31",
       "marriage": "",
@@ -57702,7 +57948,8 @@
       "deathPlace": "Monterrey, Nuevo León, Kingdom of Mexico, New Spain",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -57803,6 +58050,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "GNN7-2Y4",
+            "name": "Juana García de Abrego",
+            "generation": 12,
+            "sex": "female",
+            "birth": "1620",
+            "death": "1682",
+            "parents": [
+              "9WF4-9BH",
+              "L297-YRL"
+            ],
+            "spouseIds": [
+              "LVZ4-H8Z"
+            ],
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GNN7-2Y4",
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -57811,8 +58078,10 @@
       "id": "LVZ4-H8Z",
       "fsId": "LVZ4-H8Z",
       "name": "Francisco de la Garza de Treviño",
-      "altNames": [],
-      "sex": "",
+      "altNames": [
+        "Captain Francisco de la Garza de Treviño"
+      ],
+      "sex": "M",
       "birth": "1595",
       "death": "1660",
       "marriage": "",
@@ -57822,7 +58091,8 @@
       "deathPlace": "Monterrey, Nuevo León, Mexico",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -57909,6 +58179,26 @@
               "F847"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "LVZ4-H8Z",
+            "name": "Captain Francisco de la Garza de Treviño",
+            "generation": 12,
+            "sex": "male",
+            "birth": "1595",
+            "death": "1660",
+            "parents": [
+              "LKYD-PMM",
+              "LRLC-8LT"
+            ],
+            "spouseIds": [
+              "GNN7-2Y4"
+            ],
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LVZ4-H8Z",
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -63792,7 +64082,7 @@
       "fsId": "G9QH-CS8",
       "name": "Francisco De Treviño Covarrubias",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "1625",
       "death": "1672-02-04",
       "marriage": "",
@@ -63802,7 +64092,8 @@
       "deathPlace": "Saltillo, Coahuila, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -63882,6 +64173,26 @@
               "F845"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "G9QH-CS8",
+            "name": "Francisco De Treviño Covarrubias",
+            "generation": 12,
+            "sex": "male",
+            "birth": "1625",
+            "death": "1672",
+            "parents": [
+              "G4VG-WTT",
+              "KG65-LG3"
+            ],
+            "spouseIds": [
+              "G4DX-NDN"
+            ],
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G9QH-CS8",
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -63992,7 +64303,7 @@
       "fsId": "G4DX-NDN",
       "name": "Catarina de los Santos Coy de la Cerda",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1628",
       "death": "1707-10-04",
       "marriage": "",
@@ -64002,7 +64313,8 @@
       "deathPlace": "Parras de la Fuente, Parras, Coahuila, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -64082,6 +64394,26 @@
               "F845"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "G4DX-NDN",
+            "name": "Catarina de los Santos Coy de la Cerda",
+            "generation": 12,
+            "sex": "female",
+            "birth": "1628",
+            "death": "1707",
+            "parents": [
+              "LT7Q-JF6",
+              "KN6C-789"
+            ],
+            "spouseIds": [
+              "G9QH-CS8"
+            ],
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G4DX-NDN",
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -81161,7 +81493,7 @@
       "fsId": "LT7Q-JF6",
       "name": "Bernardo de los Santos Coy y Caliz",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "1605",
       "death": "1675",
       "marriage": "",
@@ -81171,7 +81503,8 @@
       "deathPlace": "Dueno Hada. S. Ididro O..",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -81255,6 +81588,26 @@
               "F1665"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1605",
+            "spouseIds": [
+              "KN6C-789"
+            ],
+            "death": "1675",
+            "parents": [
+              "LRDM-2LM",
+              "P8TV-T48"
+            ],
+            "id": "LT7Q-JF6",
+            "name": "Bernardo de los Santos Coy y Caliz",
+            "sex": "male",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LT7Q-JF6",
+            "generation": 13,
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -81372,7 +81725,7 @@
       "fsId": "KN6C-789",
       "name": "Maria Inés de la Cerda y Castro",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "DR+15950000..+16000000..",
       "death": "DB+16761000..+00000000..",
       "marriage": "",
@@ -81382,7 +81735,8 @@
       "deathPlace": "Saltillo, Coahuila, Mexico",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -81466,6 +81820,26 @@
               "F1665"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1595",
+            "spouseIds": [
+              "LT7Q-JF6"
+            ],
+            "death": "1676",
+            "parents": [
+              "G244-7Q9",
+              "G11C-V28"
+            ],
+            "id": "KN6C-789",
+            "name": "Maria Inés de la Cerda y Castro",
+            "sex": "female",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/KN6C-789",
+            "generation": 13,
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -83665,7 +84039,7 @@
       "fsId": "9WF4-9BH",
       "name": "Lorenzo García",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "1595",
       "death": "1694",
       "marriage": "",
@@ -83675,7 +84049,8 @@
       "deathPlace": "Monterrey, Nuevo León, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -83767,6 +84142,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1595",
+            "spouseIds": [
+              "L297-YRL"
+            ],
+            "death": "1694",
+            "parents": [
+              "PMCM-VYN",
+              "PCJ2-BDD"
+            ],
+            "id": "9WF4-9BH",
+            "name": "Lorenzo García",
+            "sex": "male",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/9WF4-9BH",
+            "generation": 13,
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -83776,7 +84171,7 @@
       "fsId": "L297-YRL",
       "name": "Leonor Abrego de Gutiérrez",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1596",
       "death": "1630",
       "marriage": "",
@@ -83786,7 +84181,8 @@
       "deathPlace": "Saltillo, Coahuila, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -83878,6 +84274,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1596",
+            "spouseIds": [
+              "9WF4-9BH"
+            ],
+            "death": "1630",
+            "parents": [
+              "L1V1-TTV",
+              "MQ4Y-GJB"
+            ],
+            "id": "L297-YRL",
+            "name": "Leonor Abrego de Gutiérrez",
+            "sex": "female",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/L297-YRL",
+            "generation": 13,
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -83887,7 +84303,7 @@
       "fsId": "LRLC-8LT",
       "name": "Juana de Treviño",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1555",
       "death": "1610-07-28",
       "marriage": "",
@@ -83897,7 +84313,8 @@
       "deathPlace": "Monterrey, Nuevo León, Kingdom of Mexico, New Spain",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -83993,6 +84410,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1555",
+            "spouseIds": [
+              "LKYD-PMM"
+            ],
+            "death": "1610",
+            "parents": [
+              "LBVY-2BD",
+              "LBHY-VYR"
+            ],
+            "id": "LRLC-8LT",
+            "name": "Juana de Treviño",
+            "sex": "female",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LRLC-8LT",
+            "generation": 13,
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -84001,8 +84438,10 @@
       "id": "LKYD-PMM",
       "fsId": "LKYD-PMM",
       "name": "Marcos Alonso de la Garza y del Arcón",
-      "altNames": [],
-      "sex": "",
+      "altNames": [
+        "Capitán Marcos Alonso de la Garza y del Arcón"
+      ],
+      "sex": "M",
       "birth": "1551-01-01",
       "death": "1634-12-03",
       "marriage": "",
@@ -84012,7 +84451,8 @@
       "deathPlace": "Monterrey, Nuevo Reino de León, Nueva España",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -84120,6 +84560,23 @@
               "F1632"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1551",
+            "spouseIds": [
+              "LRLC-8LT"
+            ],
+            "death": "1634",
+            "parents": null,
+            "id": "LKYD-PMM",
+            "name": "Capitán Marcos Alonso de la Garza y del Arcón",
+            "sex": "male",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LKYD-PMM",
+            "generation": 13,
+            "parentStatus": "no_parents_visible"
           }
         }
       ],
@@ -91324,8 +91781,10 @@
       "id": "G4VG-WTT",
       "fsId": "G4VG-WTT",
       "name": "Lorenzo Súarez Longoria y Valdez",
-      "altNames": [],
-      "sex": "",
+      "altNames": [
+        "Captain Lorenzo Súarez Longoria y Valdez"
+      ],
+      "sex": "M",
       "birth": "1592",
       "death": "1665-07-25",
       "marriage": "",
@@ -91335,7 +91794,8 @@
       "deathPlace": "Monterrey, Nuevo León, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -91439,6 +91899,23 @@
               "F1327"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1592",
+            "spouseIds": [
+              "KG65-LG3"
+            ],
+            "death": "1665",
+            "parents": null,
+            "id": "G4VG-WTT",
+            "name": "Captain Lorenzo Súarez Longoria y Valdez",
+            "sex": "male",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G4VG-WTT",
+            "generation": 13,
+            "parentStatus": "no_parents_visible"
           }
         }
       ],
@@ -91548,7 +92025,7 @@
       "fsId": "KG65-LG3",
       "name": "Ana Salazar Treviño",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1610-11-12",
       "death": "1671-04-08",
       "marriage": "",
@@ -91558,7 +92035,8 @@
       "deathPlace": "Monterrey, Nuevo León, Kingdom of Mexico, New Spain",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -91636,6 +92114,26 @@
               "F1327"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1610",
+            "spouseIds": [
+              "G4VG-WTT"
+            ],
+            "death": "1671",
+            "parents": [
+              "LBHY-W8C",
+              "M8X5-G5D"
+            ],
+            "id": "KG65-LG3",
+            "name": "Ana Salazar Treviño",
+            "sex": "female",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/KG65-LG3",
+            "generation": 13,
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -105912,7 +106410,7 @@
       "fsId": "LBHY-W8C",
       "name": "Juan Pedro Salazar Garcia",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "1560",
       "death": "1640",
       "marriage": "",
@@ -105922,7 +106420,8 @@
       "deathPlace": "Kingdom of Mexico, New Spain",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -106005,6 +106504,23 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1560",
+            "sex": "male",
+            "death": "1640",
+            "parents": null,
+            "id": "LBHY-W8C",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LBHY-W8C",
+            "name": "Juan Pedro Salazar Garcia",
+            "spouseIds": [
+              "M8X5-G5D"
+            ],
+            "generation": 14,
+            "parentStatus": "no_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -106014,7 +106530,7 @@
       "fsId": "M8X5-G5D",
       "name": "Juana Isabel de Treviño Quintanilla",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1562-11-12",
       "death": "1611",
       "marriage": "",
@@ -106024,7 +106540,8 @@
       "deathPlace": "Monterrey, Nuevo León, Mexico",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -106120,6 +106637,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1562",
+            "sex": "female",
+            "death": "1611",
+            "parents": [
+              "LBVY-2BD",
+              "LBHY-VYR"
+            ],
+            "id": "M8X5-G5D",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/M8X5-G5D",
+            "name": "Juana Isabel de Treviño Quintanilla",
+            "spouseIds": [
+              "LBHY-W8C"
+            ],
+            "generation": 14,
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -106129,7 +106666,7 @@
       "fsId": "LRDM-2LM",
       "name": "Juan de Caliz",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "D.+15750000.A+00000000..",
       "death": ".",
       "marriage": "",
@@ -106139,7 +106676,8 @@
       "deathPlace": "Argentina",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -106220,6 +106758,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1575",
+            "sex": "male",
+            "death": null,
+            "parents": [
+              "GSV6-BFC",
+              "GKFW-V1R"
+            ],
+            "id": "LRDM-2LM",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LRDM-2LM",
+            "name": "Juan de Caliz",
+            "spouseIds": [
+              "P8TV-T48"
+            ],
+            "generation": 14,
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -106229,7 +106787,7 @@
       "fsId": "P8TV-T48",
       "name": "Catalina Gómez de Coy y Corral",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1580",
       "death": ".",
       "marriage": "",
@@ -106239,7 +106797,8 @@
       "deathPlace": "Hueva, Guadalajara, Guadalajara, Castilla-La Mancha, Spain",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -106332,6 +106891,26 @@
               "F1687"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1580",
+            "sex": "female",
+            "death": null,
+            "parents": [
+              "GKFW-Q43",
+              "L1ZW-1PK"
+            ],
+            "id": "P8TV-T48",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/P8TV-T48",
+            "name": "Catalina Gómez de Coy y Corral",
+            "spouseIds": [
+              "LRDM-2LM"
+            ],
+            "generation": 14,
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -106559,7 +107138,7 @@
       "fsId": "G244-7Q9",
       "name": "Fernando Álvarez de la Cerda",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "D.+15550000.A+00000000..",
       "death": "1604",
       "marriage": "",
@@ -106569,7 +107148,8 @@
       "deathPlace": "",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -106650,6 +107230,23 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": "1555",
+            "sex": "male",
+            "death": "1604",
+            "parents": null,
+            "id": "G244-7Q9",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G244-7Q9",
+            "name": "Fernando Álvarez de la Cerda",
+            "spouseIds": [
+              "G11C-V28"
+            ],
+            "generation": 14,
+            "parentStatus": "no_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -106659,7 +107256,7 @@
       "fsId": "G11C-V28",
       "name": "Isabel de Castro y Figueroa",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": ".",
       "death": "DA+16210000..+00000000..",
       "marriage": "",
@@ -106669,7 +107266,8 @@
       "deathPlace": "Saltillo, Coahuila, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -106749,6 +107347,26 @@
               "F1691"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "birth": null,
+            "sex": "female",
+            "death": "1621",
+            "parents": [
+              "PM9D-F3B",
+              "GZ7J-YGF"
+            ],
+            "id": "G11C-V28",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G11C-V28",
+            "name": "Isabel de Castro y Figueroa",
+            "spouseIds": [
+              "G244-7Q9"
+            ],
+            "generation": 14,
+            "parentStatus": "two_parents_visible"
           }
         }
       ],
@@ -109033,7 +109651,7 @@
       "fsId": "PMCM-VYN",
       "name": "Lorenzo García de Enesa de Avila",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "1574-10-01",
       "death": "1636-03-27",
       "marriage": "",
@@ -109043,7 +109661,8 @@
       "deathPlace": "Saltillo, Coahuila de Zaragoza, Mexico",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -109142,6 +109761,26 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/PMCM-VYN",
+            "parents": [
+              "96CX-431",
+              "PS6D-BZN"
+            ],
+            "name": "Lorenzo García de Enesa de Avila",
+            "sex": "male",
+            "id": "PMCM-VYN",
+            "death": "1636",
+            "birth": "1574",
+            "spouseIds": [
+              "PCJ2-BDD"
+            ],
+            "generation": 14,
+            "parentStatus": "two_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -109151,7 +109790,7 @@
       "fsId": "PCJ2-BDD",
       "name": "Isabel Martinez del Moral Garcia",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1579-01-14",
       "death": "1641",
       "marriage": "",
@@ -109161,7 +109800,8 @@
       "deathPlace": "Monterrey, Nuevo Leon, Mexico",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -109260,6 +109900,23 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/PCJ2-BDD",
+            "parents": null,
+            "name": "Isabel Martinez del Moral Garcia",
+            "sex": "female",
+            "id": "PCJ2-BDD",
+            "death": "1641",
+            "birth": "1579",
+            "spouseIds": [
+              "PMCM-VYN"
+            ],
+            "generation": 14,
+            "parentStatus": "no_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -109269,7 +109926,7 @@
       "fsId": "L1V1-TTV",
       "name": "Agustin Abrego",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "D.+15620000.A+00000000..",
       "death": ".",
       "marriage": "",
@@ -109279,7 +109936,8 @@
       "deathPlace": "",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -109367,6 +110025,23 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/L1V1-TTV",
+            "parents": null,
+            "name": "Agustin Abrego",
+            "sex": "male",
+            "id": "L1V1-TTV",
+            "death": null,
+            "birth": "1562",
+            "spouseIds": [
+              "MQ4Y-GJB"
+            ],
+            "generation": 14,
+            "parentStatus": "no_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -109376,7 +110051,7 @@
       "fsId": "MQ4Y-GJB",
       "name": "María Leonor Isabel Gutiérrez de Olea Baeza",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1568",
       "death": "1630",
       "marriage": "",
@@ -109386,7 +110061,8 @@
       "deathPlace": "Coahuila, Zaragoza, San Luis Potosí, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -109474,6 +110150,23 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/MQ4Y-GJB",
+            "parents": null,
+            "name": "María Leonor Isabel Gutiérrez de Olea Baeza",
+            "sex": "female",
+            "id": "MQ4Y-GJB",
+            "death": "1630",
+            "birth": "1568",
+            "spouseIds": [
+              "L1V1-TTV"
+            ],
+            "generation": 14,
+            "parentStatus": "no_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -109483,7 +110176,7 @@
       "fsId": "LBVY-2BD",
       "name": "Jose Diego de Treviño",
       "altNames": [],
-      "sex": "",
+      "sex": "M",
       "birth": "1537-02-04",
       "death": ".",
       "marriage": "",
@@ -109493,7 +110186,8 @@
       "deathPlace": "",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -109583,6 +110277,23 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LBVY-2BD",
+            "parents": null,
+            "name": "Jose Diego de Treviño",
+            "sex": "male",
+            "id": "LBVY-2BD",
+            "death": null,
+            "birth": "1537",
+            "spouseIds": [
+              "LBHY-VYR"
+            ],
+            "generation": 14,
+            "parentStatus": "no_parents_visible"
+          }
         }
       ],
       "marriagePlace": ""
@@ -109592,7 +110303,7 @@
       "fsId": "LBHY-VYR",
       "name": "Beatriz de QUINTANILLA",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "1533-07-15",
       "death": "DA+16030000..+00000000..",
       "marriage": "",
@@ -109602,7 +110313,8 @@
       "deathPlace": "Monterrey, Nuevo Leon, Mexico",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "originals": [
         {
@@ -109704,6 +110416,23 @@
               "F1895"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/LBHY-VYR",
+            "parents": null,
+            "name": "Beatriz de QUINTANILLA",
+            "sex": "female",
+            "id": "LBHY-VYR",
+            "death": "1603",
+            "birth": "1533",
+            "spouseIds": [
+              "LBVY-2BD"
+            ],
+            "generation": 14,
+            "parentStatus": "no_parents_visible"
           }
         }
       ],
@@ -121484,6 +122213,576 @@
       "birthPlace": "",
       "deathPlace": "",
       "marriagePlace": ""
+    },
+    {
+      "id": "GKFW-Q43",
+      "fsId": "GKFW-Q43",
+      "name": "Juan Gomez de Los Santos Coy",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "GKFW-Q43",
+            "generation": 15,
+            "parents": [
+              "G6YR-5MF",
+              "G6YR-TGG"
+            ],
+            "name": "Juan Gomez de Los Santos Coy",
+            "parentStatus": "two_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GKFW-Q43"
+          }
+        }
+      ]
+    },
+    {
+      "id": "L1ZW-1PK",
+      "fsId": "L1ZW-1PK",
+      "name": "Francisca Corral Avila",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "L1ZW-1PK",
+            "generation": 15,
+            "parents": [
+              "GKFL-4JX",
+              "MC9S-ZS4"
+            ],
+            "name": "Francisca Corral Avila",
+            "parentStatus": "two_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/L1ZW-1PK"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PM9D-F3B",
+      "fsId": "PM9D-F3B",
+      "name": "Alonso de Castro",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "PM9D-F3B",
+            "generation": 15,
+            "parents": [
+              "GZXN-6JJ",
+              "GX4Q-PQQ"
+            ],
+            "name": "Alonso de Castro",
+            "parentStatus": "two_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/PM9D-F3B"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GZ7J-YGF",
+      "fsId": "GZ7J-YGF",
+      "name": "Francisca de Figueroa",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "GZ7J-YGF",
+            "generation": 15,
+            "parents": [
+              "G6RQ-SNP"
+            ],
+            "name": "Francisca de Figueroa",
+            "parentStatus": "one_parent_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GZ7J-YGF"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GSV6-BFC",
+      "fsId": "GSV6-BFC",
+      "name": "Lazaro De los Santos Caliz Rangel",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "GSV6-BFC",
+            "generation": 15,
+            "parents": [
+              "GC3D-M46",
+              "GC38-YJJ"
+            ],
+            "name": "Lazaro De los Santos Caliz Rangel",
+            "parentStatus": "two_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GSV6-BFC"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GKFW-V1R",
+      "fsId": "GKFW-V1R",
+      "name": "Catalina Andrea Santos",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "id": "GKFW-V1R",
+            "generation": 15,
+            "parents": null,
+            "name": "Catalina Andrea Santos",
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GKFW-V1R"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GC3D-M46",
+      "fsId": "GC3D-M46",
+      "name": "Francisco De Los Santos Caliz",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Francisco De Los Santos Caliz",
+            "parents": null,
+            "id": "GC3D-M46",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GC3D-M46"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GC38-YJJ",
+      "fsId": "GC38-YJJ",
+      "name": "María Rangel de la Garza",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "María Rangel de la Garza",
+            "parents": null,
+            "id": "GC38-YJJ",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GC38-YJJ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G6YR-5MF",
+      "fsId": "G6YR-5MF",
+      "name": "Gómez De Los Santos",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Gómez De Los Santos",
+            "parents": null,
+            "id": "G6YR-5MF",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G6YR-5MF"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G6YR-TGG",
+      "fsId": "G6YR-TGG",
+      "name": "Coy",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Coy",
+            "parents": null,
+            "id": "G6YR-TGG",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G6YR-TGG"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GKFL-4JX",
+      "fsId": "GKFL-4JX",
+      "name": "Francisco de Corral",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Francisco de Corral",
+            "parents": null,
+            "id": "GKFL-4JX",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GKFL-4JX"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MC9S-ZS4",
+      "fsId": "MC9S-ZS4",
+      "name": "Catalina de Avila",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Catalina de Avila",
+            "parents": null,
+            "id": "MC9S-ZS4",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/MC9S-ZS4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GZXN-6JJ",
+      "fsId": "GZXN-6JJ",
+      "name": "Cristobal Rodríguez de Porras",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Cristobal Rodríguez de Porras",
+            "parents": null,
+            "id": "GZXN-6JJ",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GZXN-6JJ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GX4Q-PQQ",
+      "fsId": "GX4Q-PQQ",
+      "name": "Isabel Gómez De Castro",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Isabel Gómez De Castro",
+            "parents": null,
+            "id": "GX4Q-PQQ",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/GX4Q-PQQ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G6RQ-SNP",
+      "fsId": "G6RQ-SNP",
+      "name": "Figueroa",
+      "altNames": [],
+      "sex": "",
+      "birth": "",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "name": "Figueroa",
+            "parents": null,
+            "id": "G6RQ-SNP",
+            "generation": 16,
+            "parentStatus": "no_parents_visible",
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/G6RQ-SNP"
+          }
+        }
+      ]
+    },
+    {
+      "id": "96CX-431",
+      "fsId": "96CX-431",
+      "name": "Cristóbal García Pérez de Acevedo",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1550",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/96CX-431",
+            "generation": 15,
+            "parentStatus": "no_parents_visible",
+            "spouseIds": [
+              "PS6D-BZN"
+            ],
+            "birth": "1550",
+            "parents": null,
+            "name": "Cristóbal García Pérez de Acevedo",
+            "sex": "male",
+            "id": "96CX-431",
+            "death": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "PS6D-BZN",
+      "fsId": "PS6D-BZN",
+      "name": "Leonor De Enesa",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1558",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "originals": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "sourceProfile": "https://www.familysearch.org/es/tree/person/family/PS6D-BZN",
+            "generation": 15,
+            "parentStatus": "no_parents_visible",
+            "spouseIds": [
+              "96CX-431"
+            ],
+            "birth": "1558",
+            "parents": null,
+            "name": "Leonor De Enesa",
+            "sex": "female",
+            "id": "PS6D-BZN",
+            "death": null
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -127946,7 +129245,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F845"
+        "F845",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -127955,7 +129255,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F845"
+        "F845",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -127964,7 +129265,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F847"
+        "F847",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -127973,7 +129275,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F847"
+        "F847",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -130151,7 +131454,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1150"
+        "F1150",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -130160,7 +131464,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1150"
+        "F1150",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -130187,7 +131492,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1154"
+        "F1154",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -130196,7 +131502,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1154"
+        "F1154",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -131375,7 +132682,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1327"
+        "F1327",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -131384,7 +132692,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1327"
+        "F1327",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -131411,7 +132720,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1330"
+        "F1330",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -131420,7 +132730,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1330"
+        "F1330",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -132968,7 +134279,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1556"
+        "F1556",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -132977,7 +134289,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1556"
+        "F1556",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -132986,7 +134299,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1557"
+        "F1557",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -132995,7 +134309,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1557"
+        "F1557",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -133607,7 +134922,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1687"
+        "F1687",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -133616,7 +134932,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1687"
+        "F1687",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -133643,7 +134960,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1691"
+        "F1691",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -133652,7 +134970,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1691"
+        "F1691",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -133769,7 +135088,8 @@
       "role": "padre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1713"
+        "F1713",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -133778,7 +135098,8 @@
       "role": "madre",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1713"
+        "F1713",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ]
     },
     {
@@ -135192,6 +136513,237 @@
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
         "F1921"
+      ]
+    },
+    {
+      "child": "KG65-LG3",
+      "parent": "LBHY-W8C",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "LBHY-W8C"
+      ]
+    },
+    {
+      "child": "KG65-LG3",
+      "parent": "M8X5-G5D",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "M8X5-G5D"
+      ]
+    },
+    {
+      "child": "M8X5-G5D",
+      "parent": "LBVY-2BD",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "LBVY-2BD"
+      ]
+    },
+    {
+      "child": "M8X5-G5D",
+      "parent": "LBHY-VYR",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "LBHY-VYR"
+      ]
+    },
+    {
+      "child": "LRDM-2LM",
+      "parent": "GSV6-BFC",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GSV6-BFC"
+      ]
+    },
+    {
+      "child": "LRDM-2LM",
+      "parent": "GKFW-V1R",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GKFW-V1R"
+      ]
+    },
+    {
+      "child": "P8TV-T48",
+      "parent": "GKFW-Q43",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GKFW-Q43"
+      ]
+    },
+    {
+      "child": "P8TV-T48",
+      "parent": "L1ZW-1PK",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "L1ZW-1PK"
+      ]
+    },
+    {
+      "child": "G11C-V28",
+      "parent": "PM9D-F3B",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "PM9D-F3B"
+      ]
+    },
+    {
+      "child": "G11C-V28",
+      "parent": "GZ7J-YGF",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GZ7J-YGF"
+      ]
+    },
+    {
+      "child": "PMCM-VYN",
+      "parent": "96CX-431",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "96CX-431"
+      ]
+    },
+    {
+      "child": "PMCM-VYN",
+      "parent": "PS6D-BZN",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "PS6D-BZN"
+      ]
+    },
+    {
+      "child": "GKFW-Q43",
+      "parent": "G6YR-5MF",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "G6YR-5MF"
+      ]
+    },
+    {
+      "child": "GKFW-Q43",
+      "parent": "G6YR-TGG",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "G6YR-TGG"
+      ]
+    },
+    {
+      "child": "L1ZW-1PK",
+      "parent": "GKFL-4JX",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GKFL-4JX"
+      ]
+    },
+    {
+      "child": "L1ZW-1PK",
+      "parent": "MC9S-ZS4",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "MC9S-ZS4"
+      ]
+    },
+    {
+      "child": "PM9D-F3B",
+      "parent": "GZXN-6JJ",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GZXN-6JJ"
+      ]
+    },
+    {
+      "child": "PM9D-F3B",
+      "parent": "GX4Q-PQQ",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GX4Q-PQQ"
+      ]
+    },
+    {
+      "child": "GZ7J-YGF",
+      "parent": "G6RQ-SNP",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "G6RQ-SNP"
+      ]
+    },
+    {
+      "child": "GSV6-BFC",
+      "parent": "GC3D-M46",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GC3D-M46"
+      ]
+    },
+    {
+      "child": "GSV6-BFC",
+      "parent": "GC38-YJJ",
+      "role": "",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceParentIds": [
+        "GC38-YJJ"
       ]
     }
   ],
@@ -147555,7 +149107,8 @@
       "marriagePlace": "Sagrario Metropolitano, Monterrey, Nuevo León, México",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F526"
+        "F526",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -147570,6 +149123,12 @@
           "detalles": null,
           "nota": null,
           "rootsmagic_evento_id": 4131
+        },
+        {
+          "type": "Marriage",
+          "date": "1690-06-19",
+          "place": "Sagrario Metropolitano, Monterrey, Nuevo León, Mexico",
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
         }
       ],
       "originalRecord": {
@@ -147609,7 +149168,28 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "couple": {
+              "personIds": [
+                "LVS3-DLN",
+                "L5VV-BHL"
+              ],
+              "marriage": {
+                "date": "1690-06-19",
+                "place": "Sagrario Metropolitano, Monterrey, Nuevo León, Mexico"
+              }
+            },
+            "spouseIds": [
+              "LVS3-DLN",
+              "L5VV-BHL"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F530",
@@ -154253,7 +155833,8 @@
       "marriagePlace": "Parras de la Fuente, Parras, Coahuila, Mexico",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F845"
+        "F845",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -154268,6 +155849,12 @@
           "detalles": null,
           "nota": null,
           "rootsmagic_evento_id": 6288
+        },
+        {
+          "type": "Marriage",
+          "date": "1648-06-19",
+          "place": "Parras de la Fuente, Parras, Coahuila, Mexico",
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
         }
       ],
       "originalRecord": {
@@ -154307,7 +155894,28 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "couple": {
+              "personIds": [
+                "G9QH-CS8",
+                "G4DX-NDN"
+              ],
+              "marriage": {
+                "date": "1648-06-19",
+                "place": "Parras de la Fuente, Parras, Coahuila, Mexico"
+              }
+            },
+            "spouseIds": [
+              "G9QH-CS8",
+              "G4DX-NDN"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F847",
@@ -154322,7 +155930,8 @@
       "marriagePlace": "",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F847"
+        "F847",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [],
       "originalRecord": {
@@ -154338,7 +155947,25 @@
         "matrimonio": null,
         "eventos": [],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "couple": {
+              "personIds": [
+                "LVZ4-H8Z",
+                "GNN7-2Y4"
+              ],
+              "marriage": null
+            },
+            "spouseIds": [
+              "LVZ4-H8Z",
+              "GNN7-2Y4"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F855",
@@ -163706,7 +165333,8 @@
       "marriagePlace": "Sagrario Metropolitano, Monterrey, Nuevo León, México",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1327"
+        "F1327",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -163760,7 +165388,18 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "KG65-LG3",
+              "G4VG-WTT"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1329",
@@ -167853,7 +169492,8 @@
       "marriagePlace": "Saltillo, Coahuila de Zaragoza, (México)",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1538"
+        "F1538",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -167907,7 +169547,18 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "L297-YRL",
+              "9WF4-9BH"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1540",
@@ -169194,7 +170845,8 @@
       "marriagePlace": "Mexico City, Mexico",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1632"
+        "F1632",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -169248,7 +170900,18 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "LRLC-8LT",
+              "LKYD-PMM"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1633",
@@ -169583,7 +171246,8 @@
       "marriagePlace": "",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1665"
+        "F1665",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [],
       "originalRecord": {
@@ -169597,7 +171261,18 @@
         "matrimonio": null,
         "eventos": [],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "KN6C-789",
+              "LT7Q-JF6"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1671",
@@ -170079,7 +171754,8 @@
       "marriagePlace": "",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1687"
+        "F1687",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [],
       "originalRecord": {
@@ -170093,7 +171769,18 @@
         "matrimonio": null,
         "eventos": [],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "P8TV-T48",
+              "LRDM-2LM"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1689",
@@ -170133,7 +171820,8 @@
       "marriagePlace": "",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1691"
+        "F1691",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [],
       "originalRecord": {
@@ -170147,7 +171835,18 @@
         "matrimonio": null,
         "eventos": [],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "G11C-V28",
+              "G244-7Q9"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1693",
@@ -172508,7 +174207,8 @@
       "marriagePlace": "",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1840"
+        "F1840",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -172562,7 +174262,18 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "M8X5-G5D",
+              "LBHY-W8C"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1842",
@@ -173421,7 +175132,8 @@
       "marriagePlace": "Saltillo, Coahuila, Mexico",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1880"
+        "F1880",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -173475,7 +175187,18 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "PCJ2-BDD",
+              "PMCM-VYN"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1881",
@@ -173770,7 +175493,8 @@
       "marriagePlace": "",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1891"
+        "F1891",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [],
       "originalRecord": {
@@ -173784,7 +175508,18 @@
         "matrimonio": null,
         "eventos": [],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "MQ4Y-GJB",
+              "L1V1-TTV"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1894",
@@ -173864,7 +175599,8 @@
       "marriagePlace": "Zaragoza, Puebla, Mexico",
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "F1895"
+        "F1895",
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -173918,7 +175654,18 @@
           }
         ],
         "nota": null
-      }
+      },
+      "additionalSourceRecords": [
+        {
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+          "record": {
+            "spouseIds": [
+              "LBHY-VYR",
+              "LBVY-2BD"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "F1896",
@@ -174362,6 +176109,45 @@
         ],
         "nota": null
       }
+    },
+    {
+      "id": "FS-antepasados-LVS3-DLN-L5VV-BHL-hasta-G17-json-96CX-431-PS6D-BZN",
+      "a": "96CX-431",
+      "b": "PS6D-BZN",
+      "children": [
+        "PMCM-VYN"
+      ],
+      "marriage": "ABT 1570",
+      "marriagePlace": "Tobarra, Albacete, Castilla-La Mancha, Spain",
+      "sources": [
+        "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+      ],
+      "sourceMarriageRecords": [
+        {
+          "type": "Marriage",
+          "date": "ABT 1570",
+          "place": "Tobarra, Albacete, Castilla-La Mancha, Spain",
+          "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json"
+        }
+      ],
+      "originalRecord": {
+        "source": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
+        "couple": {
+          "marriage": {
+            "place": "Tobarra, Albacete, Castilla-La Mancha, Spain",
+            "date": "ABT 1570"
+          },
+          "personIds": [
+            "96CX-431",
+            "PS6D-BZN"
+          ]
+        },
+        "spouseIds": [
+          "96CX-431",
+          "PS6D-BZN"
+        ]
+      },
+      "sourceEvidence": "couples"
     }
   ],
   "pendingRefs": [],

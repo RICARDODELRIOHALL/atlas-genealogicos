@@ -52,14 +52,14 @@ export function Toolbar(props: {
 
   return (
     <>
-      <header className="pointer-events-none absolute inset-x-0 top-0 z-10 flex flex-wrap items-start gap-2 p-3">
+      <header className="pointer-events-none absolute inset-x-0 top-0 z-10 flex flex-col items-stretch gap-2 p-3 sm:flex-row sm:flex-wrap sm:items-start">
         <div className="pointer-events-auto mr-2 hidden rounded-md border border-border bg-card/90 px-3 py-1.5 backdrop-blur lg:block">
           <div className="font-serif text-lg font-semibold leading-none text-gold">{APP_CONFIG.appName}</div>
           <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Plantilla reutilizable</div>
         </div>
-        <div className="pointer-events-auto relative w-full max-w-sm flex-1 sm:w-80 sm:flex-none">
+        <div className="pointer-events-auto relative w-full min-w-0 sm:w-80 sm:flex-none">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-          <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Nombre, apellido, ID o «G12»" className="bg-card/90 pl-8 backdrop-blur" aria-label="Buscar persona" />
+          <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Buscar persona por nombre o apellido" className="w-full bg-card/90 pl-8 backdrop-blur" aria-label="Buscar persona por nombre o apellido" />
           {results.length > 0 && (
             <div className="absolute mt-1 max-h-[60vh] w-full overflow-auto rounded-md border border-border bg-popover shadow-xl">
               {results.map((p) => (
