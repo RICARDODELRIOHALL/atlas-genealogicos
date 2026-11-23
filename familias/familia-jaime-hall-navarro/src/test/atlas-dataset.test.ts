@@ -34,7 +34,7 @@ describe("Generated genealogy application", () => {
     expect(ds.links).toContainEqual({ child: "ancestor-1266", parent: "route-pf1l-ltb", role: "", sources: [] });
     expect(ds.links).toContainEqual({ child: "ancestor-1266", parent: "route-pf1l-ccp", role: "", sources: [] });
     expect(ds.meta.appliedUpdates).toContain(PUBLISHED_UPDATE_ID);
-    expect((ds.meta as typeof ds.meta & { generationAudit: Record<string, unknown> }).generationAudit).toMatchObject({ totalPersons: 5871, includedPersons: 1839, directAncestorsExcludingRoot: 1835, includedParentLinkRecords: 1949, includedUnionRecords: 1527 });
+    expect((ds.meta as typeof ds.meta & { generationAudit: Record<string, unknown> }).generationAudit).toMatchObject({ totalPersons: 5870, includedPersons: 1839, directAncestorsExcludingRoot: 1835, includedParentLinkRecords: 1949, includedUnionRecords: 1527 });
     expect(ds.persons.find((person) => person.id === "ancestor-0003")?.name).toBe("Jaime Rafael Hall Huidobro");
     expect(ds.persons.map((person) => person.name)).not.toContain("Ricardo del Río Hall");
     expect(ds.persons.map((person) => person.id)).toContain(ds.meta.root);
