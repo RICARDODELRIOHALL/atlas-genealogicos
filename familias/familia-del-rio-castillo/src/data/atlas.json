@@ -31,6 +31,12 @@
         "file": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
         "kind": "Rama visible FamilySearch",
         "note": "Transcripción parcial de la vista; la pareja final indicada por el archivo no estaba visible."
+      },
+      {
+        "id": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+        "file": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+        "kind": "Revisión visual de FamilySearch",
+        "note": "Filiaciones transcritas desde las tarjetas y secciones Familiares del árbol abierto; LKGX-3FK muestra padre, pero no se muestra madre."
       }
     ],
     "conversion": {
@@ -61,11 +67,11 @@
     "generationAudit": {
       "mode": "componente parental conectado a la persona central",
       "root": "GQ89-7KB",
-      "totalPersons": 1239,
-      "includedPersons": 1239,
+      "totalPersons": 1252,
+      "includedPersons": 1252,
       "excludedPersons": 0,
-      "totalRelationships": 2261,
-      "includedRelationships": 2261,
+      "totalRelationships": 2276,
+      "includedRelationships": 2276,
       "excludedRelationships": 0
     },
     "sourceImports": [
@@ -688,6 +694,243 @@
             }
           }
         ]
+      },
+      {
+        "file": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+        "format": "FamilySearch browser review",
+        "incomingPeople": 20,
+        "matchedPeople": 7,
+        "newPeople": 13,
+        "sourceParentLinks": 19,
+        "alreadyPresentParentLinks": 4,
+        "newParentLinks": 15,
+        "includedSourceIds": [
+          "G93K-92L",
+          "GSS2-X97",
+          "GQP8-W3V",
+          "PX1B-DCG",
+          "GBPD-68H",
+          "G28X-WH1",
+          "LH36-6VK",
+          "2S42-25V",
+          "L2QQ-H2C",
+          "PMJR-BY6",
+          "L2Q3-4MJ",
+          "GH6T-GXX",
+          "G4K3-5F8",
+          "LKGX-3FK",
+          "M6FB-J43",
+          "GG1T-CBH",
+          "PXD4-BY3",
+          "G82M-79L",
+          "LYSS-2MW",
+          "MQH9-XWB"
+        ],
+        "excludedSourceIds": [],
+        "unknownParentSlots": [
+          {
+            "child": "LKGX-3FK",
+            "missing": [
+              "madre"
+            ]
+          }
+        ],
+        "sourceRecords": {
+          "people": [
+            {
+              "id": "G93K-92L",
+              "nombre": "Capitán Diego Flores de la Torre",
+              "sexo": "Hombre",
+              "nacimiento": "1542",
+              "defuncion": "1616"
+            },
+            {
+              "id": "GSS2-X97",
+              "nombre": "María Álvarez de la Torre",
+              "sexo": "Mujer",
+              "nacimiento": "1524",
+              "defuncion": "1545"
+            },
+            {
+              "id": "GQP8-W3V",
+              "nombre": "Gobernador Diego Pérez de la Torre",
+              "sexo": "Hombre",
+              "nacimiento": "1482",
+              "defuncion": "1538"
+            },
+            {
+              "id": "PX1B-DCG",
+              "nombre": "Juan Pedro Dávila Pérez",
+              "sexo": "Hombre",
+              "nacimiento": "1454",
+              "defuncion": ""
+            },
+            {
+              "id": "GBPD-68H",
+              "nombre": "Alonso Dávila y Guzmán, \"el Page\"",
+              "sexo": "Hombre",
+              "nacimiento": "1417",
+              "defuncion": ""
+            },
+            {
+              "id": "G28X-WH1",
+              "nombre": "Catalina Ponce",
+              "sexo": "Mujer",
+              "nacimiento": "1416",
+              "defuncion": ""
+            },
+            {
+              "id": "LH36-6VK",
+              "nombre": "Gil González Dávila de Cespedosa",
+              "sexo": "Hombre",
+              "nacimiento": "1400",
+              "defuncion": "1450"
+            },
+            {
+              "id": "2S42-25V",
+              "nombre": "Doña Aldonza Inés de Guzmán",
+              "sexo": "Mujer",
+              "nacimiento": "1400",
+              "defuncion": "1489"
+            },
+            {
+              "id": "L2QQ-H2C",
+              "nombre": "Maestre Luis Gonzalez de Guzmán",
+              "sexo": "Hombre",
+              "nacimiento": "1365",
+              "defuncion": "1443"
+            },
+            {
+              "id": "PMJR-BY6",
+              "nombre": "Constanza Mendez de Torres de Navarra y Biedma",
+              "sexo": "Mujer",
+              "nacimiento": "",
+              "defuncion": "1444"
+            },
+            {
+              "id": "L2Q3-4MJ",
+              "nombre": "Gonzalo Núñez de Guzmán",
+              "sexo": "Hombre",
+              "nacimiento": "1334",
+              "defuncion": "1404"
+            },
+            {
+              "id": "GH6T-GXX",
+              "nombre": "Isabel Enríquez de Castilla Carcamo",
+              "sexo": "Mujer",
+              "nacimiento": "1350",
+              "defuncion": "1420"
+            },
+            {
+              "id": "G4K3-5F8",
+              "nombre": "Enrique II de Castilla",
+              "sexo": "Hombre",
+              "nacimiento": "1334",
+              "defuncion": "1379"
+            },
+            {
+              "id": "LKGX-3FK",
+              "nombre": "Juana de Cárcamo",
+              "sexo": "Mujer",
+              "nacimiento": "1330",
+              "defuncion": "1404"
+            },
+            {
+              "id": "M6FB-J43",
+              "nombre": "Rey Alfonso XI de Castilla y León “El Justiciero”",
+              "sexo": "Hombre",
+              "nacimiento": "1311",
+              "defuncion": "1350"
+            },
+            {
+              "id": "GG1T-CBH",
+              "nombre": "Leonor Núñez de Guzmán Ponce de León",
+              "sexo": "Mujer",
+              "nacimiento": "1311",
+              "defuncion": "1351"
+            },
+            {
+              "id": "PXD4-BY3",
+              "nombre": "Fernan Íñiguez de Cárcamo y Díaz de Faro",
+              "sexo": "Hombre",
+              "nacimiento": "1310",
+              "defuncion": ""
+            },
+            {
+              "id": "G82M-79L",
+              "nombre": "Juana Velázquez de la Torre",
+              "sexo": "Mujer",
+              "nacimiento": "1460",
+              "defuncion": "1504"
+            },
+            {
+              "id": "LYSS-2MW",
+              "nombre": "Catalina Mexía",
+              "sexo": "Mujer",
+              "nacimiento": "1490",
+              "defuncion": ""
+            },
+            {
+              "id": "MQH9-XWB",
+              "nombre": "Alférez Mayor Hernán Flores",
+              "sexo": "Hombre",
+              "nacimiento": "1511",
+              "defuncion": "1562"
+            }
+          ],
+          "families": [
+            {
+              "child": "G93K-92L",
+              "father": "MQH9-XWB",
+              "mother": "GSS2-X97"
+            },
+            {
+              "child": "GSS2-X97",
+              "father": "GQP8-W3V",
+              "mother": "LYSS-2MW"
+            },
+            {
+              "child": "GQP8-W3V",
+              "father": "PX1B-DCG",
+              "mother": "G82M-79L"
+            },
+            {
+              "child": "PX1B-DCG",
+              "father": "GBPD-68H",
+              "mother": "G28X-WH1"
+            },
+            {
+              "child": "GBPD-68H",
+              "father": "LH36-6VK",
+              "mother": "2S42-25V"
+            },
+            {
+              "child": "2S42-25V",
+              "father": "L2QQ-H2C",
+              "mother": "PMJR-BY6"
+            },
+            {
+              "child": "L2QQ-H2C",
+              "father": "L2Q3-4MJ",
+              "mother": "GH6T-GXX"
+            },
+            {
+              "child": "GH6T-GXX",
+              "father": "G4K3-5F8",
+              "mother": "LKGX-3FK"
+            },
+            {
+              "child": "G4K3-5F8",
+              "father": "M6FB-J43",
+              "mother": "GG1T-CBH"
+            },
+            {
+              "child": "LKGX-3FK",
+              "father": "PXD4-BY3",
+              "mother": null
+            }
+          ]
+        }
       }
     ],
     "note": "Rama de antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json integrada. La fuente declara datos de árbol colaborativo, no verificación documental independiente."
@@ -123553,11 +123796,22 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "originals": [
         {
           "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "G93K-92L",
+            "nombre": "Capitán Diego Flores de la Torre",
+            "sexo": "Hombre",
+            "nacimiento": "1542",
+            "defuncion": "1616"
+          }
+        },
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
           "record": {
             "id": "G93K-92L",
             "nombre": "Capitán Diego Flores de la Torre",
@@ -123615,11 +123869,22 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "originals": [
         {
           "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "MQH9-XWB",
+            "nombre": "Alférez Mayor Hernán Flores",
+            "sexo": "Hombre",
+            "nacimiento": "1511",
+            "defuncion": "1562"
+          }
+        },
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
           "record": {
             "id": "MQH9-XWB",
             "nombre": "Alférez Mayor Hernán Flores",
@@ -123646,11 +123911,22 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "originals": [
         {
           "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "GSS2-X97",
+            "nombre": "María Álvarez de la Torre",
+            "sexo": "Mujer",
+            "nacimiento": "1524",
+            "defuncion": "1545"
+          }
+        },
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
           "record": {
             "id": "GSS2-X97",
             "nombre": "María Álvarez de la Torre",
@@ -123801,11 +124077,22 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "originals": [
         {
           "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "GQP8-W3V",
+            "nombre": "Gobernador Diego Pérez de la Torre",
+            "sexo": "Hombre",
+            "nacimiento": "1482",
+            "defuncion": "1538"
+          }
+        },
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
           "record": {
             "id": "GQP8-W3V",
             "nombre": "Gobernador Diego Pérez de la Torre",
@@ -123832,7 +124119,8 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "originals": [
         {
@@ -123843,6 +124131,16 @@
             "sexo": "Mujer",
             "nacimiento": "1490",
             "defuncion": "Fallecida"
+          }
+        },
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "LYSS-2MW",
+            "nombre": "Catalina Mexía",
+            "sexo": "Mujer",
+            "nacimiento": "1490",
+            "defuncion": ""
           }
         }
       ]
@@ -123894,7 +124192,8 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "originals": [
         {
@@ -123905,6 +124204,16 @@
             "sexo": "Hombre",
             "nacimiento": "1454",
             "defuncion": "Fallecido"
+          }
+        },
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "PX1B-DCG",
+            "nombre": "Juan Pedro Dávila Pérez",
+            "sexo": "Hombre",
+            "nacimiento": "1454",
+            "defuncion": ""
           }
         }
       ]
@@ -123925,7 +124234,8 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "originals": [
         {
@@ -123936,6 +124246,421 @@
             "sexo": "Mujer",
             "nacimiento": "1460",
             "defuncion": "1504"
+          }
+        },
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "G82M-79L",
+            "nombre": "Juana Velázquez de la Torre",
+            "sexo": "Mujer",
+            "nacimiento": "1460",
+            "defuncion": "1504"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GBPD-68H",
+      "fsId": "GBPD-68H",
+      "name": "Alonso Dávila y Guzmán, \"el Page\"",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1417",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "GBPD-68H",
+            "nombre": "Alonso Dávila y Guzmán, \"el Page\"",
+            "sexo": "Hombre",
+            "nacimiento": "1417",
+            "defuncion": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "G28X-WH1",
+      "fsId": "G28X-WH1",
+      "name": "Catalina Ponce",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1416",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "G28X-WH1",
+            "nombre": "Catalina Ponce",
+            "sexo": "Mujer",
+            "nacimiento": "1416",
+            "defuncion": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "LH36-6VK",
+      "fsId": "LH36-6VK",
+      "name": "Gil González Dávila de Cespedosa",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1400",
+      "death": "1450",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "LH36-6VK",
+            "nombre": "Gil González Dávila de Cespedosa",
+            "sexo": "Hombre",
+            "nacimiento": "1400",
+            "defuncion": "1450"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2S42-25V",
+      "fsId": "2S42-25V",
+      "name": "Doña Aldonza Inés de Guzmán",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1400",
+      "death": "1489",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "2S42-25V",
+            "nombre": "Doña Aldonza Inés de Guzmán",
+            "sexo": "Mujer",
+            "nacimiento": "1400",
+            "defuncion": "1489"
+          }
+        }
+      ]
+    },
+    {
+      "id": "L2QQ-H2C",
+      "fsId": "L2QQ-H2C",
+      "name": "Maestre Luis Gonzalez de Guzmán",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1365",
+      "death": "1443",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "L2QQ-H2C",
+            "nombre": "Maestre Luis Gonzalez de Guzmán",
+            "sexo": "Hombre",
+            "nacimiento": "1365",
+            "defuncion": "1443"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PMJR-BY6",
+      "fsId": "PMJR-BY6",
+      "name": "Constanza Mendez de Torres de Navarra y Biedma",
+      "altNames": [],
+      "sex": "F",
+      "birth": "",
+      "death": "1444",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "PMJR-BY6",
+            "nombre": "Constanza Mendez de Torres de Navarra y Biedma",
+            "sexo": "Mujer",
+            "nacimiento": "",
+            "defuncion": "1444"
+          }
+        }
+      ]
+    },
+    {
+      "id": "L2Q3-4MJ",
+      "fsId": "L2Q3-4MJ",
+      "name": "Gonzalo Núñez de Guzmán",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1334",
+      "death": "1404",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "L2Q3-4MJ",
+            "nombre": "Gonzalo Núñez de Guzmán",
+            "sexo": "Hombre",
+            "nacimiento": "1334",
+            "defuncion": "1404"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GH6T-GXX",
+      "fsId": "GH6T-GXX",
+      "name": "Isabel Enríquez de Castilla Carcamo",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1350",
+      "death": "1420",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "GH6T-GXX",
+            "nombre": "Isabel Enríquez de Castilla Carcamo",
+            "sexo": "Mujer",
+            "nacimiento": "1350",
+            "defuncion": "1420"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G4K3-5F8",
+      "fsId": "G4K3-5F8",
+      "name": "Enrique II de Castilla",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1334",
+      "death": "1379",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "G4K3-5F8",
+            "nombre": "Enrique II de Castilla",
+            "sexo": "Hombre",
+            "nacimiento": "1334",
+            "defuncion": "1379"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LKGX-3FK",
+      "fsId": "LKGX-3FK",
+      "name": "Juana de Cárcamo",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1330",
+      "death": "1404",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [
+        "La ficha consultada en FamilySearch muestra padre (PXD4-BY3) y no muestra madre; no se añadió una filiación materna."
+      ],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "LKGX-3FK",
+            "nombre": "Juana de Cárcamo",
+            "sexo": "Mujer",
+            "nacimiento": "1330",
+            "defuncion": "1404"
+          }
+        }
+      ]
+    },
+    {
+      "id": "M6FB-J43",
+      "fsId": "M6FB-J43",
+      "name": "Rey Alfonso XI de Castilla y León “El Justiciero”",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1311",
+      "death": "1350",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "M6FB-J43",
+            "nombre": "Rey Alfonso XI de Castilla y León “El Justiciero”",
+            "sexo": "Hombre",
+            "nacimiento": "1311",
+            "defuncion": "1350"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GG1T-CBH",
+      "fsId": "GG1T-CBH",
+      "name": "Leonor Núñez de Guzmán Ponce de León",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1311",
+      "death": "1351",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "GG1T-CBH",
+            "nombre": "Leonor Núñez de Guzmán Ponce de León",
+            "sexo": "Mujer",
+            "nacimiento": "1311",
+            "defuncion": "1351"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PXD4-BY3",
+      "fsId": "PXD4-BY3",
+      "name": "Fernan Íñiguez de Cárcamo y Díaz de Faro",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1310",
+      "death": "",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: árbol abierto, revisión de filiaciones por ID",
+          "record": {
+            "id": "PXD4-BY3",
+            "nombre": "Fernan Íñiguez de Cárcamo y Díaz de Faro",
+            "sexo": "Hombre",
+            "nacimiento": "1310",
+            "defuncion": ""
           }
         }
       ]
@@ -138019,7 +138744,8 @@
       "parent": "MQH9-XWB",
       "role": "padre",
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "sourceParentIds": [
         "MQH9-XWB"
@@ -138030,7 +138756,8 @@
       "parent": "GSS2-X97",
       "role": "madre",
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "sourceParentIds": [
         "GSS2-X97"
@@ -138085,7 +138812,8 @@
       "parent": "GQP8-W3V",
       "role": "padre",
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "sourceParentIds": [
         "GQP8-W3V"
@@ -138096,7 +138824,8 @@
       "parent": "LYSS-2MW",
       "role": "madre",
       "sources": [
-        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
       ],
       "sourceParentIds": [
         "LYSS-2MW"
@@ -138133,6 +138862,171 @@
       ],
       "sourceParentIds": [
         "G82M-79L"
+      ]
+    },
+    {
+      "child": "GQP8-W3V",
+      "parent": "PX1B-DCG",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "PX1B-DCG"
+      ]
+    },
+    {
+      "child": "GQP8-W3V",
+      "parent": "G82M-79L",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "G82M-79L"
+      ]
+    },
+    {
+      "child": "PX1B-DCG",
+      "parent": "GBPD-68H",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "GBPD-68H"
+      ]
+    },
+    {
+      "child": "PX1B-DCG",
+      "parent": "G28X-WH1",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "G28X-WH1"
+      ]
+    },
+    {
+      "child": "GBPD-68H",
+      "parent": "LH36-6VK",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "LH36-6VK"
+      ]
+    },
+    {
+      "child": "GBPD-68H",
+      "parent": "2S42-25V",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "2S42-25V"
+      ]
+    },
+    {
+      "child": "2S42-25V",
+      "parent": "L2QQ-H2C",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "L2QQ-H2C"
+      ]
+    },
+    {
+      "child": "2S42-25V",
+      "parent": "PMJR-BY6",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "PMJR-BY6"
+      ]
+    },
+    {
+      "child": "L2QQ-H2C",
+      "parent": "L2Q3-4MJ",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "L2Q3-4MJ"
+      ]
+    },
+    {
+      "child": "L2QQ-H2C",
+      "parent": "GH6T-GXX",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "GH6T-GXX"
+      ]
+    },
+    {
+      "child": "GH6T-GXX",
+      "parent": "G4K3-5F8",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "G4K3-5F8"
+      ]
+    },
+    {
+      "child": "GH6T-GXX",
+      "parent": "LKGX-3FK",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "LKGX-3FK"
+      ]
+    },
+    {
+      "child": "G4K3-5F8",
+      "parent": "M6FB-J43",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "M6FB-J43"
+      ]
+    },
+    {
+      "child": "G4K3-5F8",
+      "parent": "GG1T-CBH",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "GG1T-CBH"
+      ]
+    },
+    {
+      "child": "LKGX-3FK",
+      "parent": "PXD4-BY3",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: árbol abierto, revisión de filiaciones por ID"
+      ],
+      "sourceParentIds": [
+        "PXD4-BY3"
       ]
     }
   ],
