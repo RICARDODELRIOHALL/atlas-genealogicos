@@ -1,0 +1,165 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * - Keep every @import in this top block, above @theme and the rest of the file. Install an
+ *   npm package before @importing its CSS. Never @import a remote URL (web fonts, CDN CSS): the
+ *   build resolves @import from the filesystem. Load those with a <link> in the head() of
+ *   src/routes/__root.tsx and name the family in a --font-* token in @theme inline below.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The design lives in this file: oklch color tokens on the shadcn variables
+ * (--background, --foreground, --primary, --secondary, --muted, --accent, ...) plus
+ * new tokens as needed, font tokens, and custom styles and animations.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-warn: var(--warn);
+  --color-canvas: var(--canvas);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.16 0.028 258);
+  --foreground: oklch(0.93 0.012 85);
+  --card: oklch(0.215 0.03 256);
+  --card-foreground: oklch(0.93 0.012 85);
+  --popover: oklch(0.2 0.03 256);
+  --popover-foreground: oklch(0.93 0.012 85);
+  --primary: oklch(0.8 0.115 80);
+  --primary-foreground: oklch(0.18 0.03 258);
+  --secondary: oklch(0.26 0.032 256);
+  --secondary-foreground: oklch(0.9 0.012 85);
+  --muted: oklch(0.25 0.028 256);
+  --muted-foreground: oklch(0.68 0.025 250);
+  --accent: oklch(0.29 0.04 256);
+  --accent-foreground: oklch(0.95 0.012 85);
+  --destructive: oklch(0.64 0.19 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.34 0.03 256);
+  --input: oklch(0.34 0.03 256);
+  --ring: oklch(0.8 0.115 80);
+  --gold: oklch(0.8 0.115 80);
+  --gold-soft: oklch(0.8 0.115 80 / 0.18);
+  --canvas: oklch(0.13 0.025 260);
+  --canvas-dot: oklch(0.3 0.03 256);
+  --connector: oklch(0.55 0.035 250 / 0.75);
+  --warn: oklch(0.78 0.14 60);
+  --branch-1: oklch(0.7 0.09 230);
+  --branch-2: oklch(0.72 0.1 160);
+  --branch-3: oklch(0.72 0.1 30);
+  --branch-4: oklch(0.72 0.09 320);
+  --branch-other: oklch(0.65 0.02 250);
+  --chart-1: var(--branch-1); --chart-2: var(--branch-2); --chart-3: var(--branch-3); --chart-4: var(--branch-4); --chart-5: var(--gold);
+  --sidebar: var(--card); --sidebar-foreground: var(--foreground); --sidebar-primary: var(--primary); --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent); --sidebar-accent-foreground: var(--accent-foreground); --sidebar-border: var(--border); --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+@layer base { body { font-family: var(--font-sans); } }
+
+/* ---------- Lienzo ---------- */
+.atlas-flow { background: var(--canvas); }
+.atlas-flow .react-flow__edge-path { stroke: var(--connector); stroke-width: 1.2; }
+.atlas-flow .react-flow__edge.hl .react-flow__edge-path { stroke: var(--gold); stroke-width: 2.4; }
+.atlas-flow.dimmed .react-flow__edge:not(.hl) .react-flow__edge-path { opacity: 0.18; }
+.atlas-flow .react-flow__minimap { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
+.atlas-flow .react-flow__node { transition: opacity 200ms; }
+.atlas-flow.dimmed .react-flow__node-person:not(.hl):not(.sel) { opacity: 0.25; }
+
+.pcard { --b: var(--branch-other); width: 250px; height: 66px; border-radius: 6px; border: 1px solid var(--border);
+  border-left: 3px solid var(--b); background: var(--card); color: var(--card-foreground); padding: 7px 10px; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center; cursor: pointer; transition: border-color 150ms, box-shadow 150ms, background 150ms; }
+.pcard:hover { border-color: color-mix(in oklab, var(--gold) 50%, var(--border)); }
+.pcard[data-branch="Central"], .pcard[data-branch="Padres"] { --b: var(--gold); }
+.pcard.ref { border-style: dashed; background: color-mix(in oklab, var(--card) 70%, var(--canvas)); }
+.pcard .nm { font-family: var(--font-serif); font-weight: 600; font-size: 16px; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pcard .dt { font-size: 11.5px; color: var(--muted-foreground); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pcard .id { font-family: var(--font-mono); font-size: 10.5px; color: color-mix(in oklab, var(--b) 75%, var(--muted-foreground)); }
+.react-flow__node.sel .pcard { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold), 0 0 28px var(--gold-soft); }
+.react-flow__node.hl .pcard { border-color: var(--gold); background: color-mix(in oklab, var(--card) 82%, var(--gold)); }
+
+/* Zoom semántico */
+[data-zoom="mid"] .pcard .id, [data-zoom="mid"] .pcard .flag { display: none; }
+[data-zoom="mid"] .pcard .nm { font-size: 18px; }
+[data-zoom="far"] .pcard { background: var(--b); border-color: transparent; }
+[data-zoom="far"] .pcard > * { visibility: hidden; }
+[data-zoom="far"] .react-flow__node.hl .pcard, [data-zoom="far"] .react-flow__node.sel .pcard { background: var(--gold); }
+[data-zoom="far"] .react-flow__edge-path { stroke-width: 4; }
+.glabel { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); color: var(--gold); white-space: nowrap; pointer-events: none; letter-spacing: 0; }
+.glabel .big { display: none; font-size: 120px; line-height: 1; } .glabel .small { font-size: 22px; line-height: 1; }
+[data-zoom="far"] .glabel .big { display: block; } [data-zoom="far"] .glabel .small { display: none; }
+.blabel { width: 3200px; height: 700px; display: flex; align-items: center; justify-content: flex-end; font-family: var(--font-serif); font-size: 700px; line-height: 1; letter-spacing: 0; white-space: nowrap; pointer-events: none; opacity: 0.85; }
+.blabel > span { visibility: hidden; }
+[data-zoom="far"] .blabel > span { visibility: visible; }
+.union-dot { width: 8px; height: 8px; border-radius: 999px; background: var(--connector); }
