@@ -5,7 +5,7 @@ import { gunzipSync } from "node:zlib";
 
 const dataDir = dirname(fileURLToPath(import.meta.url)).replace(/[\\/]scripts$/, "/src/data");
 const parts = readdirSync(dataDir).filter((name) => /^atlas\.part-\d+\.b64$/.test(name)).sort();
-if (parts.length !== 4) throw new Error("Expected 4 compressed Atlas parts, found " + parts.length);
+if (parts.length !== 6) throw new Error("Expected 6 compressed Atlas parts, found " + parts.length);
 const compressed = Buffer.from(parts.map((name) => readFileSync(join(dataDir, name), "utf8").trim()).join(""), "base64");
 const json = gunzipSync(compressed);
 JSON.parse(json.toString("utf8"));
