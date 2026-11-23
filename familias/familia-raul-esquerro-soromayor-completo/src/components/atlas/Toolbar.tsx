@@ -52,7 +52,6 @@ export function Toolbar(props: {
       <header className="pointer-events-none absolute inset-x-0 top-0 z-10 flex flex-wrap items-start gap-2 p-3">
         <div className="pointer-events-auto mr-2 hidden rounded-md border border-border bg-card/90 px-3 py-1.5 backdrop-blur lg:block">
           <div className="font-serif text-lg font-semibold leading-none text-gold">{APP_CONFIG.appName}</div>
-          <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Plantilla reutilizable</div>
         </div>
         <div className="pointer-events-auto relative w-full max-w-sm flex-1 sm:w-80 sm:flex-none">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -108,9 +107,6 @@ export function Toolbar(props: {
           <input id="atlas-import-input" ref={fileRef} type="file" accept=".json,.csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.target.value = ""; }} />
         </div>
       </header>
-      <div className="pointer-events-none absolute bottom-3 left-3 z-10 max-w-[min(24rem,calc(100vw-1.5rem))] rounded-md border border-border bg-card/90 px-3 py-2 text-[11px] leading-snug text-muted-foreground shadow backdrop-blur" role="note">
-        Guardado solo en este navegador. iPhone y Windows no se sincronizan; conserva copias JSON. Borrar datos del navegador puede borrar el árbol.
-      </div>
       {props.mode.kind !== "none" && (
         <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold/50 bg-card/95 px-4 py-1.5 text-sm text-gold shadow-lg max-md:bottom-auto max-md:top-28">
           {props.mode.label}
@@ -123,3 +119,4 @@ export function Toolbar(props: {
     </>
   );
 }
+

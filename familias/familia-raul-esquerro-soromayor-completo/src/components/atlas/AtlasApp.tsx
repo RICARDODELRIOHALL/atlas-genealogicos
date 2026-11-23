@@ -10,7 +10,7 @@ import { computeLayout, CARD_H, CARD_W } from "@/lib/genealogy/layout";
 import { loadDataset, saveDataset, seedDataset } from "@/lib/genealogy/store";
 import type { Dataset } from "@/lib/genealogy/types";
 import { APP_CONFIG } from "@/lib/app-config";
-import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, GEN_LABEL_H, type PersonNodeData } from "./nodes";
+import { nodeTypes, type PersonNodeData } from "./nodes";
 import { PersonPanel } from "./PersonPanel";
 import { Toolbar } from "./Toolbar";
 
@@ -44,8 +44,6 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const [pathFrom, setPathFrom] = useState<string | null>(null);
   const [hidden, setHidden] = useState<Set<string>>(new Set());
   const [zoomLvl, setZoomLvl] = useState<"far" | "mid" | "near">("mid");
-  const flagged = useMemo(() => { const s = new Set<string>(); for (const i of d.issues) if (i.severity !== "info") i.ids.forEach((x) => s.add(x)); return s; }, [d]);
-
   const appBranch = useMemo(() => {
     const m = new Map<string, string>(); const byKey = new Map(layout.apps.map((a) => [a.key, a]));
     for (const a of layout.apps) {
@@ -68,20 +66,11 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const baseNodes = useMemo<Node[]>(() => {
     const n: Node[] = layout.apps.map((a) => ({
       id: a.key, type: "person", position: { x: a.x, y: a.y - CARD_H / 2 }, draggable: false, connectable: false,
-      data: { p: d.byId.get(a.personId)!, gen: a.gen, isRef: a.isRef, branch: appBranch.get(a.key)!, flagged: flagged.has(a.personId), color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
+      data: { p: d.byId.get(a.personId)!, isRef: a.isRef, branch: appBranch.get(a.key)!, color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
     }));
     for (const u of layout.unions) n.push({ id: u.key, type: "union", position: { x: u.x - 4, y: u.y - 4 }, draggable: false, selectable: false, data: {} });
-    const top = layout.bounds.minY;
-    for (const c of layout.columns) n.push({ id: `g${c.gen}`, type: "glabel", position: { x: c.x, y: top - GEN_LABEL_H - 80 },
-      width: CARD_W, height: GEN_LABEL_H, draggable: false, selectable: false, data: { gen: c.gen, count: c.count } });
-    for (const a of layout.apps) if (a.depth === 2 && a.group === "main") {
-      const b = appBranch.get(a.key)!;
-      n.push({ id: `b${a.key}`, type: "blabel", position: { x: layout.bounds.minX - BRANCH_LABEL_W - 180, y: a.y - BRANCH_LABEL_H / 2 },
-        width: BRANCH_LABEL_W, height: BRANCH_LABEL_H, draggable: false, selectable: false,
-        data: { label: b, color: BRANCH_COLORS[b] ?? "var(--branch-other)" } });
-    }
     return n;
-  }, [layout, d, appBranch, flagged, BRANCH_COLORS]);
+  }, [layout, d, appBranch, BRANCH_COLORS]);
   const baseEdges = useMemo<Edge[]>(() => {
     const e: Edge[] = [];
     for (const u of layout.unions) {
@@ -94,7 +83,6 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const unionByKey = useMemo(() => new Map(layout.unions.map((u) => [u.key, u])), [layout]);
   const nodes = useMemo(() => baseNodes.map((n) => {
     if (n.type !== "person") {
-      if (n.type === "blabel") return { ...n, hidden: hidden.has(n.data.label) };
       if (n.type === "union") { const u = unionByKey.get(n.id); return u && hidden.has(appBranch.get(u.childKey)!) && u.parentKeys.every((k) => hidden.has(appBranch.get(k)!)) ? { ...n, hidden: true } : n; }
       return n;
     }
@@ -196,3 +184,4 @@ function EmptyState({ onImport }: { onImport: () => void }) {
     </div>
   );
 }
+
