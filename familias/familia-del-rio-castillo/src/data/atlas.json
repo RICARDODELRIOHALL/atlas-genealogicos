@@ -19,6 +19,12 @@
         "file": "antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json",
         "kind": "JSON de antepasados FamilySearch",
         "note": "Rama integrada por IDs FamilySearch existentes; conserva registros fuente y las limitaciones declaradas por el archivo."
+      },
+      {
+        "id": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "file": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "kind": "Ruta de antepasados FamilySearch",
+        "note": "Transcripción de perfiles y filiaciones visibles en la ruta; mantiene las incertidumbres indicadas por la fuente."
       }
     ],
     "conversion": {
@@ -49,11 +55,11 @@
     "generationAudit": {
       "mode": "componente parental conectado a la persona central",
       "root": "GQ89-7KB",
-      "totalPersons": 1218,
-      "includedPersons": 1218,
+      "totalPersons": 1226,
+      "includedPersons": 1226,
       "excludedPersons": 0,
-      "totalRelationships": 2236,
-      "includedRelationships": 2236,
+      "totalRelationships": 2246,
+      "includedRelationships": 2246,
       "excludedRelationships": 0
     },
     "sourceImports": [
@@ -249,6 +255,194 @@
           "PS6D-BZN"
         ],
         "excludedSourceIds": []
+      },
+      {
+        "file": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "format": "FamilySearch couple route JSON",
+        "title": "Ruta de PWQQ-L5D y PM42-922 hasta M1XL-54F y PF7Y-BMT",
+        "scope": "Parejas del tramo mostrado en el árbol: progenitores de Juan Navarro de Moctezuma El viejo y Catalina Ramirez Velazco; antepasados de la rama de Juan Navarro; y pareja ancestral M1XL-54F/PF7Y-BMT. Se conservan únicamente los datos visibles en la vista.",
+        "incomingPeople": 10,
+        "matchedPeople": 2,
+        "newPeople": 8,
+        "sourceParentChildPairs": 8,
+        "parentLinkPairsAlreadyPresent": 0,
+        "newParentLinkPairs": 8,
+        "explicitUnionRecords": 2,
+        "includedSourceIds": [
+          "PWQQ-L5D",
+          "PM42-922",
+          "G645-DDS",
+          "GSH6-ZJP",
+          "LDWL-R7M",
+          "9DQY-H7G",
+          "G36M-H7S",
+          "PSRP-825",
+          "M1XL-54F",
+          "PF7Y-BMT"
+        ],
+        "excludedSourceIds": [],
+        "route": [
+          "PWQQ-L5D",
+          "PM42-922",
+          "G645-DDS",
+          "GSH6-ZJP",
+          "G36M-H7S",
+          "PSRP-825",
+          "M1XL-54F",
+          "PF7Y-BMT"
+        ],
+        "pairs": [
+          {
+            "orden": 1,
+            "pareja": [
+              {
+                "id": "PWQQ-L5D",
+                "nombre": "Juan Navarro de Moctezuma El viejo",
+                "sexo": "Hombre",
+                "nacimiento": "1571",
+                "defuncion": "1616",
+                "perfil": "https://www.familysearch.org/es/tree/person/PWQQ-L5D"
+              },
+              {
+                "id": "PM42-922",
+                "nombre": "Catalina Ramirez Velazco",
+                "sexo": "Mujer",
+                "nacimiento": "1578",
+                "defuncion": "Fallecida",
+                "perfil": "https://www.familysearch.org/es/tree/person/PM42-922"
+              }
+            ],
+            "union": null,
+            "hijo_en_ruta": null,
+            "vinculo_siguiente": "Juan Navarro de Moctezuma El viejo aparece como hijo de Martín Navarro y Petronila de Moctezuma; Catalina Ramirez Velazco aparece como hija de Juan Ramirez de la Campaña y Francisca Flores de la Torre."
+          },
+          {
+            "orden": 2,
+            "rama": "progenitores de PWQQ-L5D",
+            "pareja": [
+              {
+                "id": "G645-DDS",
+                "nombre": "Martín Navarro",
+                "sexo": "Hombre",
+                "nacimiento": "1554",
+                "defuncion": "1610",
+                "perfil": "https://www.familysearch.org/es/tree/person/G645-DDS"
+              },
+              {
+                "id": "GSH6-ZJP",
+                "nombre": "Petronila de Moctezuma",
+                "sexo": "Mujer",
+                "nacimiento": "1553",
+                "defuncion": "Fallecida",
+                "perfil": "https://www.familysearch.org/es/tree/person/GSH6-ZJP"
+              }
+            ],
+            "union": {
+              "tipo": "Matrimonio",
+              "fecha": "1571",
+              "lugar": "España"
+            },
+            "hijo_en_ruta": {
+              "id": "PWQQ-L5D",
+              "nombre": "Juan Navarro de Moctezuma El viejo"
+            },
+            "vinculo_siguiente": "Petronila de Moctezuma aparece en la rama que llega a la pareja M1XL-54F y PF7Y-BMT."
+          },
+          {
+            "orden": 3,
+            "rama": "progenitores de PM42-922 (rama mostrada en el mismo árbol)",
+            "pareja": [
+              {
+                "id": "LDWL-R7M",
+                "nombre": "Juan Ramirez de la Campaña",
+                "sexo": "Hombre",
+                "nacimiento": "1555",
+                "defuncion": "Fallecido",
+                "perfil": "https://www.familysearch.org/es/tree/person/LDWL-R7M"
+              },
+              {
+                "id": "9DQY-H7G",
+                "nombre": "Francisca Flores de la Torre",
+                "sexo": "Mujer",
+                "nacimiento": "1563",
+                "defuncion": "Fallecida",
+                "perfil": "https://www.familysearch.org/es/tree/person/9DQY-H7G"
+              }
+            ],
+            "union": {
+              "tipo": "Matrimonio",
+              "fecha": "aproximadamente 1590",
+              "lugar": "Juchipila, Juchipila, Zacatecas, México"
+            },
+            "hijo_en_ruta": {
+              "id": "PM42-922",
+              "nombre": "Catalina Ramirez Velazco"
+            },
+            "vinculo_siguiente": null
+          },
+          {
+            "orden": 4,
+            "rama": "antepasados mostrados de Petronila de Moctezuma",
+            "pareja": [
+              {
+                "id": "G36M-H7S",
+                "nombre": "Capitán Diego Arias Sotelo Núñez Vela",
+                "sexo": "Hombre",
+                "nacimiento": "1518",
+                "defuncion": "1566",
+                "perfil": "https://www.familysearch.org/es/tree/person/G36M-H7S"
+              },
+              {
+                "id": "PSRP-825",
+                "nombre": "Leonor Valderrama Moctezuma",
+                "sexo": "Mujer",
+                "nacimiento": null,
+                "defuncion": "Fallecida",
+                "perfil": "https://www.familysearch.org/es/tree/person/PSRP-825"
+              }
+            ],
+            "union": null,
+            "hijo_en_ruta": {
+              "id": "GSH6-ZJP",
+              "nombre": "Petronila de Moctezuma"
+            },
+            "vinculo_siguiente": "Leonor Valderrama Moctezuma aparece como hija de Huēyi Tlahtoāni Motēuczōma Xōcoyōtzin y Tzihuacxoachitzin II Acatlan."
+          },
+          {
+            "orden": 5,
+            "rama": "pareja final solicitada",
+            "pareja": [
+              {
+                "id": "M1XL-54F",
+                "nombre": "Huēyi Tlahtoāni Motēuczōma Xōcoyōtzin",
+                "sexo": "Hombre",
+                "nacimiento": "1467",
+                "defuncion": "1520",
+                "perfil": "https://www.familysearch.org/es/tree/person/M1XL-54F"
+              },
+              {
+                "id": "PF7Y-BMT",
+                "nombre": "Tzihuacxoachitzin II Acatlan",
+                "sexo": "Mujer",
+                "nacimiento": "1480",
+                "defuncion": "Fallecida",
+                "perfil": "https://www.familysearch.org/es/tree/person/PF7Y-BMT"
+              }
+            ],
+            "union": null,
+            "hijo_en_ruta": {
+              "id": "PSRP-825",
+              "nombre": "Leonor Valderrama Moctezuma"
+            },
+            "vinculo_siguiente": null
+          }
+        ],
+        "notes": [
+          "La vista muestra la pareja PWQQ-L5D/PM42-922 y sus progenitores; la unión de PWQQ-L5D y PM42-922 no tenía fecha o lugar visibles en esa vista.",
+          "Los datos de matrimonio de las demás parejas se incluyen solo cuando aparecían en pantalla.",
+          "No se completaron fechas, uniones ni relaciones que no estuvieran visibles en la vista del árbol.",
+          "Las relaciones se transcriben según la colocación y los vínculos mostrados por FamilySearch; este archivo no representa una verificación independiente."
+        ]
       }
     ],
     "note": "Rama de antepasados_LVS3-DLN_L5VV-BHL_hasta_G17.json integrada. La fuente declara datos de árbol colaborativo, no verificación documental independiente."
@@ -105080,7 +105274,7 @@
       "fsId": "PM42-922",
       "name": "Catalina Ramirez Velazco",
       "altNames": [],
-      "sex": "",
+      "sex": "F",
       "birth": "D.+15780000.A+00000000..",
       "death": ".",
       "marriage": "",
@@ -105090,7 +105284,8 @@
       "deathPlace": "El Sagrario, San Luis Potosí, San Luis Potosí, México",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
       ],
       "originals": [
         {
@@ -105170,6 +105365,17 @@
             ],
             "nota": null
           }
+        },
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "PM42-922",
+            "nombre": "Catalina Ramirez Velazco",
+            "sexo": "Mujer",
+            "nacimiento": "1578",
+            "defuncion": "Fallecida",
+            "perfil": "https://www.familysearch.org/es/tree/person/PM42-922"
+          }
         }
       ],
       "marriagePlace": ""
@@ -105178,8 +105384,10 @@
       "id": "PWQQ-L5D",
       "fsId": "PWQQ-L5D",
       "name": "Juan Navarro de Moctezuma",
-      "altNames": [],
-      "sex": "",
+      "altNames": [
+        "Juan Navarro de Moctezuma El viejo"
+      ],
+      "sex": "M",
       "birth": "D.+15710000.A+00000000..",
       "death": "1616-01",
       "marriage": "",
@@ -105189,7 +105397,8 @@
       "deathPlace": "El Sagrario, San Luis Potosí, San Luis Potosí, Mexico",
       "notes": [],
       "sources": [
-        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json"
+        "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
       ],
       "originals": [
         {
@@ -105268,6 +105477,17 @@
               "F1342"
             ],
             "nota": null
+          }
+        },
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "PWQQ-L5D",
+            "nombre": "Juan Navarro de Moctezuma El viejo",
+            "sexo": "Hombre",
+            "nacimiento": "1571",
+            "defuncion": "1616",
+            "perfil": "https://www.familysearch.org/es/tree/person/PWQQ-L5D"
           }
         }
       ],
@@ -122783,6 +123003,262 @@
           }
         }
       ]
+    },
+    {
+      "id": "G645-DDS",
+      "fsId": "G645-DDS",
+      "name": "Martín Navarro",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1554",
+      "death": "1610",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "G645-DDS",
+            "nombre": "Martín Navarro",
+            "sexo": "Hombre",
+            "nacimiento": "1554",
+            "defuncion": "1610",
+            "perfil": "https://www.familysearch.org/es/tree/person/G645-DDS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GSH6-ZJP",
+      "fsId": "GSH6-ZJP",
+      "name": "Petronila de Moctezuma",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1553",
+      "death": "Fallecida",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "GSH6-ZJP",
+            "nombre": "Petronila de Moctezuma",
+            "sexo": "Mujer",
+            "nacimiento": "1553",
+            "defuncion": "Fallecida",
+            "perfil": "https://www.familysearch.org/es/tree/person/GSH6-ZJP"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LDWL-R7M",
+      "fsId": "LDWL-R7M",
+      "name": "Juan Ramirez de la Campaña",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1555",
+      "death": "Fallecido",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "LDWL-R7M",
+            "nombre": "Juan Ramirez de la Campaña",
+            "sexo": "Hombre",
+            "nacimiento": "1555",
+            "defuncion": "Fallecido",
+            "perfil": "https://www.familysearch.org/es/tree/person/LDWL-R7M"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9DQY-H7G",
+      "fsId": "9DQY-H7G",
+      "name": "Francisca Flores de la Torre",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1563",
+      "death": "Fallecida",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "9DQY-H7G",
+            "nombre": "Francisca Flores de la Torre",
+            "sexo": "Mujer",
+            "nacimiento": "1563",
+            "defuncion": "Fallecida",
+            "perfil": "https://www.familysearch.org/es/tree/person/9DQY-H7G"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G36M-H7S",
+      "fsId": "G36M-H7S",
+      "name": "Capitán Diego Arias Sotelo Núñez Vela",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1518",
+      "death": "1566",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "G36M-H7S",
+            "nombre": "Capitán Diego Arias Sotelo Núñez Vela",
+            "sexo": "Hombre",
+            "nacimiento": "1518",
+            "defuncion": "1566",
+            "perfil": "https://www.familysearch.org/es/tree/person/G36M-H7S"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PSRP-825",
+      "fsId": "PSRP-825",
+      "name": "Leonor Valderrama Moctezuma",
+      "altNames": [],
+      "sex": "F",
+      "birth": "",
+      "death": "Fallecida",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "PSRP-825",
+            "nombre": "Leonor Valderrama Moctezuma",
+            "sexo": "Mujer",
+            "nacimiento": null,
+            "defuncion": "Fallecida",
+            "perfil": "https://www.familysearch.org/es/tree/person/PSRP-825"
+          }
+        }
+      ]
+    },
+    {
+      "id": "M1XL-54F",
+      "fsId": "M1XL-54F",
+      "name": "Huēyi Tlahtoāni Motēuczōma Xōcoyōtzin",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1467",
+      "death": "1520",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "M1XL-54F",
+            "nombre": "Huēyi Tlahtoāni Motēuczōma Xōcoyōtzin",
+            "sexo": "Hombre",
+            "nacimiento": "1467",
+            "defuncion": "1520",
+            "perfil": "https://www.familysearch.org/es/tree/person/M1XL-54F"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PF7Y-BMT",
+      "fsId": "PF7Y-BMT",
+      "name": "Tzihuacxoachitzin II Acatlan",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1480",
+      "death": "Fallecida",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "originals": [
+        {
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "PF7Y-BMT",
+            "nombre": "Tzihuacxoachitzin II Acatlan",
+            "sexo": "Mujer",
+            "nacimiento": "1480",
+            "defuncion": "Fallecida",
+            "perfil": "https://www.familysearch.org/es/tree/person/PF7Y-BMT"
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -136744,6 +137220,94 @@
       ],
       "sourceParentIds": [
         "GC38-YJJ"
+      ]
+    },
+    {
+      "child": "PWQQ-L5D",
+      "parent": "G645-DDS",
+      "role": "padre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "G645-DDS"
+      ]
+    },
+    {
+      "child": "PWQQ-L5D",
+      "parent": "GSH6-ZJP",
+      "role": "madre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "GSH6-ZJP"
+      ]
+    },
+    {
+      "child": "PM42-922",
+      "parent": "LDWL-R7M",
+      "role": "padre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "LDWL-R7M"
+      ]
+    },
+    {
+      "child": "PM42-922",
+      "parent": "9DQY-H7G",
+      "role": "madre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "9DQY-H7G"
+      ]
+    },
+    {
+      "child": "GSH6-ZJP",
+      "parent": "G36M-H7S",
+      "role": "padre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "G36M-H7S"
+      ]
+    },
+    {
+      "child": "GSH6-ZJP",
+      "parent": "PSRP-825",
+      "role": "madre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "PSRP-825"
+      ]
+    },
+    {
+      "child": "PSRP-825",
+      "parent": "M1XL-54F",
+      "role": "padre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "M1XL-54F"
+      ]
+    },
+    {
+      "child": "PSRP-825",
+      "parent": "PF7Y-BMT",
+      "role": "madre",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceParentIds": [
+        "PF7Y-BMT"
       ]
     }
   ],
@@ -176148,6 +176712,70 @@
         ]
       },
       "sourceEvidence": "couples"
+    },
+    {
+      "id": "FS-ruta-PWQQ-L5D-PM42-922-a-M1XL-54F-PF7Y-BMT-json-G645-DDS-GSH6-ZJP",
+      "a": "G645-DDS",
+      "b": "GSH6-ZJP",
+      "children": [
+        "PWQQ-L5D"
+      ],
+      "marriage": "1571",
+      "marriagePlace": "España",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceMarriageRecords": [
+        {
+          "type": "Matrimonio",
+          "date": "1571",
+          "place": "España",
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "qualification": "1571"
+        }
+      ],
+      "originalRecord": {
+        "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "row": 2,
+        "record": {
+          "tipo": "Matrimonio",
+          "fecha": "1571",
+          "lugar": "España"
+        }
+      },
+      "sourceEvidence": "route-union-record"
+    },
+    {
+      "id": "FS-ruta-PWQQ-L5D-PM42-922-a-M1XL-54F-PF7Y-BMT-json-9DQY-H7G-LDWL-R7M",
+      "a": "LDWL-R7M",
+      "b": "9DQY-H7G",
+      "children": [
+        "PM42-922"
+      ],
+      "marriage": "aproximadamente 1590",
+      "marriagePlace": "Juchipila, Juchipila, Zacatecas, México",
+      "sources": [
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+      ],
+      "sourceMarriageRecords": [
+        {
+          "type": "Matrimonio",
+          "date": "aproximadamente 1590",
+          "place": "Juchipila, Juchipila, Zacatecas, México",
+          "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "qualification": "aproximadamente 1590"
+        }
+      ],
+      "originalRecord": {
+        "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "row": 3,
+        "record": {
+          "tipo": "Matrimonio",
+          "fecha": "aproximadamente 1590",
+          "lugar": "Juchipila, Juchipila, Zacatecas, México"
+        }
+      },
+      "sourceEvidence": "route-union-record"
     }
   ],
   "pendingRefs": [],
