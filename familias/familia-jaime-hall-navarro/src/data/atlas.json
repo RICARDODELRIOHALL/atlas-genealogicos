@@ -7,33 +7,36 @@
     "generationAudit": {
       "mode": "ancestros directos; hermanos solo nombre",
       "root": "person-root",
-      "totalPersons": 5868,
-      "includedPersons": 1837,
+      "totalPersons": 5894,
+      "includedPersons": 1863,
       "excludedPersons": 4031,
-      "directAncestorsExcludingRoot": 1833,
-      "ancestorsIncludingRoot": 1834,
+      "directAncestorsExcludingRoot": 1859,
+      "ancestorsIncludingRoot": 1860,
       "siblingNamesOnly": 3,
       "excludedDisconnectedPersons": 1515,
       "excludedConnectedNonAncestorProfiles": 2516,
       "removedFullProfilesFromPriorConnectedComponent": 2516,
-      "totalRelationships": 15737,
-      "includedRelationships": 3474,
-      "excludedRelationships": 12263,
-      "includedParentLinkRecords": 1947,
-      "includedUnionRecords": 1527,
-      "priorConnectedPersons": 4353,
+    "totalRelationships": 15782,
+      "includedRelationships": 3519,
+    "excludedRelationships": 12263,
+      "includedParentLinkRecords": 1979,
+      "includedUnionRecords": 1540,
+      "priorConnectedPersons": 4379,
       "priorConnectedNonAncestors": 2516,
       "siblingSourceProfilesMinimized": 3,
-      "importedAncestorProfiles": 1001,
-      "sourcePersons": 5868,
-      "sourceRelationships": 15737,
+      "importedAncestorProfiles": 1027,
+      "sourcePersons": 5894,
+    "sourceRelationships": 15782,
       "sourceBranches": [
         "Original maternal ancestry Navarro/Llamas",
-        "Ancestors of Jaime Rafael Hall Huidobro from Del Rio Hall atlas"
+        "Ancestors of Jaime Rafael Hall Huidobro from Del Rio Hall atlas",
+        "Rama Mowbray–Fitzalan hasta Henry III y Éléonore de Provence",
+        "Rama Berkeley–Bluet hasta Henry III y Éléonore de Provence"
       ]
     },
     "appliedUpdates": [
-      "jaime-hall-huidobro-shared-ancestors-v1"
+      "jaime-hall-huidobro-shared-ancestors-v1",
+      "jaime-hall-royal-routes-v1"
     ]
   },
   "persons": [
@@ -37106,6 +37109,834 @@
         "generador:Arbol_Del_Rio_Hall_Lovable.json"
       ],
       "originals": []
+    },
+    {
+      "id": "hallroute-lbgd-p8s",
+      "fsId": "LBGD-P8S",
+      "name": "John de Mowbray",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1340",
+      "death": "1368",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LBGD-P8S",
+            "name": "John de Mowbray",
+            "sex": "male",
+            "birth": "1340",
+            "death": "1368",
+            "generation_in_open_tree": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-ltdj-x1w",
+      "fsId": "LTDJ-X1W",
+      "name": "Elizabeth de Segrave",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1338",
+      "death": "1368",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LTDJ-X1W",
+            "name": "Elizabeth de Segrave",
+            "sex": "female",
+            "birth": "1338",
+            "death": "1368",
+            "generation_in_open_tree": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-ld91-3k9",
+      "fsId": "LD91-3K9",
+      "name": "Richard Fitzlan The 4th Earl of Arundel and 9th Earl of Surrey",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1346",
+      "death": "1397",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LD91-3K9",
+            "name": "Richard Fitzlan The 4th Earl of Arundel and 9th Earl of Surrey",
+            "sex": "male",
+            "birth": "1346",
+            "death": "1397",
+            "generation_in_open_tree": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-l8bx-895",
+      "fsId": "L8BX-895",
+      "name": "Lady Elizabeth de Bohun Countess of Arundel",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1350",
+      "death": "1385",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "L8BX-895",
+            "name": "Lady Elizabeth de Bohun Countess of Arundel",
+            "sex": "female",
+            "birth": "1350",
+            "death": "1385",
+            "generation_in_open_tree": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-93c9-sdv",
+      "fsId": "93C9-SDV",
+      "name": "John de Mowbray",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1310",
+      "death": "1361",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "93C9-SDV",
+            "name": "John de Mowbray",
+            "sex": "male",
+            "birth": "1310",
+            "death": "1361",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-lt5n-7f7",
+      "fsId": "LT5N-7F7",
+      "name": "Lady Joan of Lancaster Plantagnet",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1312",
+      "death": "1345",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LT5N-7F7",
+            "name": "Lady Joan of Lancaster Plantagnet",
+            "sex": "female",
+            "birth": "1312",
+            "death": "1345",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-937j-d9d",
+      "fsId": "937J-D9D",
+      "name": "Sir John de Segrave 4th Baron Segrave",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1315",
+      "death": "1353",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "937J-D9D",
+            "name": "Sir John de Segrave 4th Baron Segrave",
+            "sex": "male",
+            "birth": "1315",
+            "death": "1353",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-ltkh-4fn",
+      "fsId": "LTKH-4FN",
+      "name": "Margaret of Brotherton Duchess of Norfolk",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1322",
+      "death": "1399",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LTKH-4FN",
+            "name": "Margaret of Brotherton Duchess of Norfolk",
+            "sex": "female",
+            "birth": "1322",
+            "death": "1399",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-pn5t-y34",
+      "fsId": "PN5T-Y34",
+      "name": "Richard FitzAlan, 3rd Earl of Arundel",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1313",
+      "death": "1376",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "PN5T-Y34",
+            "name": "Richard FitzAlan, 3rd Earl of Arundel",
+            "sex": "male",
+            "birth": "1313",
+            "death": "1376",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-lb1s-5v6",
+      "fsId": "LB1S-5V6",
+      "name": "Eleanor of Lancaster",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1313",
+      "death": "1372",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LB1S-5V6",
+            "name": "Eleanor of Lancaster",
+            "sex": "female",
+            "birth": "1313",
+            "death": "1372",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-k24l-mwk",
+      "fsId": "K24L-MWK",
+      "name": "Sir William de Bohun 1st Earl of Northampton",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1312",
+      "death": "1361",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "K24L-MWK",
+            "name": "Sir William de Bohun 1st Earl of Northampton",
+            "sex": "male",
+            "birth": "1312",
+            "death": "1361",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-lr4q-118",
+      "fsId": "LR4Q-118",
+      "name": "Elizabeth de Badlesmere Countess of Northampton",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1313",
+      "death": "1356",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LR4Q-118",
+            "name": "Elizabeth de Badlesmere Countess of Northampton",
+            "sex": "female",
+            "birth": "1313",
+            "death": "1356",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-ld91-q66",
+      "fsId": "LD91-Q66",
+      "name": "Henry of Lancaster",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1281",
+      "death": "1345",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LD91-Q66",
+            "name": "Henry of Lancaster",
+            "sex": "male",
+            "birth": "1281",
+            "death": "1345",
+            "generation_in_open_tree": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-ld91-q6j",
+      "fsId": "LD91-Q6J",
+      "name": "Matilda Chaworth",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1282",
+      "death": "1322",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LD91-Q6J",
+            "name": "Matilda Chaworth",
+            "sex": "female",
+            "birth": "1282",
+            "death": "1322",
+            "generation_in_open_tree": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-l7tr-tvz",
+      "fsId": "L7TR-TVZ",
+      "name": "Edmund of Lancaster",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1245",
+      "death": "1296",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "L7TR-TVZ",
+            "name": "Edmund of Lancaster",
+            "sex": "male",
+            "birth": "1245",
+            "death": "1296",
+            "generation_in_open_tree": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-l41w-5sk",
+      "fsId": "L41W-5SK",
+      "name": "Reina Blanca d'Artois of Navarra",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1248",
+      "death": "1302",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "L41W-5SK",
+            "name": "Reina Blanca d'Artois of Navarra",
+            "sex": "female",
+            "birth": "1248",
+            "death": "1302",
+            "generation_in_open_tree": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-lywx-cbr",
+      "fsId": "LYWX-CBR",
+      "name": "King Edward I of England",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1239",
+      "death": "1307",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LYWX-CBR",
+            "name": "King Edward I of England",
+            "sex": "male",
+            "birth": "1239",
+            "death": "1307",
+            "generation_in_open_tree": 25
+          }
+        },
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LYWX-CBR",
+            "name": "King Edward I of England",
+            "sex": "male",
+            "birth": "1239",
+            "death": "1307",
+            "generation_in_open_tree": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-9cqx-dxx",
+      "fsId": "9CQX-DXX",
+      "name": "Eleanor of Castile, Queen of England",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1241",
+      "death": "1290",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "9CQX-DXX",
+            "name": "Eleanor of Castile, Queen of England",
+            "sex": "female",
+            "birth": "1241",
+            "death": "1290",
+            "generation_in_open_tree": 25
+          }
+        },
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "9CQX-DXX",
+            "name": "Eleanor of Castile, Queen of England",
+            "sex": "female",
+            "birth": "1241",
+            "death": "1290",
+            "generation_in_open_tree": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-9ss7-5bt",
+      "fsId": "9SS7-5BT",
+      "name": "Henry III King of England",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1207",
+      "death": "1272",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "9SS7-5BT",
+            "name": "Henry III King of England",
+            "sex": "male",
+            "birth": "1207",
+            "death": "1272",
+            "generation_in_open_tree": 26
+          }
+        },
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "9SS7-5BT",
+            "name": "Henry III King of England",
+            "sex": "male",
+            "birth": "1207",
+            "death": "1272",
+            "generation_in_open_tree": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-9hd3-mc1",
+      "fsId": "9HD3-MC1",
+      "name": "Éléonore de Provence Reine d'Angleterre",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1223",
+      "death": "1291",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "9HD3-MC1",
+            "name": "Éléonore de Provence Reine d'Angleterre",
+            "sex": "female",
+            "birth": "1223",
+            "death": "1291",
+            "generation_in_open_tree": 26
+          }
+        },
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "9HD3-MC1",
+            "name": "Éléonore de Provence Reine d'Angleterre",
+            "sex": "female",
+            "birth": "1223",
+            "death": "1291",
+            "generation_in_open_tree": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-lhv5-dyd",
+      "fsId": "LHV5-DYD",
+      "name": "Maurice Berkeley 4th Baron Berkeley",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1330",
+      "death": "1368",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LHV5-DYD",
+            "name": "Maurice Berkeley 4th Baron Berkeley",
+            "sex": "male",
+            "birth": "1330",
+            "death": "1368",
+            "generation_in_open_tree": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-lhww-qbm",
+      "fsId": "LHWW-QBM",
+      "name": "Elizabeth Despenser",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1322",
+      "death": "1421",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LHWW-QBM",
+            "name": "Elizabeth Despenser",
+            "sex": "female",
+            "birth": "1322",
+            "death": "1421",
+            "generation_in_open_tree": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-9cq1-x4j",
+      "fsId": "9CQ1-X4J",
+      "name": "Hugh Despenser The Younger, 1st Baron Despenser",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1286",
+      "death": "1326",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "9CQ1-X4J",
+            "name": "Hugh Despenser The Younger, 1st Baron Despenser",
+            "sex": "male",
+            "birth": "1286",
+            "death": "1326",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-ld93-wks",
+      "fsId": "LD93-WKS",
+      "name": "Eleanor de Clare",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1292",
+      "death": "1337",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LD93-WKS",
+            "name": "Eleanor de Clare",
+            "sex": "female",
+            "birth": "1292",
+            "death": "1337",
+            "generation_in_open_tree": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-lz1v-jw1",
+      "fsId": "LZ1V-JW1",
+      "name": "Earl Gilbert de Clare, 7th of Gloucester",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1243",
+      "death": "1295",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "LZ1V-JW1",
+            "name": "Earl Gilbert de Clare, 7th of Gloucester",
+            "sex": "male",
+            "birth": "1243",
+            "death": "1295",
+            "generation_in_open_tree": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": "hallroute-99vv-grx",
+      "fsId": "99VV-GRX",
+      "name": "Joan of Acre",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1272",
+      "death": "1307",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ],
+      "originals": [
+        {
+          "source": "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+          "record": {
+            "id": "99VV-GRX",
+            "name": "Joan of Acre",
+            "sex": "female",
+            "birth": "1272",
+            "death": "1307",
+            "generation_in_open_tree": 24
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -51810,6 +52641,294 @@
       "sources": [
         "generador:Arbol_Del_Rio_Hall_Lovable.json",
         "F1590"
+      ]
+    },
+    {
+      "child": "hallbranch-i3469",
+      "parent": "hallroute-lbgd-p8s",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallbranch-i3469",
+      "parent": "hallroute-ltdj-x1w",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallbranch-i3474",
+      "parent": "hallroute-ld91-3k9",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallbranch-i3474",
+      "parent": "hallroute-l8bx-895",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lbgd-p8s",
+      "parent": "hallroute-93c9-sdv",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lbgd-p8s",
+      "parent": "hallroute-lt5n-7f7",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ltdj-x1w",
+      "parent": "hallroute-937j-d9d",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ltdj-x1w",
+      "parent": "hallroute-ltkh-4fn",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ld91-3k9",
+      "parent": "hallroute-pn5t-y34",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ld91-3k9",
+      "parent": "hallroute-lb1s-5v6",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-l8bx-895",
+      "parent": "hallroute-k24l-mwk",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-l8bx-895",
+      "parent": "hallroute-lr4q-118",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lt5n-7f7",
+      "parent": "hallroute-ld91-q66",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lt5n-7f7",
+      "parent": "hallroute-ld91-q6j",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lb1s-5v6",
+      "parent": "hallroute-ld91-q66",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lb1s-5v6",
+      "parent": "hallroute-ld91-q6j",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ld91-q66",
+      "parent": "hallroute-l7tr-tvz",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ld91-q66",
+      "parent": "hallroute-l41w-5sk",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-l7tr-tvz",
+      "parent": "hallroute-9ss7-5bt",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-l7tr-tvz",
+      "parent": "hallroute-9hd3-mc1",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ltkh-4fn",
+      "parent": "hallroute-lywx-cbr",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ltkh-4fn",
+      "parent": "hallroute-9cqx-dxx",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lywx-cbr",
+      "parent": "hallroute-9ss7-5bt",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lywx-cbr",
+      "parent": "hallroute-9hd3-mc1",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallbranch-i3468",
+      "parent": "hallroute-lhv5-dyd",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallbranch-i3468",
+      "parent": "hallroute-lhww-qbm",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lhww-qbm",
+      "parent": "hallroute-9cq1-x4j",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-lhww-qbm",
+      "parent": "hallroute-ld93-wks",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ld93-wks",
+      "parent": "hallroute-lz1v-jw1",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-ld93-wks",
+      "parent": "hallroute-99vv-grx",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-99vv-grx",
+      "parent": "hallroute-lywx-cbr",
+      "role": "padre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "child": "hallroute-99vv-grx",
+      "parent": "hallroute-9cqx-dxx",
+      "role": "madre",
+      "sources": [
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
       ]
     }
   ],
@@ -72471,7 +73590,17 @@
       ],
       "sources": [
         "generador:Arbol_Del_Rio_Hall_Lovable.json",
-        "F1561"
+        "F1561",
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ],
+      "marriageVariants": [
+        "2 JUL 1384",
+        "2 de julio de 1384"
+      ],
+      "marriagePlaceVariants": [
+        "Arundel Castle, Sussex, England",
+        "Arundel Castle, Sussex, Inglaterra"
       ]
     },
     {
@@ -72530,7 +73659,17 @@
       ],
       "sources": [
         "generador:Arbol_Del_Rio_Hall_Lovable.json",
-        "F1565"
+        "F1565",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ],
+      "marriageVariants": [
+        "BEF 1394",
+        "Antes de 1394"
+      ],
+      "marriagePlaceVariants": [
+        "Raglan, Monmouthshire, Wales",
+        "Raglan, Monmouthshire, Gales, Reino Unido"
       ]
     },
     {
@@ -72820,6 +73959,193 @@
       "sources": [
         "generador:Arbol_Del_Rio_Hall_Lovable.json",
         "F1589"
+      ]
+    },
+    {
+      "id": "hallroute-union-2",
+      "a": "hallroute-lbgd-p8s",
+      "b": "hallroute-ltdj-x1w",
+      "marriage": "25 de marzo de 1359",
+      "marriagePlace": "Epworth, Lincolnshire, Inglaterra",
+      "children": [
+        "hallbranch-i3469"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-3",
+      "a": "hallroute-l8bx-895",
+      "b": "hallroute-ld91-3k9",
+      "marriage": "",
+      "marriagePlace": "Derbyshire, Inglaterra, Reino Unido",
+      "children": [
+        "hallbranch-i3474"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-4",
+      "a": "hallroute-93c9-sdv",
+      "b": "hallroute-lt5n-7f7",
+      "marriage": "8 de marzo de 1326",
+      "marriagePlace": "Epworth, Lincolnshire, Inglaterra, Reino Unido",
+      "children": [
+        "hallroute-lbgd-p8s"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-5",
+      "a": "hallroute-937j-d9d",
+      "b": "hallroute-ltkh-4fn",
+      "marriage": "1337",
+      "marriagePlace": "Croxton, Norfolk, Inglaterra, Reino Unido",
+      "children": [
+        "hallroute-ltdj-x1w"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-6",
+      "a": "hallroute-lb1s-5v6",
+      "b": "hallroute-pn5t-y34",
+      "marriage": "Antes del 4 de marzo de 1345",
+      "marriagePlace": "Ditton, Lancashire, Inglaterra",
+      "children": [
+        "hallroute-ld91-3k9"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-7",
+      "a": "hallroute-k24l-mwk",
+      "b": "hallroute-lr4q-118",
+      "marriage": "1335",
+      "marriagePlace": "Badlesmere, Kent, Inglaterra",
+      "children": [
+        "hallroute-l8bx-895"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-8",
+      "a": "hallroute-ld91-q66",
+      "b": "hallroute-ld91-q6j",
+      "marriage": "2 de marzo de 1297",
+      "marriagePlace": "Kidwelly, Carmarthenshire, Gales",
+      "children": [
+        "hallroute-lt5n-7f7",
+        "hallroute-lb1s-5v6"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-9",
+      "a": "hallroute-l41w-5sk",
+      "b": "hallroute-l7tr-tvz",
+      "marriage": "3 de enero de 1276",
+      "marriagePlace": "París, Francia",
+      "children": [
+        "hallroute-ld91-q66"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-10",
+      "a": "hallroute-9cqx-dxx",
+      "b": "hallroute-lywx-cbr",
+      "marriage": "1 de noviembre de 1254",
+      "marriagePlace": "Burgos, Burgos, Castilla y León, España",
+      "children": [
+        "hallroute-ltkh-4fn",
+        "hallroute-99vv-grx"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "id": "hallroute-union-11",
+      "a": "hallroute-9hd3-mc1",
+      "b": "hallroute-9ss7-5bt",
+      "marriage": "14 de enero de 1236",
+      "marriagePlace": "Canterbury Cathedral, Canterbury, Kent, Inglaterra, Reino Unido",
+      "children": [
+        "hallroute-l7tr-tvz",
+        "hallroute-lywx-cbr"
+      ],
+      "sources": [
+        "rama_L8BX-ZHN_MF6V-C69_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar",
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json"
+      ]
+    },
+    {
+      "id": "hallroute-union-13",
+      "a": "hallroute-lhv5-dyd",
+      "b": "hallroute-lhww-qbm",
+      "marriage": "Agosto de 1348",
+      "marriagePlace": "Berkeley, Gloucestershire, Inglaterra",
+      "children": [
+        "hallbranch-i3468"
+      ],
+      "sources": [
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-14",
+      "a": "hallroute-9cq1-x4j",
+      "b": "hallroute-ld93-wks",
+      "marriage": "14 de junio de 1306",
+      "marriagePlace": "Westminster, Middlesex, Inglaterra",
+      "children": [
+        "hallroute-lhww-qbm"
+      ],
+      "sources": [
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
+      ]
+    },
+    {
+      "id": "hallroute-union-15",
+      "a": "hallroute-99vv-grx",
+      "b": "hallroute-lz1v-jw1",
+      "marriage": "30 de abril de 1290",
+      "marriagePlace": "Westminster Abbey, City of Westminster, London, Inglaterra, Reino Unido",
+      "children": [
+        "hallroute-ld93-wks"
+      ],
+      "sources": [
+        "rama_KPQC-HMQ_G8KF-LGX_hasta_9SS7-5BT.json",
+        "FamilySearch Árbol Familiar"
       ]
     }
   ]

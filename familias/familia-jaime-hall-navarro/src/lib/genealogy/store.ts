@@ -9,6 +9,7 @@ const STORE = "kv";
 const KEY = "dataset";
 export const PUBLISHED_UPDATE_ID = PF1L_ROUTE_UPDATE_ID;
 export const HALL_BRANCH_UPDATE_ID = "jaime-hall-huidobro-shared-ancestors-v1";
+export const HALL_ROUTES_UPDATE_ID = "jaime-hall-royal-routes-v1";
 
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -46,7 +47,7 @@ export async function seedDataset(): Promise<Dataset> {
 /** Merge this release's additive route update into older browser databases without replacing local edits. */
 export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> {
   const existingUpdates = current.meta.appliedUpdates ?? [];
-  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID)) return current;
+  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(HALL_ROUTES_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID)) return current;
   const next = structuredClone(current);
   const applied = new Set(next.meta.appliedUpdates ?? []);
   if (!applied.has(HALL_BRANCH_UPDATE_ID) && next.meta.root === "person-root") {
@@ -87,8 +88,37 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
     next.unions = [...keepUnions, ...targetUnions];
     (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit = structuredClone((target.meta as typeof target.meta & { generationAudit?: Record<string, unknown> }).generationAudit!);
     applied.add(HALL_BRANCH_UPDATE_ID);
+    applied.add(HALL_ROUTES_UPDATE_ID);
   }
   if (!applied.has(HALL_BRANCH_UPDATE_ID) && next.meta.root !== "person-root") applied.add(HALL_BRANCH_UPDATE_ID);
+  if (!applied.has(HALL_ROUTES_UPDATE_ID) && next.meta.root !== "person-root") applied.add(HALL_ROUTES_UPDATE_ID);
+
+  if (!applied.has(HALL_ROUTES_UPDATE_ID) && next.meta.root === "person-root") {
+    const targetModule = await import("@/data/atlas.json");
+    const target = (targetModule.default ?? targetModule) as unknown as Dataset;
+    const routePersons = target.persons.filter((person) => person.id.startsWith("hallroute-"));
+    const personIds = new Set(next.persons.map((person) => person.id));
+    for (const person of routePersons) if (!personIds.has(person.id)) {
+      next.persons.push(structuredClone(person));
+      personIds.add(person.id);
+    }
+    const targetLinks = target.links.filter((link) => link.child.startsWith("hallroute-") || link.parent.startsWith("hallroute-"));
+    const linkKeys = new Set(next.links.map((link) => `${link.child}>${link.parent}`));
+    for (const link of targetLinks) {
+      const key = `${link.child}>${link.parent}`;
+      if (linkKeys.has(key)) continue;
+      next.links.push(structuredClone(link));
+      linkKeys.add(key);
+    }
+    const routeUnions = (target.unions ?? []).filter((union) => String(union["id"]).startsWith("hallroute-union-"));
+    next.unions ??= [];
+    for (const union of routeUnions) {
+      const existing = next.unions.find((item) => [item.a, item.b].sort().join("+") === [union.a, union.b].sort().join("+"));
+      if (!existing) { next.unions.push(structuredClone(union)); continue; }
+    }
+    (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit = structuredClone((target.meta as typeof target.meta & { generationAudit?: Record<string, unknown> }).generationAudit!);
+    applied.add(HALL_ROUTES_UPDATE_ID);
+  }
 
   const personIds = new Set(next.persons.map((person) => person.id));
   const addedIds = new Set<string>();
@@ -133,4 +163,3 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
 
   return next;
 }
-
