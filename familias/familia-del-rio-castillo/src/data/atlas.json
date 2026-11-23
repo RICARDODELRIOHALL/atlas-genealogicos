@@ -25,6 +25,12 @@
         "file": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
         "kind": "Ruta de antepasados FamilySearch",
         "note": "Transcripción de perfiles y filiaciones visibles en la ruta; mantiene las incertidumbres indicadas por la fuente."
+      },
+      {
+        "id": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "file": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "kind": "Rama visible FamilySearch",
+        "note": "Transcripción parcial de la vista; la pareja final indicada por el archivo no estaba visible."
       }
     ],
     "conversion": {
@@ -55,11 +61,11 @@
     "generationAudit": {
       "mode": "componente parental conectado a la persona central",
       "root": "GQ89-7KB",
-      "totalPersons": 1226,
-      "includedPersons": 1226,
+      "totalPersons": 1239,
+      "includedPersons": 1239,
       "excludedPersons": 0,
-      "totalRelationships": 2246,
-      "includedRelationships": 2246,
+      "totalRelationships": 2261,
+      "includedRelationships": 2261,
       "excludedRelationships": 0
     },
     "sourceImports": [
@@ -442,6 +448,245 @@
           "Los datos de matrimonio de las demás parejas se incluyen solo cuando aparecían en pantalla.",
           "No se completaron fechas, uniones ni relaciones que no estuvieran visibles en la vista del árbol.",
           "Las relaciones se transcriben según la colocación y los vínculos mostrados por FamilySearch; este archivo no representa una verificación independiente."
+        ]
+      },
+      {
+        "file": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "format": "FamilySearch visible branch JSON",
+        "title": "Rama visible de LDWL-R7M y 9DQY-H7G",
+        "source": "Transcripción de la vista de antepasados de FamilySearch abierta en la sesión.",
+        "incomingPeople": 16,
+        "matchedPeople": 3,
+        "newPeople": 13,
+        "sourceParentLinks": 15,
+        "alreadyPresentParentLinks": 2,
+        "newParentLinks": 13,
+        "explicitSourceUnions": 3,
+        "newUnionRecords": 2,
+        "includedSourceIds": [
+          "LDWL-R7M",
+          "9DQY-H7G",
+          "PM42-922",
+          "G93K-92L",
+          "GFRP-LN9",
+          "MQH9-XWB",
+          "GSS2-X97",
+          "GHRG-9NW",
+          "G7K1-RM7",
+          "G55P-S1Q",
+          "MCS3-2S4",
+          "GQP8-W3V",
+          "LYSS-2MW",
+          "G2HH-4SR",
+          "PX1B-DCG",
+          "G82M-79L"
+        ],
+        "excludedSourceIds": [],
+        "unknownSpouseSlots": 1,
+        "sourceLimit": {
+          "pareja_final_solicitada": [
+            "G4K3-5F8",
+            "LKGX-3FK"
+          ],
+          "estado": "No aparece en la vista leída. No se completó su nombre, pareja, filiación ni el tramo que conectaría con LDWL-R7M y 9DQY-H7G.",
+          "nota": "Este archivo transcribe solo la información visible hasta las generaciones mostradas; no es la rama completa solicitada."
+        },
+        "sourceRecords": [
+          {
+            "orden": 1,
+            "pareja": [
+              "LDWL-R7M",
+              "9DQY-H7G"
+            ],
+            "union": {
+              "tipo": "Matrimonio",
+              "fecha": "aproximadamente 1590",
+              "lugar": "Juchipila, Juchipila, Zacatecas, México"
+            },
+            "hijo_en_ruta": {
+              "id": "PM42-922",
+              "nombre": "Catalina Ramirez Velazco"
+            },
+            "nota": "La vista muestra a Catalina Ramirez Velazco como hija de esta pareja."
+          },
+          {
+            "orden": 2,
+            "rama": "antepasados de 9DQY-H7G",
+            "pareja": [
+              {
+                "id": "G93K-92L",
+                "nombre": "Capitán Diego Flores de la Torre",
+                "sexo": "Hombre",
+                "nacimiento": "1542",
+                "defuncion": "1616"
+              },
+              {
+                "id": "GFRP-LN9",
+                "nombre": "Ángela Temiño de Velasco",
+                "sexo": "Mujer",
+                "nacimiento": "1542",
+                "defuncion": "1586"
+              }
+            ],
+            "union": null,
+            "hijo_en_ruta": {
+              "id": "9DQY-H7G",
+              "nombre": "Francisca Flores de la Torre"
+            }
+          },
+          {
+            "orden": 3,
+            "rama": "antepasados de G93K-92L",
+            "pareja": [
+              {
+                "id": "MQH9-XWB",
+                "nombre": "Alférez Mayor Hernán Flores",
+                "sexo": "Hombre",
+                "nacimiento": "1511",
+                "defuncion": "1562"
+              },
+              {
+                "id": "GSS2-X97",
+                "nombre": "María Álvarez de la Torre",
+                "sexo": "Mujer",
+                "nacimiento": "1524",
+                "defuncion": "1545"
+              }
+            ],
+            "union": {
+              "tipo": "Matrimonio",
+              "fecha": "aproximadamente 1541",
+              "lugar": "Ciudad de México, México"
+            },
+            "hijo_en_ruta": {
+              "id": "G93K-92L",
+              "nombre": "Capitán Diego Flores de la Torre"
+            }
+          },
+          {
+            "orden": 4,
+            "rama": "antepasados de GFRP-LN9",
+            "pareja": [
+              {
+                "id": "GHRG-9NW",
+                "nombre": "Pedro Pacho",
+                "sexo": "Hombre",
+                "nacimiento": "1500",
+                "defuncion": "1546"
+              },
+              {
+                "id": "G7K1-RM7",
+                "nombre": "María Anna Temiño de Velasco",
+                "sexo": "Mujer",
+                "nacimiento": "1520",
+                "defuncion": "1580"
+              }
+            ],
+            "union": {
+              "tipo": "Matrimonio",
+              "fecha": "aproximadamente 1541",
+              "lugar": "Ciudad de México, México"
+            },
+            "hijo_en_ruta": {
+              "id": "GFRP-LN9",
+              "nombre": "Ángela Temiño de Velasco"
+            }
+          },
+          {
+            "orden": 5,
+            "rama": "antepasados visibles de MQH9-XWB y GSS2-X97",
+            "pareja": [
+              {
+                "id": "G55P-S1Q",
+                "nombre": "Capitán Pedro de Fuentes",
+                "sexo": "Hombre",
+                "nacimiento": "1490",
+                "defuncion": "Fallecido"
+              },
+              {
+                "id": "MCS3-2S4",
+                "nombre": "Catalina Flores",
+                "sexo": "Mujer",
+                "nacimiento": "1480",
+                "defuncion": "1553"
+              }
+            ],
+            "union": null,
+            "hijo_en_ruta": {
+              "id": "MQH9-XWB",
+              "nombre": "Alférez Mayor Hernán Flores"
+            }
+          },
+          {
+            "orden": 6,
+            "rama": "antepasados visibles de GSS2-X97",
+            "pareja": [
+              {
+                "id": "GQP8-W3V",
+                "nombre": "Gobernador Diego Pérez de la Torre",
+                "sexo": "Hombre",
+                "nacimiento": "1482",
+                "defuncion": "1538"
+              },
+              {
+                "id": "LYSS-2MW",
+                "nombre": "Catalina Mexía",
+                "sexo": "Mujer",
+                "nacimiento": "1490",
+                "defuncion": "Fallecida"
+              }
+            ],
+            "union": null,
+            "hijo_en_ruta": {
+              "id": "GSS2-X97",
+              "nombre": "María Álvarez de la Torre"
+            }
+          },
+          {
+            "orden": 7,
+            "rama": "antepasados visibles de G55P-S1Q",
+            "pareja": [
+              {
+                "id": "G2HH-4SR",
+                "nombre": "De Fuentes",
+                "sexo": "Hombre",
+                "nacimiento": "1475",
+                "defuncion": "Fallecido"
+              },
+              null
+            ],
+            "union": null,
+            "hijo_en_ruta": {
+              "id": "G55P-S1Q",
+              "nombre": "Capitán Pedro de Fuentes"
+            },
+            "nota": "La vista muestra la tarjeta de De Fuentes y el control para agregar cónyuge; no muestra una pareja."
+          },
+          {
+            "orden": 8,
+            "rama": "antepasados visibles de MCS3-2S4",
+            "pareja": [
+              {
+                "id": "PX1B-DCG",
+                "nombre": "Juan Pedro Dávila Pérez",
+                "sexo": "Hombre",
+                "nacimiento": "1454",
+                "defuncion": "Fallecido"
+              },
+              {
+                "id": "G82M-79L",
+                "nombre": "Juana Velázquez de la Torre",
+                "sexo": "Mujer",
+                "nacimiento": "1460",
+                "defuncion": "1504"
+              }
+            ],
+            "union": null,
+            "hijo_en_ruta": {
+              "id": "MCS3-2S4",
+              "nombre": "Catalina Flores"
+            }
+          }
         ]
       }
     ],
@@ -105285,7 +105530,8 @@
       "notes": [],
       "sources": [
         "Arbol_Del_Rio_Castillo_ANCestros_directos_Codex.json",
-        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
       ],
       "originals": [
         {
@@ -105375,6 +105621,13 @@
             "nacimiento": "1578",
             "defuncion": "Fallecida",
             "perfil": "https://www.familysearch.org/es/tree/person/PM42-922"
+          }
+        },
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "PM42-922",
+            "nombre": "Catalina Ramirez Velazco"
           }
         }
       ],
@@ -123084,11 +123337,23 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
       ],
       "originals": [
         {
           "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "LDWL-R7M",
+            "nombre": "Juan Ramirez de la Campaña",
+            "sexo": "Hombre",
+            "nacimiento": "1555",
+            "defuncion": "Fallecido",
+            "perfil": "https://www.familysearch.org/es/tree/person/LDWL-R7M"
+          }
+        },
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
           "record": {
             "id": "LDWL-R7M",
             "nombre": "Juan Ramirez de la Campaña",
@@ -123116,11 +123381,23 @@
       "marriagePlace": "",
       "notes": [],
       "sources": [
-        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
       ],
       "originals": [
         {
           "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "record": {
+            "id": "9DQY-H7G",
+            "nombre": "Francisca Flores de la Torre",
+            "sexo": "Mujer",
+            "nacimiento": "1563",
+            "defuncion": "Fallecida",
+            "perfil": "https://www.familysearch.org/es/tree/person/9DQY-H7G"
+          }
+        },
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
           "record": {
             "id": "9DQY-H7G",
             "nombre": "Francisca Flores de la Torre",
@@ -123256,6 +123533,409 @@
             "nacimiento": "1480",
             "defuncion": "Fallecida",
             "perfil": "https://www.familysearch.org/es/tree/person/PF7Y-BMT"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G93K-92L",
+      "fsId": "G93K-92L",
+      "name": "Capitán Diego Flores de la Torre",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1542",
+      "death": "1616",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "G93K-92L",
+            "nombre": "Capitán Diego Flores de la Torre",
+            "sexo": "Hombre",
+            "nacimiento": "1542",
+            "defuncion": "1616"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GFRP-LN9",
+      "fsId": "GFRP-LN9",
+      "name": "Ángela Temiño de Velasco",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1542",
+      "death": "1586",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "GFRP-LN9",
+            "nombre": "Ángela Temiño de Velasco",
+            "sexo": "Mujer",
+            "nacimiento": "1542",
+            "defuncion": "1586"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MQH9-XWB",
+      "fsId": "MQH9-XWB",
+      "name": "Alférez Mayor Hernán Flores",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1511",
+      "death": "1562",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "MQH9-XWB",
+            "nombre": "Alférez Mayor Hernán Flores",
+            "sexo": "Hombre",
+            "nacimiento": "1511",
+            "defuncion": "1562"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GSS2-X97",
+      "fsId": "GSS2-X97",
+      "name": "María Álvarez de la Torre",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1524",
+      "death": "1545",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "GSS2-X97",
+            "nombre": "María Álvarez de la Torre",
+            "sexo": "Mujer",
+            "nacimiento": "1524",
+            "defuncion": "1545"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GHRG-9NW",
+      "fsId": "GHRG-9NW",
+      "name": "Pedro Pacho",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1500",
+      "death": "1546",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "GHRG-9NW",
+            "nombre": "Pedro Pacho",
+            "sexo": "Hombre",
+            "nacimiento": "1500",
+            "defuncion": "1546"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G7K1-RM7",
+      "fsId": "G7K1-RM7",
+      "name": "María Anna Temiño de Velasco",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1520",
+      "death": "1580",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "G7K1-RM7",
+            "nombre": "María Anna Temiño de Velasco",
+            "sexo": "Mujer",
+            "nacimiento": "1520",
+            "defuncion": "1580"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G55P-S1Q",
+      "fsId": "G55P-S1Q",
+      "name": "Capitán Pedro de Fuentes",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1490",
+      "death": "Fallecido",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "G55P-S1Q",
+            "nombre": "Capitán Pedro de Fuentes",
+            "sexo": "Hombre",
+            "nacimiento": "1490",
+            "defuncion": "Fallecido"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MCS3-2S4",
+      "fsId": "MCS3-2S4",
+      "name": "Catalina Flores",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1480",
+      "death": "1553",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "MCS3-2S4",
+            "nombre": "Catalina Flores",
+            "sexo": "Mujer",
+            "nacimiento": "1480",
+            "defuncion": "1553"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GQP8-W3V",
+      "fsId": "GQP8-W3V",
+      "name": "Gobernador Diego Pérez de la Torre",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1482",
+      "death": "1538",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "GQP8-W3V",
+            "nombre": "Gobernador Diego Pérez de la Torre",
+            "sexo": "Hombre",
+            "nacimiento": "1482",
+            "defuncion": "1538"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LYSS-2MW",
+      "fsId": "LYSS-2MW",
+      "name": "Catalina Mexía",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1490",
+      "death": "Fallecida",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "LYSS-2MW",
+            "nombre": "Catalina Mexía",
+            "sexo": "Mujer",
+            "nacimiento": "1490",
+            "defuncion": "Fallecida"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G2HH-4SR",
+      "fsId": "G2HH-4SR",
+      "name": "De Fuentes",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1475",
+      "death": "Fallecido",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "G2HH-4SR",
+            "nombre": "De Fuentes",
+            "sexo": "Hombre",
+            "nacimiento": "1475",
+            "defuncion": "Fallecido"
+          }
+        }
+      ]
+    },
+    {
+      "id": "PX1B-DCG",
+      "fsId": "PX1B-DCG",
+      "name": "Juan Pedro Dávila Pérez",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1454",
+      "death": "Fallecido",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "PX1B-DCG",
+            "nombre": "Juan Pedro Dávila Pérez",
+            "sexo": "Hombre",
+            "nacimiento": "1454",
+            "defuncion": "Fallecido"
+          }
+        }
+      ]
+    },
+    {
+      "id": "G82M-79L",
+      "fsId": "G82M-79L",
+      "name": "Juana Velázquez de la Torre",
+      "altNames": [],
+      "sex": "F",
+      "birth": "1460",
+      "death": "1504",
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "originals": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "record": {
+            "id": "G82M-79L",
+            "nombre": "Juana Velázquez de la Torre",
+            "sexo": "Mujer",
+            "nacimiento": "1460",
+            "defuncion": "1504"
           }
         }
       ]
@@ -137249,7 +137929,8 @@
       "parent": "LDWL-R7M",
       "role": "padre",
       "sources": [
-        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
       ],
       "sourceParentIds": [
         "LDWL-R7M"
@@ -137260,7 +137941,8 @@
       "parent": "9DQY-H7G",
       "role": "madre",
       "sources": [
-        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
       ],
       "sourceParentIds": [
         "9DQY-H7G"
@@ -137308,6 +137990,149 @@
       ],
       "sourceParentIds": [
         "PF7Y-BMT"
+      ]
+    },
+    {
+      "child": "9DQY-H7G",
+      "parent": "G93K-92L",
+      "role": "padre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "G93K-92L"
+      ]
+    },
+    {
+      "child": "9DQY-H7G",
+      "parent": "GFRP-LN9",
+      "role": "madre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "GFRP-LN9"
+      ]
+    },
+    {
+      "child": "G93K-92L",
+      "parent": "MQH9-XWB",
+      "role": "padre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "MQH9-XWB"
+      ]
+    },
+    {
+      "child": "G93K-92L",
+      "parent": "GSS2-X97",
+      "role": "madre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "GSS2-X97"
+      ]
+    },
+    {
+      "child": "GFRP-LN9",
+      "parent": "GHRG-9NW",
+      "role": "padre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "GHRG-9NW"
+      ]
+    },
+    {
+      "child": "GFRP-LN9",
+      "parent": "G7K1-RM7",
+      "role": "madre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "G7K1-RM7"
+      ]
+    },
+    {
+      "child": "MQH9-XWB",
+      "parent": "G55P-S1Q",
+      "role": "padre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "G55P-S1Q"
+      ]
+    },
+    {
+      "child": "MQH9-XWB",
+      "parent": "MCS3-2S4",
+      "role": "madre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "MCS3-2S4"
+      ]
+    },
+    {
+      "child": "GSS2-X97",
+      "parent": "GQP8-W3V",
+      "role": "padre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "GQP8-W3V"
+      ]
+    },
+    {
+      "child": "GSS2-X97",
+      "parent": "LYSS-2MW",
+      "role": "madre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "LYSS-2MW"
+      ]
+    },
+    {
+      "child": "G55P-S1Q",
+      "parent": "G2HH-4SR",
+      "role": "padre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "G2HH-4SR"
+      ]
+    },
+    {
+      "child": "MCS3-2S4",
+      "parent": "PX1B-DCG",
+      "role": "padre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "PX1B-DCG"
+      ]
+    },
+    {
+      "child": "MCS3-2S4",
+      "parent": "G82M-79L",
+      "role": "madre",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceParentIds": [
+        "G82M-79L"
       ]
     }
   ],
@@ -176755,7 +177580,8 @@
       "marriage": "aproximadamente 1590",
       "marriagePlace": "Juchipila, Juchipila, Zacatecas, México",
       "sources": [
-        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json"
+        "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
       ],
       "sourceMarriageRecords": [
         {
@@ -176763,6 +177589,13 @@
           "date": "aproximadamente 1590",
           "place": "Juchipila, Juchipila, Zacatecas, México",
           "source": "ruta_PWQQ-L5D_PM42-922_a_M1XL-54F_PF7Y-BMT.json",
+          "qualification": "aproximadamente 1590"
+        },
+        {
+          "type": "Matrimonio",
+          "date": "aproximadamente 1590",
+          "place": "Juchipila, Juchipila, Zacatecas, México",
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
           "qualification": "aproximadamente 1590"
         }
       ],
@@ -176775,7 +177608,88 @@
           "lugar": "Juchipila, Juchipila, Zacatecas, México"
         }
       },
-      "sourceEvidence": "route-union-record"
+      "sourceEvidence": "route-union-record",
+      "additionalSourceRecords": [
+        {
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "rows": [
+            1
+          ],
+          "record": {
+            "tipo": "Matrimonio",
+            "fecha": "aproximadamente 1590",
+            "lugar": "Juchipila, Juchipila, Zacatecas, México"
+          }
+        }
+      ]
+    },
+    {
+      "id": "FS-NUEVArama-visible-LDWL-R7M-9DQY-H7G-json-GSS2-X97-MQH9-XWB",
+      "a": "MQH9-XWB",
+      "b": "GSS2-X97",
+      "children": [
+        "G93K-92L"
+      ],
+      "marriage": "aproximadamente 1541",
+      "marriagePlace": "Ciudad de México, México",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceMarriageRecords": [
+        {
+          "type": "Matrimonio",
+          "date": "aproximadamente 1541",
+          "place": "Ciudad de México, México",
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "qualification": "aproximadamente 1541"
+        }
+      ],
+      "originalRecord": {
+        "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "rows": [
+          3
+        ],
+        "record": {
+          "tipo": "Matrimonio",
+          "fecha": "aproximadamente 1541",
+          "lugar": "Ciudad de México, México"
+        }
+      },
+      "sourceEvidence": "visible-union-record"
+    },
+    {
+      "id": "FS-NUEVArama-visible-LDWL-R7M-9DQY-H7G-json-G7K1-RM7-GHRG-9NW",
+      "a": "GHRG-9NW",
+      "b": "G7K1-RM7",
+      "children": [
+        "GFRP-LN9"
+      ],
+      "marriage": "aproximadamente 1541",
+      "marriagePlace": "Ciudad de México, México",
+      "sources": [
+        "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json"
+      ],
+      "sourceMarriageRecords": [
+        {
+          "type": "Matrimonio",
+          "date": "aproximadamente 1541",
+          "place": "Ciudad de México, México",
+          "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+          "qualification": "aproximadamente 1541"
+        }
+      ],
+      "originalRecord": {
+        "source": "NUEVArama_visible_LDWL-R7M_9DQY-H7G.json",
+        "rows": [
+          4
+        ],
+        "record": {
+          "tipo": "Matrimonio",
+          "fecha": "aproximadamente 1541",
+          "lugar": "Ciudad de México, México"
+        }
+      },
+      "sourceEvidence": "visible-union-record"
     }
   ],
   "pendingRefs": [],
