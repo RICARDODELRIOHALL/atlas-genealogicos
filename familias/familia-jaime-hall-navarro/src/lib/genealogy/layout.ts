@@ -1,13 +1,15 @@
 // @ts-nocheck -- strict indexed-access checks relaxed for genealogy graph code
-import type { Derived } from "./types";
+import type { Derived, Person } from "./types";
+import { life } from "./exporters";
 
-export const CARD_W = 430, CARD_H = 66, COL_W = 500;
+export const CARD_W = 440, CARD_H = 70, COL_W = 510;
 const TIGHT = 6, GAP = 18;
-export function personCardSize(name: string) {
+export function personCardSize(name: string, dateText = "") {
   const text = name || "Sin nombre registrado";
-  const width = Math.min(CARD_W, Math.max(280, Math.ceil(text.length * 8.2 + 28)));
-  const lines = Math.max(1, Math.ceil(text.length / Math.max(18, Math.floor((width - 30) / 8.2))));
-  return { width, height: Math.max(CARD_H, 16 + lines * 18 + 27) };
+  const width = Math.min(CARD_W, Math.max(270, Math.ceil(text.length * 8.2 + 28), Math.ceil(dateText.length * 6.2 + 26)));
+  const nameLines = Math.max(1, Math.ceil(text.length / Math.max(18, Math.floor((width - 30) / 8.2))));
+  const dateLines = dateText ? Math.max(1, Math.ceil(dateText.length / Math.max(20, Math.floor((width - 26) / 6.2)))) : 0;
+  return { width, height: Math.max(CARD_H, 38 + nameLines * 18 + dateLines * 14) };
 }
 
 export interface Appearance {
@@ -36,7 +38,8 @@ export function computeLayout(d: Derived, root: string): LayoutResult {
   const expanded = new Set<string>();
   let seq = 0;
   const mk = (pid: string, depth: number, child: string | null, group: Appearance["group"]) => {
-    const size = personCardSize(d.byId.get(pid)?.name ?? "");
+    const person = d.byId.get(pid) as Person | undefined;
+    const size = personCardSize(person?.name ?? "", person ? life(person) : "");
     const a: Appearance = { key: `a${seq++}`, personId: pid, gen: depth + 1, depth, isRef: false, childKey: child, parentKeys: [], x: 0, y: 0, ...size, group };
     apps.set(a.key, a); (byPerson.get(pid) ?? byPerson.set(pid, []).get(pid)!).push(a); return a;
   };
@@ -108,6 +111,6 @@ export function computeLayout(d: Derived, root: string): LayoutResult {
   const xs = list.length ? list.map((a) => a.x) : [0], ys = list.length ? list.map((a) => a.y) : [0];
   return {
     apps: list, byPerson, unions, columns: [...cols.values()].sort((a, b) => a.gen - b.gen), pendingTop,
-    bounds: { minX: Math.min(...xs), minY: Math.min(...ys) - CARD_H, maxX: Math.max(...list.map((a) => a.x + a.width)), maxY: Math.max(...ys) + CARD_H },
+    bounds: { minX: Math.min(...xs), minY: Math.min(...list.map((a) => a.y - a.height / 2)), maxX: Math.max(...list.map((a) => a.x + a.width)), maxY: Math.max(...list.map((a) => a.y + a.height / 2)) },
   };
 }
