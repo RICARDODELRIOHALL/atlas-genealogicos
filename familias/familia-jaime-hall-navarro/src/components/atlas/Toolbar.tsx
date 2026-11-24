@@ -1,6 +1,6 @@
 // @ts-nocheck -- strict indexed-access checks relaxed for genealogy graph code
 import { useMemo, useRef, useState } from "react";
-import { Search, Home, Maximize, Layers, BarChart3, ShieldCheck, Database, X } from "lucide-react";
+import { Search, Home, Maximize, Layers, BarChart3, Database, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -11,7 +11,7 @@ import type { LayoutResult } from "@/lib/genealogy/layout";
 import { download, toGedcom, life } from "@/lib/genealogy/exporters";
 import { seedDataset } from "@/lib/genealogy/store";
 import { APP_CONFIG } from "@/lib/app-config";
-import { StatsDialog, IntegrityDialog, ImportDialog, type PendingImport } from "./dialogs";
+import { StatsDialog, ImportDialog, type PendingImport } from "./dialogs";
 import { merge, parseJson, parseRows } from "@/lib/genealogy/importer";
 
 const norm = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -23,7 +23,7 @@ export function Toolbar(props: {
 }) {
   const { ds, d, layout } = props;
   const [q, setQ] = useState("");
-  const [open, setOpen] = useState<null | "stats" | "integrity">(null);
+  const [open, setOpen] = useState<null | "stats">(null);
   const [pending, setPending] = useState<PendingImport | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const index = useMemo(() => ds.persons.filter((p) => layout.byPerson.has(p.id)).map((p) => ({ p, k: norm(`${p.name} ${p.altNames.join(" ")} ${p.fsId}`) })), [ds, layout]);
@@ -86,7 +86,6 @@ export function Toolbar(props: {
             </DropdownMenuContent>
           </DropdownMenu>
           <Button size="sm" variant="secondary" onClick={() => setOpen("stats")}><BarChart3 className="h-4 w-4 sm:mr-1" /><span className="hidden sm:inline">Estadísticas</span></Button>
-          <Button size="sm" variant="secondary" onClick={() => setOpen("integrity")}><ShieldCheck className="h-4 w-4 sm:mr-1" /><span className="hidden sm:inline">Integridad</span></Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild><Button size="sm" variant="secondary"><Database className="h-4 w-4 sm:mr-1" /><span className="hidden sm:inline">Datos</span></Button></DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -115,7 +114,6 @@ export function Toolbar(props: {
         </div>
       )}
       <StatsDialog open={open === "stats"} onOpenChange={(o) => setOpen(o ? "stats" : null)} ds={ds} d={d} layout={layout} />
-      <IntegrityDialog open={open === "integrity"} onOpenChange={(o) => setOpen(o ? "integrity" : null)} ds={ds} d={d} goTo={(id) => { setOpen(null); props.goTo(id); }} />
       <ImportDialog pending={pending} onClose={() => setPending(null)} ds={ds} setDs={props.setDs} />
     </>
   );

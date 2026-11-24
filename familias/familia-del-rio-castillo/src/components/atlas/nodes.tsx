@@ -12,7 +12,7 @@ const life = (p: Person) => (p.birth || p.death ? `${p.birth || "¿?"} – ${p.d
 export const PersonNode = memo(function PersonNode({ data }: NodeProps<Node<PersonNodeData>>) {
   const { p, isRef, branch, gen, flagged } = data;
   return (
-    <div className={`pcard${isRef ? " ref" : ""}`} data-branch={branch} style={data.color ? ({ "--b": data.color } as CSSProperties) : undefined} title={isRef ? "Otra aparición del mismo registro" : p.name}>
+    <div className={`pcard${isRef ? " ref" : ""}`} data-branch={branch} style={{ ...(data.color ? { "--b": data.color } : {}), width: "100%", height: "100%" } as CSSProperties} title={isRef ? "Otra aparición del mismo registro" : p.name}>
       <Handle type="target" position={Position.Left} isConnectable={false} style={{ opacity: 0 }} />
       <div className="nm">{p.name || "Sin nombre registrado"}</div>
       <div className="dt">{life(p)}</div>
@@ -48,3 +48,4 @@ export const BranchLabelNode = memo(function BranchLabelNode({ data }: NodeProps
 });
 
 export const nodeTypes = { person: PersonNode, union: UnionNode, glabel: GenLabelNode, blabel: BranchLabelNode };
+

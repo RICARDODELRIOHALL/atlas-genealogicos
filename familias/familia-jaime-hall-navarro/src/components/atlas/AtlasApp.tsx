@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { derive, ancestorsOf, descendantsOf, findPath } from "@/lib/genealogy/derive";
-import { computeLayout, CARD_H, CARD_W } from "@/lib/genealogy/layout";
+import { computeLayout, CARD_H, CARD_W, personCardSize } from "@/lib/genealogy/layout";
 import { applyPublishedUpdates, HALL_BRANCH_UPDATE_ID, HALL_ROUTES_UPDATE_ID, loadDataset, PUBLISHED_UPDATE_ID, saveDataset, seedDataset } from "@/lib/genealogy/store";
 import type { Dataset } from "@/lib/genealogy/types";
 import { APP_CONFIG } from "@/lib/app-config";
@@ -83,15 +83,18 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const hl = useMemo(() => new Set(mode.kind === "none" ? [] : mode.ids), [mode]);
   const baseNodes = useMemo<Node[]>(() => {
     const n: Node[] = visibleApps.map((a) => ({
-      id: a.key, type: "person", className: a.personId === ds.meta.root ? "root-person" : undefined, position: { x: a.x, y: a.y - CARD_H / 2 }, draggable: false, connectable: false,
+      id: a.key, type: "person", className: a.personId === ds.meta.root ? "root-person" : undefined, position: { x: a.x, y: a.y - a.height / 2 }, width: a.width, height: a.height, draggable: false, connectable: false,
       data: { p: d.byId.get(a.personId)!, gen: a.gen, isRef: a.isRef, branch: appBranch.get(a.key)!, flagged: false, color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
     }));
     const rootAppearance = layout.byPerson.get(ds.meta.root)?.find((a) => !a.isRef);
     if (rootAppearance) {
       const offsets = [-2, -1, 1];
       siblings.forEach(({ id, name }, index) => {
+        const size = personCardSize(name);
+        let y = rootAppearance.y + Math.sign(offsets[index]) * (rootAppearance.height / 2 + size.height / 2 + 24);
+        for (let j = 0; j < siblings.length; j++) if (j !== index && Math.abs(offsets[j]) < Math.abs(offsets[index]) && Math.sign(offsets[j]) === Math.sign(offsets[index])) y += Math.sign(offsets[index]) * (personCardSize(siblings[j].name).height + 24);
         const p = { id, name, altNames: [], fsId: "", sex: "", birth: "", death: "", birthPlace: "", deathPlace: "", marriage: "", marriagePlace: "", baptism: "", burial: "", notes: [], sources: [], originals: [] };
-        n.push({ id, type: "person", className: "sibling-name-only", position: { x: rootAppearance.x, y: rootAppearance.y + offsets[index] * (CARD_H + 24) - CARD_H / 2 }, draggable: false, connectable: false,
+        n.push({ id, type: "person", className: "sibling-name-only", position: { x: rootAppearance.x, y: y - size.height / 2 }, width: size.width, height: size.height, draggable: false, connectable: false,
           data: { p, gen: rootAppearance.gen, isRef: false, branch: "Central", flagged: false, color: BRANCH_COLORS.Central, nameOnly: true } });
       });
     }
@@ -225,3 +228,4 @@ function EmptyState({ onImport }: { onImport: () => void }) {
     </div>
   );
 }
+
