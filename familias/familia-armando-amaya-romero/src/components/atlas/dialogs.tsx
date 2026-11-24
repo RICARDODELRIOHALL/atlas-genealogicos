@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 1412)
-Total output lines: 78
-
 import { useMemo, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -31,7 +28,25 @@ export function StatsDialog({ open, onOpenChange, ds, d, layout }: { open: boole
 
 export function IntegrityDialog({ open, onOpenChange, ds, d, goTo }: { open: boolean; onOpenChange: (o: boolean) => void; ds: Dataset; d: Derived; goTo: (id: string) => void }) {
   const [kind, setKind] = useState<string | null>(null);
-  const cou…412 tokens truncated…     </div>
+  const counts = useMemo(() => { const m = new Map<string, number>(); d.issues.forEach((i) => m.set(i.kind, (m.get(i.kind) ?? 0) + 1)); return [...m]; }, [d]);
+  const list = d.issues.filter((i) => !kind || i.kind === kind).slice(0, 400);
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}><DialogContent className="max-h-[85vh] max-w-3xl overflow-auto">
+      <DialogHeader><DialogTitle className="font-serif text-2xl">Informe de integridad</DialogTitle>
+        <DialogDescription>{ds.persons.length} personas · {ds.links.length} vínculos · {ds.pendingRefs.length} referencias sin ficha. {ds.meta.note} {ds.meta.missingCsv}</DialogDescription></DialogHeader>
+      <div className="text-xs text-muted-foreground">Fuentes: {ds.meta.sources.map((s) => s.file).join(" · ")}</div>
+      <div className="flex flex-wrap gap-1.5">
+        <Button size="sm" variant={kind ? "outline" : "default"} onClick={() => setKind(null)}>Todos ({d.issues.length})</Button>
+        {counts.map(([k, n]) => <Button key={k} size="sm" variant={kind === k ? "default" : "outline"} onClick={() => setKind(k)}>{k} ({n})</Button>)}
+      </div>
+      <div className="space-y-1.5">
+        {list.map((i, n) => (
+          <div key={n} className="rounded border border-border p-2 text-sm">
+            <span className={i.severity === "info" ? "text-muted-foreground" : "text-warn"}>[{i.kind}]</span> {i.msg}
+            <div className="mt-1 flex flex-wrap gap-1">{i.ids.filter((x) => d.byId.has(x)).slice(0, 6).map((x) => <button key={x} className="font-mono text-xs text-gold hover:underline" onClick={() => goTo(x)}>{x}</button>)}</div>
+          </div>
+        ))}
+      </div>
     </DialogContent></Dialog>
   );
 }
