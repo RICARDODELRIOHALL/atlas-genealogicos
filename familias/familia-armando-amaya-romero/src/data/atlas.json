@@ -7,6 +7,12 @@
         "file": "generador:AMAYA_conectados_LOVABLE.json",
         "kind": "JSON genealógico español (familias/personas)",
         "note": "Conversión a Atlas; cada persona conserva su registro de origen y cada pareja conserva su familia GEDCOM original."
+      },
+      {
+        "id": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+        "file": "https://www.familysearch.org/es/tree/pedigree/landscape/PX7L-M8G",
+        "kind": "Transcripción visual de una rama de FamilySearch",
+        "note": "Relaciones y datos copiados de la vista del árbol solicitada por el usuario; no constituyen verificación documental independiente."
       }
     ],
     "conversion": {
@@ -39,14 +45,93 @@
       }
     },
     "generationAudit": {
-      "mode": "componente parental conectado a la persona central",
+      "mode": "componente parental conectado a la persona central, con rama solicitada de FamilySearch",
       "root": "P1",
-      "totalPersons": 2428,
-      "includedPersons": 1715,
-      "excludedPersons": 713,
-      "totalRelationships": 9330,
-      "includedRelationships": 8610,
+      "totalPersons": 2432,
+      "includedPersons": 1720,
+      "excludedPersons": 712,
+      "totalRelationships": 9338,
+      "includedRelationships": 8618,
       "excludedRelationships": 720
+    },
+    "branchIntegrationAudit": {
+      "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+      "observedUrl": "https://www.familysearch.org/es/tree/pedigree/landscape/PX7L-M8G",
+      "observedDate": "2026-11-24",
+      "addedFamilySearchProfiles": [
+        {
+          "fsId": "L19Q-KTX",
+          "name": "FERNANDO IV DE CASTILLA"
+        },
+        {
+          "fsId": "M6FB-J43",
+          "name": "Rey Alfonso XI de Castilla y León “El Justiciero”"
+        },
+        {
+          "fsId": "GG1T-CBH",
+          "name": "Leonor Núñez de Guzmán Ponce de León"
+        },
+        {
+          "fsId": "GSM1-S13",
+          "name": "Fadrique de Castilla Guzmán infante de Castilla y Maestre de la Orden de Santiago"
+        }
+      ],
+      "restoredSourceProfiles": [
+        "LYPR-SSP"
+      ],
+      "addedParentLinks": [
+        {
+          "child": "M6FB-J43",
+          "parent": "L19Q-KTX",
+          "role": "padre"
+        },
+        {
+          "child": "GSM1-S13",
+          "parent": "GG1T-CBH",
+          "role": "madre"
+        },
+        {
+          "child": "L8BR-9FP",
+          "parent": "GSM1-S13",
+          "role": "padre"
+        },
+        {
+          "child": "PHPS-3SC",
+          "parent": "LZVJ-R7C",
+          "role": "madre"
+        },
+        {
+          "child": "PHPS-3SC",
+          "parent": "LYPR-SSP",
+          "role": "padre"
+        },
+        {
+          "child": "GSM1-S13",
+          "parent": "M6FB-J43",
+          "role": "padre"
+        }
+      ],
+      "addedCouples": [
+        {
+          "a": "M6FB-J43",
+          "b": "GG1T-CBH",
+          "children": [
+            "GSM1-S13"
+          ],
+          "marriage": "",
+          "marriagePlace": ""
+        },
+        {
+          "a": "LYPR-SSP",
+          "b": "LZVJ-R7C",
+          "children": [
+            "PHPS-3SC"
+          ],
+          "marriage": "1410-03-06",
+          "marriagePlace": "Villabrágima, Valladolid, Castilla y León, España"
+        }
+      ],
+      "independentlyVerified": false
     }
   },
   "persons": [
@@ -121807,6 +121892,212 @@
           }
         }
       ]
+    },
+    {
+      "id": "P2429",
+      "fsId": "L19Q-KTX",
+      "name": "FERNANDO IV DE CASTILLA",
+      "sex": "M",
+      "birth": "1285",
+      "death": "1312",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "record": {
+            "id": "P2429",
+            "fsId": "L19Q-KTX",
+            "name": "FERNANDO IV DE CASTILLA",
+            "sex": "M",
+            "birth": "1285",
+            "death": "1312",
+            "transcription": "FamilySearch árbol horizontal; fechas tal como se muestran."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2430",
+      "fsId": "M6FB-J43",
+      "name": "Rey Alfonso XI de Castilla y León “El Justiciero”",
+      "sex": "M",
+      "birth": "1311",
+      "death": "1350",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "record": {
+            "id": "P2430",
+            "fsId": "M6FB-J43",
+            "name": "Rey Alfonso XI de Castilla y León “El Justiciero”",
+            "sex": "M",
+            "birth": "1311",
+            "death": "1350",
+            "transcription": "FamilySearch árbol horizontal; fechas tal como se muestran."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2431",
+      "fsId": "GG1T-CBH",
+      "name": "Leonor Núñez de Guzmán Ponce de León",
+      "sex": "F",
+      "birth": "1311",
+      "death": "1351",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "record": {
+            "id": "P2431",
+            "fsId": "GG1T-CBH",
+            "name": "Leonor Núñez de Guzmán Ponce de León",
+            "sex": "F",
+            "birth": "1311",
+            "death": "1351",
+            "transcription": "FamilySearch árbol horizontal; fechas tal como se muestran."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2432",
+      "fsId": "GSM1-S13",
+      "name": "Fadrique de Castilla Guzmán infante de Castilla y Maestre de la Orden de Santiago",
+      "sex": "M",
+      "birth": "1333",
+      "death": "1358",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "record": {
+            "id": "P2432",
+            "fsId": "GSM1-S13",
+            "name": "Fadrique de Castilla Guzmán infante de Castilla y Maestre de la Orden de Santiago",
+            "sex": "M",
+            "birth": "1333",
+            "death": "1358",
+            "transcription": "FamilySearch árbol horizontal; fechas tal como se muestran."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2327",
+      "fsId": "LYPR-SSP",
+      "name": "II Conde Rodrigo Alfonso de Pimentel",
+      "altNames": [],
+      "sex": "M",
+      "birth": "1388",
+      "death": "1440-06-26",
+      "marriage": "",
+      "baptism": "",
+      "burial": "1440",
+      "birthPlace": "",
+      "deathPlace": "Valladolid, Castilla y León, Espanha",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "generador:AMAYA_conectados_LOVABLE.json",
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ],
+      "originals": [
+        {
+          "source": "generador:AMAYA_conectados_LOVABLE.json",
+          "record": {
+            "id": "P2327",
+            "rootsmagic_id": 2327,
+            "familysearch_id": "LYPR-SSP",
+            "nombre": "II Conde Rodrigo Alfonso de Pimentel",
+            "nombres": "Rodrigo",
+            "apellidos": "Alfonso de Pimentel",
+            "sexo": "masculino",
+            "nacimiento": {
+              "fecha": "1388",
+              "lugar": null
+            },
+            "defuncion": {
+              "fecha": "1440-06-26",
+              "lugar": "Valladolid, Castilla y León, Espanha"
+            },
+            "padres_ids": {
+              "padre": [],
+              "madre": []
+            },
+            "conyuges_ids": [
+              "P2071"
+            ],
+            "hijos_ids": [],
+            "componente_conectado": 1,
+            "eventos": [
+              {
+                "tipo": "Birth",
+                "fecha": "1388",
+                "fecha_original": "D.+13880000..+00000000..",
+                "lugar": null,
+                "detalles": null
+              },
+              {
+                "tipo": "Death",
+                "fecha": "1440-06-26",
+                "fecha_original": "D.+14400626..+00000000..",
+                "lugar": "Valladolid, Castilla y León, Espanha",
+                "detalles": null
+              },
+              {
+                "tipo": "Burial",
+                "fecha": "1440",
+                "fecha_original": "D.+14400000..+00000000..",
+                "lugar": "Monasterio de San Francisco, Benavente, Zamora, Castilla y León, España",
+                "detalles": null
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -189345,6 +189636,54 @@
         "generador:AMAYA_conectados_LOVABLE.json",
         "F1627"
       ]
+    },
+    {
+      "child": "P2430",
+      "parent": "P2429",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "child": "P2432",
+      "parent": "P2431",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "child": "P1773",
+      "parent": "P2432",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "child": "P1931",
+      "parent": "P2071",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "child": "P1931",
+      "parent": "P2327",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "child": "P2432",
+      "parent": "P2430",
+      "role": "padre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
     }
   ],
   "pendingRefs": [],
@@ -225788,6 +226127,62 @@
         "hijos_ids": [],
         "eventos": []
       }
+    },
+    {
+      "id": "FS-M6FB-GG1T",
+      "a": "P2430",
+      "b": "P2431",
+      "children": [
+        "P2432"
+      ],
+      "marriage": "",
+      "marriagePlace": "",
+      "sourceMarriageRecords": [],
+      "originalRecord": {
+        "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+        "spouses": [
+          "M6FB-J43",
+          "GG1T-CBH"
+        ],
+        "children": [
+          "GSM1-S13"
+        ]
+      },
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "id": "FS-LZVJ-LYPR",
+      "a": "P2327",
+      "b": "P2071",
+      "children": [
+        "P1931"
+      ],
+      "marriage": "1410-03-06",
+      "marriagePlace": "Villabrágima, Valladolid, Castilla y León, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "dateText": "6 de marzo de 1410",
+          "placeText": "Villabrágima, Valladolid, Castilla y León, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+        "spouses": [
+          "LYPR-SSP",
+          "LZVJ-R7C"
+        ],
+        "children": [
+          "PHPS-3SC"
+        ],
+        "dateText": "6 de marzo de 1410",
+        "placeText": "Villabrágima, Valladolid, Castilla y León, España"
+      },
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
     }
   ]
 }
