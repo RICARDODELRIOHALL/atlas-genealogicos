@@ -47,11 +47,11 @@
     "generationAudit": {
       "mode": "componente parental conectado a la persona central, con rama solicitada de FamilySearch",
       "root": "P1",
-      "totalPersons": 2432,
-      "includedPersons": 1720,
+      "totalPersons": 2434,
+      "includedPersons": 1722,
       "excludedPersons": 712,
-      "totalRelationships": 9338,
-      "includedRelationships": 8618,
+      "totalRelationships": 9342,
+      "includedRelationships": 8622,
       "excludedRelationships": 720
     },
     "branchIntegrationAudit": {
@@ -74,6 +74,14 @@
         {
           "fsId": "GSM1-S13",
           "name": "Fadrique de Castilla Guzmán infante de Castilla y Maestre de la Orden de Santiago"
+        },
+        {
+          "fsId": "LT84-KP1",
+          "name": "Yonati «Paloma» bat Gedaliah ibn Yahya"
+        },
+        {
+          "fsId": "L8TT-XFX",
+          "name": "Constança de Portugal Reina de Castilla y de León"
         }
       ],
       "restoredSourceProfiles": [
@@ -109,6 +117,16 @@
           "child": "GSM1-S13",
           "parent": "M6FB-J43",
           "role": "padre"
+        },
+        {
+          "child": "L8BR-9FP",
+          "parent": "LT84-KP1",
+          "role": "madre"
+        },
+        {
+          "child": "M6FB-J43",
+          "parent": "L8TT-XFX",
+          "role": "madre"
         }
       ],
       "addedCouples": [
@@ -129,6 +147,24 @@
           ],
           "marriage": "1410-03-06",
           "marriagePlace": "Villabrágima, Valladolid, Castilla y León, España"
+        },
+        {
+          "a": "GSM1-S13",
+          "b": "LT84-KP1",
+          "children": [
+            "L8BR-9FP"
+          ],
+          "marriage": "",
+          "marriagePlace": ""
+        },
+        {
+          "a": "L19Q-KTX",
+          "b": "L8TT-XFX",
+          "children": [
+            "M6FB-J43"
+          ],
+          "marriage": "1302-01-23",
+          "marriagePlace": "Valladolid, Valladolid, Castilla y León, España"
         }
       ],
       "independentlyVerified": false
@@ -122098,6 +122134,74 @@
           }
         }
       ]
+    },
+    {
+      "id": "P2433",
+      "fsId": "LT84-KP1",
+      "name": "Yonati «Paloma» bat Gedaliah ibn Yahya",
+      "sex": "F",
+      "birth": "1335",
+      "death": "1429",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ],
+      "verification": "transcripcion-visual",
+      "originals": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "record": {
+            "id": "P2433",
+            "fsId": "LT84-KP1",
+            "name": "Yonati «Paloma» bat Gedaliah ibn Yahya",
+            "sex": "F",
+            "birth": "1335",
+            "death": "1429",
+            "transcription": "FamilySearch árbol horizontal; nombres y fechas tal como se muestran."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2434",
+      "fsId": "L8TT-XFX",
+      "name": "Constança de Portugal Reina de Castilla y de León",
+      "sex": "F",
+      "birth": "1290",
+      "death": "1313",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ],
+      "verification": "transcripcion-visual",
+      "originals": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "record": {
+            "id": "P2434",
+            "fsId": "L8TT-XFX",
+            "name": "Constança de Portugal Reina de Castilla y de León",
+            "sex": "F",
+            "birth": "1290",
+            "death": "1313",
+            "transcription": "FamilySearch árbol horizontal; nombres y fechas tal como se muestran."
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -189684,6 +189788,22 @@
       "sources": [
         "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
       ]
+    },
+    {
+      "child": "P1773",
+      "parent": "P2433",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "child": "P2430",
+      "parent": "P2434",
+      "role": "madre",
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
     }
   ],
   "pendingRefs": [],
@@ -226179,6 +226299,62 @@
         ],
         "dateText": "6 de marzo de 1410",
         "placeText": "Villabrágima, Valladolid, Castilla y León, España"
+      },
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "id": "FS-GSM1-LT84",
+      "a": "P2432",
+      "b": "P2433",
+      "children": [
+        "P1773"
+      ],
+      "marriage": "",
+      "marriagePlace": "",
+      "sourceMarriageRecords": [],
+      "originalRecord": {
+        "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+        "spouses": [
+          "GSM1-S13",
+          "LT84-KP1"
+        ],
+        "children": [
+          "L8BR-9FP"
+        ]
+      },
+      "sources": [
+        "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "id": "FS-L19Q-L8TT",
+      "a": "P2429",
+      "b": "P2434",
+      "children": [
+        "P2430"
+      ],
+      "marriage": "1302-01-23",
+      "marriagePlace": "Valladolid, Valladolid, Castilla y León, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+          "dateText": "23 de enero de 1302",
+          "placeText": "Valladolid, Valladolid, Castilla y León, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)",
+        "spouses": [
+          "L19Q-KTX",
+          "L8TT-XFX"
+        ],
+        "children": [
+          "M6FB-J43"
+        ],
+        "dateText": "23 de enero de 1302",
+        "placeText": "Valladolid, Valladolid, Castilla y León, España"
       },
       "sources": [
         "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
