@@ -24,6 +24,11 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
   const parents = d.parents.get(id) ?? [];
   const kids = d.children.get(id) ?? [];
   const unions = d.unionOf.get(id) ?? [];
+  // El panel resume las relaciones por persona/unión; las listas originales
+  // siguen intactas para fichas exportadas y para el dataset.
+  const displayParents = [...new Map(parents.map((link) => [link.parent, link])).values()];
+  const displayKids = [...new Set(kids)];
+  const displayUnions = [...new Map(unions.map((union) => [union.id, union])).values()];
   const issues = d.issues.filter((i) => i.ids.includes(id));
   const lines = Object.fromEntries(personLines(d, p));
   const recordLinks = ([
@@ -95,17 +100,17 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
           </section>}
           <section>
             <h3 className="mb-1 text-xs uppercase tracking-widest text-gold">Progenitores</h3>
-            {parents.length ? parents.map((l) => <PersonLink key={l.parent} pid={l.parent} extra={l.role || "rol no indicado"} />) : <p className="text-sm italic text-muted-foreground">Sin información</p>}
+            {displayParents.length ? displayParents.map((l) => <PersonLink key={l.parent} pid={l.parent} extra={l.role || "rol no indicado"} />) : <p className="text-sm italic text-muted-foreground">Sin información</p>}
           </section>
           <section>
             <h3 className="mb-1 text-xs uppercase tracking-widest text-gold">Uniones</h3>
-            {unions.length ? unions.map((u) => { const o = u.a === id ? u.b : u.a; return <div key={u.id} className="mb-1"><PersonLink pid={o} />
+            {displayUnions.length ? displayUnions.map((u) => { const o = u.a === id ? u.b : u.a; return <div key={u.id} className="mb-1"><PersonLink pid={o} />
               <div className="text-xs text-muted-foreground">{u.marriage || (u.marriageVariants ? `Variantes: ${u.marriageVariants.join(" | ")}` : "Matrimonio sin información")}{u.marriagePlace ? ` · ${u.marriagePlace}` : u.marriagePlaceVariants ? ` · Lugares: ${u.marriagePlaceVariants.join(" | ")}` : ""} · {u.children.length} hijo/a(s) en común</div></div>; })
               : <p className="text-sm italic text-muted-foreground">Sin información</p>}
           </section>
           <section>
             <h3 className="mb-1 text-xs uppercase tracking-widest text-gold">Hijos registrados</h3>
-            {kids.length ? kids.map((k) => <PersonLink key={k} pid={k} />) : <p className="text-sm italic text-muted-foreground">Sin información</p>}
+            {displayKids.length ? displayKids.map((k) => <PersonLink key={k} pid={k} />) : <p className="text-sm italic text-muted-foreground">Sin información</p>}
           </section>
           <section className="rounded-md bg-secondary/60 p-3 text-sm">
             <h3 className="mb-1 text-xs uppercase tracking-widest text-gold">Fuentes</h3>
