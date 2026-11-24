@@ -65,7 +65,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const hl = useMemo(() => new Set(mode.kind === "none" ? [] : mode.ids), [mode]);
   const baseNodes = useMemo<Node[]>(() => {
     const n: Node[] = layout.apps.map((a) => ({
-      id: a.key, type: "person", position: { x: a.x, y: a.y - CARD_H / 2 }, draggable: false, connectable: false,
+      id: a.key, type: "person", position: { x: a.x, y: a.y - a.height / 2 }, width: a.width, height: a.height, draggable: false, connectable: false,
       data: { p: d.byId.get(a.personId)!, isRef: a.isRef, branch: appBranch.get(a.key)!, color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
     }));
     for (const u of layout.unions) n.push({ id: u.key, type: "union", position: { x: u.x - 4, y: u.y - 4 }, draggable: false, selectable: false, data: {} });
@@ -194,3 +194,4 @@ function EmptyState({ onImport }: { onImport: () => void }) {
     </div>
   );
 }
+

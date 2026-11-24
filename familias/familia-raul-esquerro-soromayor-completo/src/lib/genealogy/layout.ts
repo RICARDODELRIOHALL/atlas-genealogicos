@@ -1,12 +1,20 @@
 // @ts-nocheck -- strict indexed-access checks relaxed for genealogy graph code
 import type { Derived } from "./types";
 
-export const CARD_W = 250, CARD_H = 66, COL_W = 340;
+export const CARD_W = 410, CARD_H = 66, COL_W = 480;
 const TIGHT = 6, GAP = 18;
+
+export function personCardSize(name: string) {
+  const text = name || "Sin nombre registrado";
+  const width = Math.min(CARD_W, Math.max(250, Math.ceil(text.length * 8.2 + 28)));
+  const charsPerLine = Math.max(18, Math.floor((width - 30) / 8.2));
+  const lines = Math.max(1, Math.ceil(text.length / charsPerLine));
+  return { width, height: Math.max(CARD_H, 16 + lines * 18 + 27) };
+}
 
 export interface Appearance {
   key: string; personId: string; gen: number; depth: number; isRef: boolean;
-  childKey: string | null; parentKeys: string[]; x: number; y: number; group: "main" | "pending";
+  childKey: string | null; parentKeys: string[]; x: number; y: number; width: number; height: number; group: "main" | "pending";
 }
 export interface LayoutResult {
   apps: Appearance[]; byPerson: Map<string, Appearance[]>;
@@ -30,7 +38,8 @@ export function computeLayout(d: Derived, root: string, rootColumnIds: string[] 
   const expanded = new Set<string>();
   let seq = 0;
   const mk = (pid: string, depth: number, child: string | null, group: Appearance["group"]) => {
-    const a: Appearance = { key: `a${seq++}`, personId: pid, gen: depth + 1, depth, isRef: false, childKey: child, parentKeys: [], x: 0, y: 0, group };
+    const size = personCardSize(d.byId.get(pid)?.name ?? "");
+    const a: Appearance = { key: `a${seq++}`, personId: pid, gen: depth + 1, depth, isRef: false, childKey: child, parentKeys: [], x: 0, y: 0, ...size, group };
     apps.set(a.key, a); (byPerson.get(pid) ?? byPerson.set(pid, []).get(pid)!).push(a); return a;
   };
   const expandBFS = (start: Appearance[]) => {
@@ -62,7 +71,7 @@ export function computeLayout(d: Derived, root: string, rootColumnIds: string[] 
       offs.push(need);
     }
     const shift = cs.length ? (offs[0] + offs[offs.length - 1]) / 2 : 0;
-    const top = [-CARD_H / 2], bot = [CARD_H / 2];
+    const top = [-a.height / 2], bot = [a.height / 2];
     cs.forEach((c, i) => {
       const o = offs[i] - shift; offsets.set(kids[i].key, o);
       c.top.forEach((v, dd) => { top[dd + 1] = Math.min(top[dd + 1] ?? Infinity, o + v); });
@@ -89,12 +98,21 @@ export function computeLayout(d: Derived, root: string, rootColumnIds: string[] 
   if (rootAppearance) {
     const ordered = [...new Set(rootColumnIds.includes(root) ? rootColumnIds : [root, ...rootColumnIds])].filter((id) => d.byId.has(id));
     const rootIndex = ordered.indexOf(root);
+    let siblingY = rootAppearance.y;
     ordered.forEach((pid, index) => {
       if (pid === root) return;
       const a = mk(pid, 0, null, "main");
       a.parentKeys = [...rootAppearance.parentKeys];
       a.x = 0;
-      a.y = rootAppearance.y + (index - rootIndex) * (CARD_H + GAP);
+      const direction = index > rootIndex ? 1 : -1;
+      if (direction > 0) {
+        const previous = ordered.slice(rootIndex, index).map((id) => byPerson.get(id)?.find((item) => item.depth === 0));
+        siblingY = rootAppearance.y + previous.reduce((sum, item) => sum + (item?.height ?? CARD_H) + GAP, 0);
+        a.y = siblingY;
+      } else {
+        const previous = ordered.slice(index + 1, rootIndex + 1).map((id) => byPerson.get(id)?.find((item) => item.depth === 0));
+        a.y = rootAppearance.y - previous.reduce((sum, item) => sum + (item?.height ?? CARD_H) + GAP, 0);
+      }
     });
   }
 
@@ -122,6 +140,7 @@ export function computeLayout(d: Derived, root: string, rootColumnIds: string[] 
   const xs = list.length ? list.map((a) => a.x) : [0], ys = list.length ? list.map((a) => a.y) : [0];
   return {
     apps: list, byPerson, unions, columns: [...cols.values()].sort((a, b) => a.gen - b.gen), pendingTop,
-    bounds: { minX: Math.min(...xs), minY: Math.min(...ys) - CARD_H, maxX: Math.max(...xs) + CARD_W, maxY: Math.max(...ys) + CARD_H },
+    bounds: { minX: Math.min(...xs), minY: Math.min(...ys) - CARD_H, maxX: Math.max(...list.map((a) => a.x + a.width)), maxY: Math.max(...ys) + CARD_H },
   };
 }
+
