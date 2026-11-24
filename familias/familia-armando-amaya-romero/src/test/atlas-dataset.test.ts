@@ -58,6 +58,8 @@ describe("Generated genealogy application", () => {
     expect(genOf("L19Q-KTX")).toContain(21);
     expect(genOf("L8TT-XFX")).toContain(21);
     expect(CARD_W).toBe(440);
+    expect(personCardSize("FERNANDO IV DE CASTILLA").width).toBeGreaterThanOrEqual(270);
+    expect(personCardSize("FERNANDO IV DE CASTILLA").height).toBeGreaterThan(66);
     expect(personCardSize("Un nombre genealógico muy largo para una tarjeta").width).toBeLessThanOrEqual(CARD_W);
   });
 
