@@ -13,7 +13,6 @@ const Stat = ({ k, v }: { k: string; v: number | string }) => (
 
 export function StatsDialog({ open, onOpenChange, ds, d, layout }: { open: boolean; onOpenChange: (o: boolean) => void; ds: Dataset; d: Derived; layout: LayoutResult }) {
   const branches = new Set([...d.branches.values()].flat());
-  const pend = d.issues.filter((i) => i.severity !== "info").length;
   return (
     <Dialog open={open} onOpenChange={onOpenChange}><DialogContent className="max-w-2xl">
       <DialogHeader><DialogTitle className="font-serif text-2xl">Estadísticas</DialogTitle></DialogHeader>
@@ -21,7 +20,7 @@ export function StatsDialog({ open, onOpenChange, ds, d, layout }: { open: boole
         <Stat k="Personas únicas" v={ds.persons.length} /><Stat k="Apariciones visuales" v={layout.apps.length} />
         <Stat k="Generaciones" v={layout.columns.length} /><Stat k="Parejas" v={d.unions.length} />
         <Stat k="Vínculos padre/hijo" v={ds.links.length} /><Stat k="Ramas" v={branches.size} />
-        <Stat k="Pendientes de revisión" v={pend} /><Stat k="Fuentes" v={ds.meta.sources.length} />
+        <Stat k="Fuentes" v={ds.meta.sources.length} />
       </div>
     </DialogContent></Dialog>
   );
@@ -58,8 +57,7 @@ export function ImportDialog({ pending, onClose, ds, setDs }: { pending: Pending
   const r = pending.preview.report;
   return (
     <Dialog open onOpenChange={(o) => !o && onClose()}><DialogContent>
-      <DialogHeader><DialogTitle className="font-serif text-2xl">Importar {pending.file}</DialogTitle>
-        <DialogDescription>Nada se guarda hasta que confirmes. La fusión no borra datos existentes.</DialogDescription></DialogHeader>
+      <DialogHeader><DialogTitle className="font-serif text-2xl">Importar {pending.file}</DialogTitle></DialogHeader>
       <ul className="text-sm"><li>Personas nuevas: {r.newPersons}</li><li>Personas con datos añadidos: {r.updatedPersons}</li><li>Vínculos nuevos: {r.newLinks}</li><li>Discrepancias registradas: {r.conflicts}</li></ul>
       <label className="flex items-center gap-2 text-sm text-warn"><input type="checkbox" checked={confirmReplace} onChange={(e) => setConfirmReplace(e.target.checked)} />Entiendo que «Reemplazar todo» borra los datos actuales</label>
       <div className="flex justify-end gap-2">
@@ -76,3 +74,4 @@ export function ImportDialog({ pending, onClose, ds, setDs }: { pending: Pending
     </DialogContent></Dialog>
   );
 }
+

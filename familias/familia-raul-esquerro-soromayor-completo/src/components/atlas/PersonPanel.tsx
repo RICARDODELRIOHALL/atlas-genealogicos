@@ -25,7 +25,6 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
   const parents = d.parents.get(id) ?? [];
   const kids = d.children.get(id) ?? [];
   const unions = d.unionOf.get(id) ?? [];
-  const issues = d.issues.filter((i) => i.ids.includes(id));
   const lines = Object.fromEntries(personLines(d, p));
   const Field = ({ k, v }: { k: string; v?: string }) => (
     <div className="grid grid-cols-[120px_1fr] gap-2 py-1 text-sm">
@@ -86,18 +85,6 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
             <h3 className="mb-1 text-xs uppercase tracking-widest text-gold">Hijos registrados</h3>
             {kids.length ? kids.map((k) => <PersonLink key={k} pid={k} />) : <p className="text-sm italic text-muted-foreground">Sin información</p>}
           </section>
-          <section className="rounded-md bg-secondary/60 p-3 text-sm">
-            <h3 className="mb-1 text-xs uppercase tracking-widest text-gold">Fuente y verificación</h3>
-            <p>Fuentes: {p.sources.join(", ")}</p>
-            <p className="mt-1 text-warn">{lines["Verificación"]}</p>
-            {p.notes.map((n) => <p key={n} className="mt-1 text-muted-foreground">Observación: {n}</p>)}
-          </section>
-          {issues.length > 0 && (
-            <section>
-              <h3 className="mb-1 text-xs uppercase tracking-widest text-warn">Avisos de integridad</h3>
-              {issues.map((i, k) => <p key={k} className="mb-1 text-xs text-muted-foreground">[{i.kind}] {i.msg}</p>)}
-            </section>
-          )}
           {originals.length > 0 && <details className="text-xs">
             <summary className="cursor-pointer text-muted-foreground">Registros originales ({originals.length})</summary>
             <pre className="mt-2 whitespace-pre-wrap break-all rounded bg-secondary p-2 font-mono text-[11px]">{JSON.stringify(originals, null, 1)}</pre>
@@ -112,3 +99,4 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
     </aside>
   );
 }
+
