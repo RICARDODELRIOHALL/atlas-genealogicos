@@ -3,14 +3,14 @@ import type { CSSProperties } from "react";
 import { Handle, Position, type NodeProps, type Node } from "@xyflow/react";
 import type { Person } from "@/lib/genealogy/types";
 
-export type PersonNodeData = { p: Person; gen: number; isRef: boolean; branch: string; flagged: boolean; color?: string };
+export type PersonNodeData = { p: Person; gen: number; isRef: boolean; branch: string; color?: string };
 export const BRANCH_LABEL_W = 3200;
 export const BRANCH_LABEL_H = 700;
 export const GEN_LABEL_H = 140;
 const life = (p: Person) => (p.birth || p.death ? `${p.birth || "¿?"} – ${p.death || "¿?"}` : "Sin fechas registradas");
 
 export const PersonNode = memo(function PersonNode({ data }: NodeProps<Node<PersonNodeData>>) {
-  const { p, isRef, branch, gen, flagged } = data;
+  const { p, isRef, branch, gen } = data;
   return (
     <div className={`pcard${isRef ? " ref" : ""}`} data-branch={branch} style={{ ...(data.color ? { "--b": data.color } : {}), width: "100%", height: "100%" } as CSSProperties} title={isRef ? "Otra aparición del mismo registro" : p.name}>
       <Handle type="target" position={Position.Left} isConnectable={false} style={{ opacity: 0 }} />
@@ -19,7 +19,6 @@ export const PersonNode = memo(function PersonNode({ data }: NodeProps<Node<Pers
       <div className="id flex items-center gap-2">
         <span>{p.fsId}</span><span className="opacity-60">G{gen}</span>
         {isRef && <span className="flag">↪ repetido</span>}
-        {flagged && <span className="flag text-warn">● revisar</span>}
       </div>
       <Handle type="source" position={Position.Right} isConnectable={false} style={{ opacity: 0 }} />
     </div>

@@ -44,7 +44,6 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const [pathFrom, setPathFrom] = useState<string | null>(null);
   const [hidden, setHidden] = useState<Set<string>>(new Set());
   const [zoomLvl, setZoomLvl] = useState<"far" | "mid" | "near">("mid");
-  const flagged = useMemo(() => { const s = new Set<string>(); for (const i of d.issues) if (i.severity !== "info") i.ids.forEach((x) => s.add(x)); return s; }, [d]);
 
   const appBranch = useMemo(() => {
     const m = new Map<string, string>(); const byKey = new Map(layout.apps.map((a) => [a.key, a]));
@@ -68,7 +67,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const baseNodes = useMemo<Node[]>(() => {
     const n: Node[] = layout.apps.map((a) => ({
       id: a.key, type: "person", position: { x: a.x, y: a.y - a.height / 2 }, width: a.width, height: a.height, draggable: false, connectable: false,
-      data: { p: d.byId.get(a.personId)!, gen: a.gen, isRef: a.isRef, branch: appBranch.get(a.key)!, flagged: flagged.has(a.personId), color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
+      data: { p: d.byId.get(a.personId)!, gen: a.gen, isRef: a.isRef, branch: appBranch.get(a.key)!, color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
     }));
     for (const u of layout.unions) n.push({ id: u.key, type: "union", position: { x: u.x - 4, y: u.y - 4 }, draggable: false, selectable: false, data: {} });
     const top = layout.bounds.minY;
@@ -99,7 +98,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
         data: { label: b, color: BRANCH_COLORS[b] ?? "var(--branch-other)" } });
     }
     return n;
-  }, [layout, d, appBranch, flagged, BRANCH_COLORS]);
+  }, [layout, d, appBranch, BRANCH_COLORS]);
   const baseEdges = useMemo<Edge[]>(() => {
     const e: Edge[] = [];
     for (const u of layout.unions) {
