@@ -1,7 +1,7 @@
 // @ts-nocheck -- strict indexed-access checks relaxed for genealogy graph code
 import type { Derived } from "./types";
 
-export const CARD_W = 410, CARD_H = 66, COL_W = 480;
+export const CARD_W = 440, CARD_H = 66, COL_W = 510;
 const TIGHT = 6, GAP = 18;
 export function personCardSize(name: string) {
   const text = name || "Sin nombre registrado";
