@@ -5,8 +5,8 @@ export const CARD_W = 440, CARD_H = 66, COL_W = 510;
 const TIGHT = 6, GAP = 18;
 export function personCardSize(name: string) {
   const text = name || "Sin nombre registrado";
-  const width = Math.min(CARD_W, Math.max(250, Math.ceil(text.length * 8.2 + 28)));
-  const lines = Math.max(1, Math.ceil(text.length / Math.max(18, Math.floor((width - 30) / 8.2))));
+  const width = Math.min(CARD_W, Math.max(270, Math.ceil(text.length * 10.5 + 32)));
+  const lines = Math.max(1, Math.ceil(text.length / Math.max(18, Math.floor((width - 34) / 11.2))));
   return { width, height: Math.max(CARD_H, 16 + lines * 18 + 27) };
 }
 
