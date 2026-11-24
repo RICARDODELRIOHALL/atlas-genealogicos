@@ -33,6 +33,9 @@ function orderedParents(d: Derived, id: string) {
 export function computeLayout(d: Derived, root: string): LayoutResult {
   const apps = new Map<string, Appearance>();
   const byPerson = new Map<string, Appearance[]>();
+  // El lienzo representa cada persona una sola vez. Si hay colapso de
+  // ascendencia, conservamos el primer camino visual y omitimos apariciones
+  // repetidas; los vínculos y datos completos permanecen en el Dataset.
   const expanded = new Set<string>();
   let seq = 0;
   const mk = (pid: string, depth: number, child: string | null, group: Appearance["group"]) => {
@@ -44,13 +47,17 @@ export function computeLayout(d: Derived, root: string): LayoutResult {
     const q = [...start];
     while (q.length) {
       const a = q.shift()!;
-      if (expanded.has(a.personId)) { a.isRef = true; continue; }
-      expanded.add(a.personId);
-      for (const p of orderedParents(d, a.personId)) { const pa = mk(p, a.depth + 1, a.key, a.group); a.parentKeys.push(pa.key); q.push(pa); }
+      for (const p of orderedParents(d, a.personId)) {
+        if (expanded.has(p)) continue;
+        expanded.add(p);
+        const pa = mk(p, a.depth + 1, a.key, a.group);
+        a.parentKeys.push(pa.key);
+        q.push(pa);
+      }
     }
   };
   const roots: Appearance[] = [];
-  if (d.byId.has(root)) { const r = mk(root, 0, null, "main"); roots.push(r); expandBFS([r]); }
+  if (d.byId.has(root)) { const r = mk(root, 0, null, "main"); roots.push(r); expanded.add(root); expandBFS([r]); }
 
   // Contornos (tipo Reingold–Tilford) por columna: parejas juntas salvo que sus ascendientes lo impidan
   type Contour = { top: number[]; bot: number[] };
@@ -114,3 +121,4 @@ export function computeLayout(d: Derived, root: string): LayoutResult {
     bounds: { minX: Math.min(...xs), minY: Math.min(...topEdges) - CARD_H / 2, maxX: Math.max(...rightEdges), maxY: Math.max(...bottomEdges) + CARD_H / 2 },
   };
 }
+
