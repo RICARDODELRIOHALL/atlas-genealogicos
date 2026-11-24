@@ -7,7 +7,7 @@ import { Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { derive, ancestorsOf, descendantsOf, findPath } from "@/lib/genealogy/derive";
 import { computeLayout, CARD_H, CARD_W } from "@/lib/genealogy/layout";
-import { loadDataset, saveDataset, seedDataset } from "@/lib/genealogy/store";
+import { loadDataset, mergePublishedBranch, saveDataset, seedDataset } from "@/lib/genealogy/store";
 import type { Dataset } from "@/lib/genealogy/types";
 import { APP_CONFIG } from "@/lib/app-config";
 import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, GEN_LABEL_H, type PersonNodeData } from "./nodes";
@@ -24,7 +24,13 @@ export default function AtlasApp() {
     (async () => {
       try {
         let d = await loadDataset();
-        if (!d) { d = await seedDataset(); await saveDataset(d); }
+        const seed = await seedDataset();
+        if (!d) { d = seed; await saveDataset(d); }
+        else {
+          const upgraded = mergePublishedBranch(d, seed);
+          d = upgraded.dataset;
+          if (upgraded.changed) await saveDataset(d);
+        }
         setDs(d);
       } catch (e) { setErr(String(e)); }
     })();
