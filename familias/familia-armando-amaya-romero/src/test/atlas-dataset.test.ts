@@ -1,7 +1,7 @@
 import type { Dataset } from "@/lib/genealogy/types";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { derive, findPath } from "@/lib/genealogy/derive";
-import { computeLayout } from "@/lib/genealogy/layout";
+import { CARD_W, computeLayout, personCardSize } from "@/lib/genealogy/layout";
 import { loadDataset, mergePublishedBranch, seedDataset, DB_NAME } from "@/lib/genealogy/store";
 import { ensureRoot, merge, parseJson, parseRows } from "@/lib/genealogy/importer";
 import { integrateSequence } from "@/lib/genealogy/sequence";
@@ -41,11 +41,24 @@ describe("Generated genealogy application", () => {
 
     const result = mergePublishedBranch(saved, seed);
     expect(result.changed).toBe(true);
-    expect(result.dataset.persons.filter((person) => missingFsIds.has(person.fsId))).toHaveLength(5);
-    expect(result.dataset.links.filter((link) => branchPairs.has(`${link.child}>${link.parent}`))).toHaveLength(6);
-    expect(result.dataset.unions?.filter((union) => branchCouples.has([union.a, union.b].sort().join("+")))).toHaveLength(2);
+    expect(result.dataset.persons.filter((person) => missingFsIds.has(person.fsId))).toHaveLength(missingFsIds.size);
+    expect(result.dataset.links.filter((link) => branchPairs.has(`${link.child}>${link.parent}`))).toHaveLength(branchPairs.size);
+    expect(result.dataset.unions?.filter((union) => branchCouples.has([union.a, union.b].sort().join("+")))).toHaveLength(branchCouples.size);
     expect(result.dataset.persons[0]!.notes).toContain("edición local preservada");
     expect(mergePublishedBranch(result.dataset, seed).changed).toBe(false);
+  });
+
+  it("shows the two FamilySearch couples in their requested generations and uses slightly wider cards", async () => {
+    const ds = await seedDataset();
+    const d = derive(ds);
+    const layout = computeLayout(d, ds.meta.root);
+    const genOf = (fsId: string) => layout.byPerson.get(ds.persons.find((person) => person.fsId === fsId)!.id)?.map((appearance) => appearance.gen) ?? [];
+    expect(genOf("GSM1-S13")).toContain(19);
+    expect(genOf("LT84-KP1")).toContain(19);
+    expect(genOf("L19Q-KTX")).toContain(21);
+    expect(genOf("L8TT-XFX")).toContain(21);
+    expect(CARD_W).toBe(440);
+    expect(personCardSize("Un nombre genealógico muy largo para una tarjeta").width).toBeLessThanOrEqual(CARD_W);
   });
 
   it("derives and lays out the generated tree without errors", async () => {
