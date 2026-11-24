@@ -10,7 +10,6 @@ export interface AppConfig {
 }
 
 export const APP_CONFIG = config as AppConfig;
-export const databaseNameFor = (appId: string) => `atlas-${appId}-v2`;
+export const databaseNameFor = (appId: string) => `atlas-${appId}-v3`;
 export const viewportKeyFor = (appId: string) => `atlas-${appId}-viewport-v1`;
 export const cachePrefixFor = (appId: string) => `atlas-cache-${appId}-`;
-
