@@ -93,7 +93,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
         const size = personCardSize(name);
         let y = rootAppearance.y + Math.sign(offsets[index]) * (rootAppearance.height / 2 + size.height / 2 + 24);
         for (let j = 0; j < siblings.length; j++) if (j !== index && Math.abs(offsets[j]) < Math.abs(offsets[index]) && Math.sign(offsets[j]) === Math.sign(offsets[index])) y += Math.sign(offsets[index]) * (personCardSize(siblings[j].name).height + 24);
-        const p = { id, name, altNames: [], fsId: "", sex: "", birth: "", death: "", birthPlace: "", deathPlace: "", marriage: "", marriagePlace: "", baptism: "", burial: "", notes: [], sources: [], originals: [] };
+        const p = ds.persons.find((person) => person.id === id) ?? { id, name, altNames: [], fsId: "", sex: "", birth: "", death: "", birthPlace: "", deathPlace: "", marriage: "", marriagePlace: "", baptism: "", burial: "", notes: [], sources: [], originals: [] };
         n.push({ id, type: "person", className: "sibling-name-only", position: { x: rootAppearance.x, y: y - size.height / 2 }, width: size.width, height: size.height, draggable: false, connectable: false,
           data: { p, gen: rootAppearance.gen, isRef: false, branch: "Central", flagged: false, color: BRANCH_COLORS.Central, nameOnly: true } });
       });
@@ -228,4 +228,3 @@ function EmptyState({ onImport }: { onImport: () => void }) {
     </div>
   );
 }
-
