@@ -1,6 +1,6 @@
 const APP_ID = "familia-raul-esquerro-soromayor-completo";
 const CACHE_PREFIX = `atlas-cache-${APP_ID}-`;
-const CACHE = `${CACHE_PREFIX}v1`;
+const CACHE = `${CACHE_PREFIX}v2`;
 const base = new URL("./", self.location.href);
 const shell = [".", "manifest.webmanifest", "icons/family-icon.svg", "icons/family-icon-180.png", "icons/family-icon-512.png"];
 
@@ -18,6 +18,16 @@ self.addEventListener("fetch", (event) => {
   const request = event.request;
   const url = new URL(request.url);
   if (request.method !== "GET" || url.origin !== self.location.origin) return;
+  if (request.mode === "navigate") {
+    event.respondWith(fetch(request).then((response) => {
+      if (response.ok && url.pathname.startsWith(base.pathname)) {
+        const copy = response.clone();
+        caches.open(CACHE).then((cache) => cache.put(request, copy));
+      }
+      return response;
+    }).catch(() => caches.match(request).then((cached) => cached || caches.match(new URL(".", base)))));
+    return;
+  }
   event.respondWith(caches.match(request).then((cached) => cached || fetch(request).then((response) => {
     if (response.ok && url.pathname.startsWith(base.pathname)) {
       const copy = response.clone();
@@ -26,3 +36,4 @@ self.addEventListener("fetch", (event) => {
     return response;
   }).catch(() => caches.match(new URL(".", base)))));
 });
+
