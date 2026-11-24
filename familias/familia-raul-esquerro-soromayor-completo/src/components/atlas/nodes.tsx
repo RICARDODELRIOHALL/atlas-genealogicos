@@ -4,6 +4,8 @@ import { Handle, Position, type NodeProps, type Node } from "@xyflow/react";
 import type { Person } from "@/lib/genealogy/types";
 
 export type PersonNodeData = { p: Person; isRef: boolean; branch: string; color?: string };
+export const BRANCH_LABEL_W = 3200;
+export const BRANCH_LABEL_H = 700;
 const life = (p: Person) => (p.birth || p.death ? `${p.birth || "¿?"} – ${p.death || "¿?"}` : "Sin fechas registradas");
 
 export const PersonNode = memo(function PersonNode({ data }: NodeProps<Node<PersonNodeData>>) {
@@ -30,5 +32,8 @@ export const UnionNode = memo(function UnionNode() {
   );
 });
 
-export const nodeTypes = { person: PersonNode, union: UnionNode };
+export const BranchLabelNode = memo(function BranchLabelNode({ data }: NodeProps<Node<{ label: string; color: string }>>) {
+  return <div className="blabel" style={{ color: data.color }}><span>{data.label}</span></div>;
+});
 
+export const nodeTypes = { person: PersonNode, union: UnionNode, blabel: BranchLabelNode };

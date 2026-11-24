@@ -10,7 +10,7 @@ import { computeLayout, CARD_H, CARD_W } from "@/lib/genealogy/layout";
 import { loadDataset, saveDataset, seedDataset } from "@/lib/genealogy/store";
 import type { Dataset } from "@/lib/genealogy/types";
 import { APP_CONFIG } from "@/lib/app-config";
-import { nodeTypes, type PersonNodeData } from "./nodes";
+import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, type PersonNodeData } from "./nodes";
 import { PersonPanel } from "./PersonPanel";
 import { Toolbar } from "./Toolbar";
 
@@ -69,6 +69,15 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
       data: { p: d.byId.get(a.personId)!, isRef: a.isRef, branch: appBranch.get(a.key)!, color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
     }));
     for (const u of layout.unions) n.push({ id: u.key, type: "union", position: { x: u.x - 4, y: u.y - 4 }, draggable: false, selectable: false, data: {} });
+    for (const a of layout.apps) if (a.depth === 2 && a.group === "main") {
+      const branch = appBranch.get(a.key)!;
+      n.push({
+        id: `b${a.key}`, type: "blabel",
+        position: { x: layout.bounds.minX - BRANCH_LABEL_W - 180, y: a.y - BRANCH_LABEL_H / 2 },
+        width: BRANCH_LABEL_W, height: BRANCH_LABEL_H, draggable: false, selectable: false,
+        data: { label: branch, color: BRANCH_COLORS[branch] ?? "var(--branch-other)" },
+      });
+    }
     return n;
   }, [layout, d, appBranch, BRANCH_COLORS]);
   const baseEdges = useMemo<Edge[]>(() => {
@@ -83,6 +92,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const unionByKey = useMemo(() => new Map(layout.unions.map((u) => [u.key, u])), [layout]);
   const nodes = useMemo(() => baseNodes.map((n) => {
     if (n.type !== "person") {
+      if (n.type === "blabel") return { ...n, hidden: hidden.has(n.data.label) };
       if (n.type === "union") { const u = unionByKey.get(n.id); return u && hidden.has(appBranch.get(u.childKey)!) && u.parentKeys.every((k) => hidden.has(appBranch.get(k)!)) ? { ...n, hidden: true } : n; }
       return n;
     }
@@ -184,4 +194,3 @@ function EmptyState({ onImport }: { onImport: () => void }) {
     </div>
   );
 }
-

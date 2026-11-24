@@ -2,7 +2,12 @@
 import type { Dataset, Derived, Issue, ParentLink, Person, Union } from "./types";
 
 /** Etiquetas de rama por abuelo/a de la persona central (solo etiquetas; la estructura sale de los datos). */
-export const BRANCH_LABELS: Record<string, string> = {};
+export const BRANCH_LABELS: Record<string, string> = {
+  I14: "Esquerro",
+  I20: "Carton",
+  I5: "Sotomayor",
+  I4: "Valle",
+};
 export const DERIVED_KINDS = new Set(["varias generaciones", "sin conexión", "cronología", "ciclo", "más de dos progenitores", "rol/sexo"]);
 
 export function year(s?: string): number | null {
