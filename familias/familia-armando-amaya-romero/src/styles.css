@@ -137,15 +137,15 @@
 .atlas-flow .react-flow__node { transition: opacity 200ms; }
 .atlas-flow.dimmed .react-flow__node-person:not(.hl):not(.sel) { opacity: 0.25; }
 
-.pcard { --b: var(--branch-other); width: 100%; height: 100%; min-width: 250px; border-radius: 6px; border: 1px solid var(--border);
+  .pcard { --b: var(--branch-other); width: 100%; height: 100%; min-width: 270px; border-radius: 6px; border: 1px solid var(--border);
   border-left: 3px solid var(--b); background: var(--card); color: var(--card-foreground); padding: 7px 10px; overflow: hidden;
   display: flex; flex-direction: column; justify-content: center; cursor: pointer; transition: border-color 150ms, box-shadow 150ms, background 150ms; }
 .pcard:hover { border-color: color-mix(in oklab, var(--gold) 50%, var(--border)); }
 .pcard[data-branch="Central"], .pcard[data-branch="Padres"] { --b: var(--gold); }
 .pcard.ref { border-style: dashed; background: color-mix(in oklab, var(--card) 70%, var(--canvas)); }
-.pcard .nm { font-family: var(--font-serif); font-weight: 600; font-size: 16px; line-height: 1.1; white-space: normal; overflow-wrap: anywhere; }
-.pcard .dt { font-size: 11.5px; color: var(--muted-foreground); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.pcard .id { font-family: var(--font-mono); font-size: 10.5px; color: color-mix(in oklab, var(--b) 75%, var(--muted-foreground)); }
+  .pcard .nm { flex: 0 0 auto; font-family: var(--font-serif); font-weight: 600; font-size: 16px; line-height: 1.1; white-space: normal; overflow-wrap: anywhere; }
+  .pcard .dt { flex: 0 0 auto; font-size: 11.5px; color: var(--muted-foreground); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pcard .id { flex: 0 0 auto; font-family: var(--font-mono); font-size: 10.5px; color: color-mix(in oklab, var(--b) 75%, var(--muted-foreground)); }
 .react-flow__node.sel .pcard { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold), 0 0 28px var(--gold-soft); }
 .react-flow__node.hl .pcard { border-color: var(--gold); background: color-mix(in oklab, var(--card) 82%, var(--gold)); }
 
