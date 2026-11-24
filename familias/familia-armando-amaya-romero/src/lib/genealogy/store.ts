@@ -7,6 +7,67 @@ export const DB_NAME = databaseNameFor(APP_CONFIG.id);
 const STORE = "kv";
 const KEY = "dataset";
 
+const ARM_START_PARENTS_UPDATE = "confirmed-parents-kk3d-6vr-2026-11-24";
+const ARM_START_SOURCE_ID = "FamilySearch:X4Q6-SBSR";
+const ARM_START_RECORD_URL = "https://www.familysearch.org/ark:/61903/1:1:X4Q6-SBSR?lang=es";
+
+/** Add the user-confirmed parents of Ma. Virginia Alvarez to old saved copies. */
+export function applyConfirmedVirginiaParents(saved: Dataset): { dataset: Dataset; changed: boolean } {
+  if ((saved.meta.appliedUpdates ?? []).includes(ARM_START_PARENTS_UPDATE)) {
+    return { dataset: saved, changed: false };
+  }
+
+  const dataset = structuredClone(saved) as Dataset;
+  const virginia = dataset.persons.find((person) => person.fsId === "KK3D-6VR");
+  if (!virginia) return { dataset: saved, changed: false };
+
+  const knownPerson = (name: string) => dataset.persons.find((person) =>
+    person.name.trim().toLocaleLowerCase("es") === name.toLocaleLowerCase("es")
+  );
+  const unusedId = (candidate: string) => dataset.persons.some((person) => person.id === candidate)
+    ? `P${Math.max(0, ...dataset.persons.map((person) => Number(person.id.slice(1)) || 0)) + 1}`
+    : candidate;
+  const makeParent = (name: string, sex: "M" | "F", candidateId: string) => {
+    const existing = knownPerson(name);
+    if (existing) return existing;
+    const person = {
+      id: unusedId(candidateId), fsId: "", name, altNames: [], sex,
+      birth: "", death: "", marriage: "", baptism: "", burial: "",
+      notes: ["Progenitor de Ma. Virginia Alvarez; filiación confirmada por el usuario a partir de la partida de información matrimonial de 1894."],
+      sources: [ARM_START_SOURCE_ID],
+      originals: [{ source: ARM_START_SOURCE_ID, record: {
+        title: "San Sebastián Mártir. Informaciones matrimoniales 1893–1900",
+        date: "17 de mayo de 1894", place: "Venado, San Sebastián Mártir, San Luis Potosí",
+        indexedName: name, relation: sex === "M" ? "Padre de Virginia Alvares" : "Madre de Virginia Alvares",
+        familySearchRecord: ARM_START_RECORD_URL,
+      } }],
+    };
+    dataset.persons.push(person);
+    return person;
+  };
+
+  const father = makeParent("Jesus Alvares", "M", "P2435");
+  const mother = makeParent("Ana Vega", "F", "P2436");
+  const addLink = (parent: typeof father, role: "padre" | "madre") => {
+    if (!dataset.links.some((link) => link.child === virginia.id && link.parent === parent.id)) {
+      dataset.links.push({ child: virginia.id, parent: parent.id, role, sources: [ARM_START_SOURCE_ID] });
+    }
+  };
+  addLink(father, "padre");
+  addLink(mother, "madre");
+
+  dataset.meta.sources ??= [];
+  if (!dataset.meta.sources.some((source) => source.id === ARM_START_SOURCE_ID)) {
+    dataset.meta.sources.push({
+      id: ARM_START_SOURCE_ID, file: ARM_START_RECORD_URL,
+      kind: "Partida de información matrimonial indexada en FamilySearch",
+      note: "Entrada del 17 de mayo de 1894 para Virginia Alvares y Arturo A. Amaya; identifica a Jesus Alvares y Ana Vega como sus padres. La filiación se incorpora por confirmación del usuario.",
+    });
+  }
+  dataset.meta.appliedUpdates = [...(dataset.meta.appliedUpdates ?? []), ARM_START_PARENTS_UPDATE];
+  return { dataset, changed: true };
+}
+
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, 1);
@@ -98,3 +159,4 @@ export function mergePublishedBranch(saved: Dataset, seed: Dataset): { dataset: 
   (dataset.meta as any).branchIntegrationAudit = structuredClone(audit);
   return { dataset, changed: true };
 }
+
