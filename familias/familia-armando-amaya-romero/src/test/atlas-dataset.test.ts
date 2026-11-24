@@ -2,7 +2,7 @@ import type { Dataset } from "@/lib/genealogy/types";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { derive, findPath } from "@/lib/genealogy/derive";
 import { computeLayout } from "@/lib/genealogy/layout";
-import { loadDataset, seedDataset, DB_NAME } from "@/lib/genealogy/store";
+import { loadDataset, mergePublishedBranch, seedDataset, DB_NAME } from "@/lib/genealogy/store";
 import { ensureRoot, merge, parseJson, parseRows } from "@/lib/genealogy/importer";
 import { integrateSequence } from "@/lib/genealogy/sequence";
 import { toGedcom } from "@/lib/genealogy/exporters";
@@ -18,6 +18,34 @@ describe("Generated genealogy application", () => {
     const mod = await import("@/data/atlas.json");
     expect(ds).toEqual(structuredClone((mod.default ?? mod) as unknown));
     expect(ds.persons.map((person) => person.id)).toContain(ds.meta.root);
+  });
+
+  it("merges a newly published branch into saved browser data without losing local edits", async () => {
+    const seed = await seedDataset();
+    const audit = (seed.meta as any).branchIntegrationAudit;
+    const missingFsIds = new Set([
+      ...audit.addedFamilySearchProfiles.map((profile: { fsId: string }) => profile.fsId),
+      ...audit.restoredSourceProfiles,
+    ]);
+    const seedByFsId = new Map(seed.persons.map((person) => [person.fsId, person]));
+    const missingIds = new Set([...missingFsIds].map((fsId) => seedByFsId.get(fsId)?.id));
+    const branchPairs = new Set(audit.addedParentLinks.map((link: { child: string; parent: string }) => `${seedByFsId.get(link.child)?.id}>${seedByFsId.get(link.parent)?.id}`));
+    const branchCouples = new Set(audit.addedCouples.map((couple: { a: string; b: string }) => [seedByFsId.get(couple.a)?.id, seedByFsId.get(couple.b)?.id].sort().join("+")));
+    const saved: Dataset = {
+      ...structuredClone(seed),
+      persons: seed.persons.filter((person) => !missingIds.has(person.id)),
+      links: seed.links.filter((link) => !branchPairs.has(`${link.child}>${link.parent}`) && !missingIds.has(link.child) && !missingIds.has(link.parent)),
+      unions: (seed.unions ?? []).filter((union) => !branchCouples.has([union.a, union.b].sort().join("+"))),
+    };
+    saved.persons[0]!.notes.push("edición local preservada");
+
+    const result = mergePublishedBranch(saved, seed);
+    expect(result.changed).toBe(true);
+    expect(result.dataset.persons.filter((person) => missingFsIds.has(person.fsId))).toHaveLength(5);
+    expect(result.dataset.links.filter((link) => branchPairs.has(`${link.child}>${link.parent}`))).toHaveLength(6);
+    expect(result.dataset.unions?.filter((union) => branchCouples.has([union.a, union.b].sort().join("+")))).toHaveLength(2);
+    expect(result.dataset.persons[0]!.notes).toContain("edición local preservada");
+    expect(mergePublishedBranch(result.dataset, seed).changed).toBe(false);
   });
 
   it("derives and lays out the generated tree without errors", async () => {
