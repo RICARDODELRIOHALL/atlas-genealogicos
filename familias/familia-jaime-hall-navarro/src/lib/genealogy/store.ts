@@ -10,6 +10,7 @@ const KEY = "dataset";
 export const PUBLISHED_UPDATE_ID = PF1L_ROUTE_UPDATE_ID;
 export const HALL_BRANCH_UPDATE_ID = "jaime-hall-huidobro-shared-ancestors-v1";
 export const HALL_ROUTES_UPDATE_ID = "jaime-hall-royal-routes-v1";
+export const FAMILYSEARCH_IDS_UPDATE_ID = "jaime-familysearch-ids-v1";
 
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -47,9 +48,19 @@ export async function seedDataset(): Promise<Dataset> {
 /** Merge this release's additive route update into older browser databases without replacing local edits. */
 export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> {
   const existingUpdates = current.meta.appliedUpdates ?? [];
-  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(HALL_ROUTES_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID)) return current;
+  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(HALL_ROUTES_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID) && existingUpdates.includes(FAMILYSEARCH_IDS_UPDATE_ID)) return current;
   const next = structuredClone(current);
   const applied = new Set(next.meta.appliedUpdates ?? []);
+  if (!applied.has(FAMILYSEARCH_IDS_UPDATE_ID)) {
+    const targetModule = await import("@/data/atlas.json");
+    const target = (targetModule.default ?? targetModule) as unknown as Dataset;
+    const targetById = new Map(target.persons.map((person) => [person.id, person]));
+    for (const person of next.persons) {
+      const targetPerson = targetById.get(person.id);
+      if (!person.fsId && targetPerson?.fsId) person.fsId = targetPerson.fsId;
+    }
+    applied.add(FAMILYSEARCH_IDS_UPDATE_ID);
+  }
   if (!applied.has(HALL_BRANCH_UPDATE_ID) && next.meta.root === "person-root") {
     // Migrate only the father's ancestor component in older IndexedDB copies.
     // Maternal ancestry, root, sibling cards, and maternal route additions stay intact.
