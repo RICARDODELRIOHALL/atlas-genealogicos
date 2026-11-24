@@ -10,7 +10,7 @@ export interface Appearance {
 }
 export interface LayoutResult {
   apps: Appearance[]; byPerson: Map<string, Appearance[]>;
-  unions: { key: string; x: number; y: number; childKey: string; parentKeys: string[] }[];
+  unions: { key: string; x: number; y: number; childKey: string; childKeys: string[]; parentKeys: string[] }[];
   columns: { gen: number; x: number; minY: number; maxY: number; count: number }[];
   pendingTop: number | null; bounds: { minX: number; minY: number; maxX: number; maxY: number };
 }
@@ -24,7 +24,7 @@ function orderedParents(d: Derived, id: string) {
   return ls.sort((a, b) => rank(a.parent, a.role) - rank(b.parent, b.role)).map((l) => l.parent);
 }
 
-export function computeLayout(d: Derived, root: string): LayoutResult {
+export function computeLayout(d: Derived, root: string, rootColumnIds: string[] = [root]): LayoutResult {
   const apps = new Map<string, Appearance>();
   const byPerson = new Map<string, Appearance[]>();
   const expanded = new Set<string>();
@@ -84,13 +84,34 @@ export function computeLayout(d: Derived, root: string): LayoutResult {
   };
   for (const r of roots) placeRoot(r, true);
 
+  // Perfiles de la columna central (p. ej., hermanos) comparten x y conservan el orden recibido.
+  const rootAppearance = roots[0];
+  if (rootAppearance) {
+    const ordered = [...new Set(rootColumnIds.includes(root) ? rootColumnIds : [root, ...rootColumnIds])].filter((id) => d.byId.has(id));
+    const rootIndex = ordered.indexOf(root);
+    ordered.forEach((pid, index) => {
+      if (pid === root) return;
+      const a = mk(pid, 0, null, "main");
+      a.parentKeys = [...rootAppearance.parentKeys];
+      a.x = 0;
+      a.y = rootAppearance.y + (index - rootIndex) * (CARD_H + GAP);
+    });
+  }
+
   const list = [...apps.values()];
-  const unions: LayoutResult["unions"] = [];
+  const unionGroups = new Map<string, { childKeys: string[]; parentKeys: string[] }>();
   for (const a of list) {
     if (!a.parentKeys.length) continue;
-    const ps = a.parentKeys.map((k) => apps.get(k)!);
+    const key = [...a.parentKeys].sort().join("|");
+    const group = unionGroups.get(key) ?? unionGroups.set(key, { childKeys: [], parentKeys: a.parentKeys }).get(key)!;
+    group.childKeys.push(a.key);
+  }
+  const unions: LayoutResult["unions"] = [];
+  for (const group of unionGroups.values()) {
+    const ps = group.parentKeys.map((k) => apps.get(k)!);
     const ys = ps.map((p) => p.y);
-    unions.push({ key: `j${a.key}`, x: (a.depth + 1) * COL_W - 34, y: (Math.min(...ys) + Math.max(...ys)) / 2, childKey: a.key, parentKeys: a.parentKeys });
+    const first = apps.get(group.childKeys[0])!;
+    unions.push({ key: `j${group.childKeys[0]}`, x: (first.depth + 1) * COL_W - 34, y: (Math.min(...ys) + Math.max(...ys)) / 2, childKey: group.childKeys[0], childKeys: group.childKeys, parentKeys: group.parentKeys });
   }
   const cols = new Map<number, LayoutResult["columns"][number]>();
   for (const a of list) {

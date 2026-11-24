@@ -37,7 +37,7 @@ export default function AtlasApp() {
 function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void> }) {
   const rf = useReactFlow();
   const d = useMemo(() => derive(ds), [ds]);
-  const layout = useMemo(() => computeLayout(d, ds.meta.root), [d, ds.meta.root]);
+  const layout = useMemo(() => computeLayout(d, ds.meta.root, ds.meta.rootColumnIds ?? [ds.meta.root]), [d, ds.meta.root, ds.meta.rootColumnIds]);
   const [selected, setSelected] = useState<string | null>(null);
   const [selApp, setSelApp] = useState<string | null>(null);
   const [mode, setMode] = useState<Mode>({ kind: "none" });
@@ -83,7 +83,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const baseEdges = useMemo<Edge[]>(() => {
     const e: Edge[] = [];
     for (const u of layout.unions) {
-      e.push({ id: `e${u.key}`, source: u.childKey, target: u.key, type: "smoothstep", selectable: false, focusable: false });
+      for (const childKey of u.childKeys) e.push({ id: `e${u.key}-${childKey}`, source: childKey, target: u.key, type: "smoothstep", selectable: false, focusable: false });
       for (const p of u.parentKeys) e.push({ id: `e${u.key}-${p}`, source: u.key, target: p, type: "step", selectable: false, focusable: false });
     }
     return e;
@@ -93,7 +93,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
   const nodes = useMemo(() => baseNodes.map((n) => {
     if (n.type !== "person") {
       if (n.type === "blabel") return { ...n, hidden: hidden.has(n.data.label) };
-      if (n.type === "union") { const u = unionByKey.get(n.id); return u && hidden.has(appBranch.get(u.childKey)!) && u.parentKeys.every((k) => hidden.has(appBranch.get(k)!)) ? { ...n, hidden: true } : n; }
+      if (n.type === "union") { const u = unionByKey.get(n.id); return u && u.childKeys.every((childKey) => hidden.has(appBranch.get(childKey)!)) && u.parentKeys.every((k) => hidden.has(appBranch.get(k)!)) ? { ...n, hidden: true } : n; }
       return n;
     }
     const pid = appPerson.get(n.id)!;
@@ -105,7 +105,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
     if (!hl.size) return baseEdges;
     return baseEdges.map((e) => {
       const s = appPerson.get(e.source) ?? null, t = appPerson.get(e.target) ?? null;
-      const ok = (x: string | null, key: string) => (x ? hl.has(x) : (() => { const u = unionByKey.get(key); return !!u && hl.has(appPerson.get(u.childKey)!) && u.parentKeys.some((k) => hl.has(appPerson.get(k)!)); })());
+      const ok = (x: string | null, key: string) => (x ? hl.has(x) : (() => { const u = unionByKey.get(key); return !!u && u.childKeys.some((childKey) => hl.has(appPerson.get(childKey)!)) && u.parentKeys.some((k) => hl.has(appPerson.get(k)!)); })());
       return ok(s, e.source) && ok(t, e.target) ? { ...e, className: "hl" } : e;
     });
   }, [baseEdges, hl, appPerson, unionByKey]);

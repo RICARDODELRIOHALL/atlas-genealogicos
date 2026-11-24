@@ -100,6 +100,12 @@ export function derive(ds: Dataset): Derived {
         stack.push([l.parent, g + 1, path.length < 64 ? [...path, l.parent] : [l.parent]]);
       }
     }
+    // Los perfiles fijados en la columna central son hermanos del root con progenitores comunes.
+    for (const id of ds.meta.rootColumnIds ?? []) {
+      if (id === root || !byId.has(id)) continue;
+      const set = gsets.get(id) ?? gsets.set(id, new Set()).get(id)!;
+      set.add(1);
+    }
     for (const [k, s] of gsets) generation.set(k, [...s].sort((a, b) => a - b));
   }
   // Ramas por cuadrante de abuelos

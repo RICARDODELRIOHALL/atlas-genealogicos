@@ -13,7 +13,7 @@ export interface UnionRecord { a: string; b: string; marriage?: string; marriage
 export interface SourceInfo { id: SourceId; file: string; kind: string; note: string }
 export interface Issue { kind: string; msg: string; ids: string[]; severity: "info" | "revisión" | "grave" }
 export interface Dataset {
-  meta: { root: string; sources: SourceInfo[]; note?: string; missingCsv?: string; savedAt?: string; appliedUpdates?: string[] };
+  meta: { root: string; rootColumnIds?: string[]; sources: SourceInfo[]; note?: string; missingCsv?: string; savedAt?: string; appliedUpdates?: string[] };
   persons: Person[]; links: ParentLink[]; pendingRefs: ParentLink[]; issues: Issue[]; unions?: UnionRecord[];
 }
 export interface Union { id: string; a: string; b: string; children: string[]; marriage: string; marriageVariants?: string[]; marriagePlace?: string; marriagePlaceVariants?: string[] }
