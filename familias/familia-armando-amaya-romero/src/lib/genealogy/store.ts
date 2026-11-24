@@ -160,3 +160,74 @@ export function mergePublishedBranch(saved: Dataset, seed: Dataset): { dataset: 
   return { dataset, changed: true };
 }
 
+const PIMENTEL_G20_UPDATE = "familysearch-pimentel-parents-of-lypr-ssp-2026-11-24";
+const PIMENTEL_SOURCE_ID = "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)";
+const PIMENTEL_TREE_URL = "https://www.familysearch.org/es/tree/pedigree/landscape/PX7L-M8G";
+
+/** Add the two FamilySearch profiles shown as parents of LYPR-SSP at G20. */
+export function applyPimentelGeneration20(saved: Dataset): { dataset: Dataset; changed: boolean } {
+  if ((saved.meta.appliedUpdates ?? []).includes(PIMENTEL_G20_UPDATE)) {
+    return { dataset: saved, changed: false };
+  }
+  const savedChild = saved.persons.find((person) => person.fsId === "LYPR-SSP");
+  if (!savedChild) return { dataset: saved, changed: false };
+
+  const dataset = structuredClone(saved) as Dataset;
+  const child = dataset.persons.find((person) => person.fsId === "LYPR-SSP")!;
+  const makeParent = (fsId: string, name: string, sex: "M" | "F", birth: string, death: string) => {
+    const found = dataset.persons.find((person) => person.fsId === fsId);
+    if (found) return found;
+    const maxId = Math.max(0, ...dataset.persons.map((person) => Number(person.id.slice(1)) || 0));
+    const preferredId = fsId === "P35C-GVN" ? "P2437" : "P2438";
+    const id = dataset.persons.some((person) => person.id === preferredId) ? `P${maxId + 1}` : preferredId;
+    const person = {
+      id, fsId, name, altNames: [], sex, birth, death,
+      marriage: "", baptism: "", burial: "",
+      notes: ["Perfil y vínculo familiar transcritos de la vista horizontal de FamilySearch del árbol de Armando Amaya Romero."],
+      sources: [PIMENTEL_SOURCE_ID], verification: "familysearch" as const,
+      originals: [{ source: PIMENTEL_SOURCE_ID, record: {
+        familySearchId: fsId,
+        familySearchPerson: `https://www.familysearch.org/es/tree/person/${fsId}`,
+        name, birth, death,
+        relationship: sex === "M" ? "Padre de II Conde Rodrigo Alfonso de Pimentel" : "Madre de II Conde Rodrigo Alfonso de Pimentel",
+        familySearchTree: PIMENTEL_TREE_URL,
+      } }],
+    };
+    dataset.persons.push(person);
+    return person;
+  };
+
+  const father = makeParent("P35C-GVN", "Conde João Afonso Pimentel", "M", "1350", "1419");
+  const mother = makeParent("LKMQ-LWD", "Joanna Telles de Menezes", "F", "1355", "1420");
+  if (!dataset.links.some((link) => link.child === child.id && link.parent === father.id)) {
+    dataset.links.push({ child: child.id, parent: father.id, role: "padre", sources: [PIMENTEL_SOURCE_ID] });
+  }
+  if (!dataset.links.some((link) => link.child === child.id && link.parent === mother.id)) {
+    dataset.links.push({ child: child.id, parent: mother.id, role: "madre", sources: [PIMENTEL_SOURCE_ID] });
+  }
+
+  dataset.unions ??= [];
+  const hasUnion = dataset.unions.some((union) =>
+    (union.a === father.id && union.b === mother.id) || (union.a === mother.id && union.b === father.id)
+  );
+  if (!hasUnion) {
+    dataset.unions.push({
+      id: "FS-P35C-GVN-LKMQ-LWD", a: father.id, b: mother.id,
+      children: [child.id], marriage: "1377", marriagePlace: "Castilla, España",
+      sources: [PIMENTEL_SOURCE_ID],
+      originalRecord: { source: PIMENTEL_SOURCE_ID, spouses: ["P35C-GVN", "LKMQ-LWD"], children: ["LYPR-SSP"], dateText: "1377", placeText: "Castilla, España" },
+    });
+  }
+
+  dataset.meta.sources ??= [];
+  if (!dataset.meta.sources.some((source) => source.id === PIMENTEL_SOURCE_ID)) {
+    dataset.meta.sources.push({
+      id: PIMENTEL_SOURCE_ID, file: PIMENTEL_TREE_URL,
+      kind: "Vista horizontal del árbol familiar de FamilySearch",
+      note: "Muestra a Conde João Afonso Pimentel (1350–1419) y Joanna Telles de Menezes (1355–1420) como padres de II Conde Rodrigo Alfonso de Pimentel (LYPR-SSP); la unión aparece fechada en 1377 en Castilla, España.",
+    });
+  }
+  dataset.meta.appliedUpdates = [...(dataset.meta.appliedUpdates ?? []), PIMENTEL_G20_UPDATE];
+  return { dataset, changed: true };
+}
+
