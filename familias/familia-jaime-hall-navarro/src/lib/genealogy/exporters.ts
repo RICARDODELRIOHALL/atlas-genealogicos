@@ -10,15 +10,33 @@ export function download(name: string, content: BlobPart, type: string) {
 }
 export const fsUrl = (id: string) => `https://www.familysearch.org/es/tree/person/${id}`;
 export const displayDate = (value: string) => {
-  const match = value.match(/^D\.\+(\d{4})(\d{2})(\d{2})\.\.\+00000000\.\.$/);
-  if (!match) return value;
-  const [, year, month, day] = match;
-  const y = Number(year), m = Number(month), d = Number(day);
-  if (!m || m > 12) return String(y);
-  if (!d || d > 31) return new Intl.DateTimeFormat("es-MX", { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, 1)));
-  const date = new Date(Date.UTC(y, m - 1, d));
-  if (date.getUTCMonth() !== m - 1 || date.getUTCDate() !== d) return value;
-  return new Intl.DateTimeFormat("es-MX", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(date);
+  const coded = value.match(/^D([ABRS]?)[.]?([+-])(\d{8})\.([A-Z]?)\.?([+-])(\d{8})\.\.$/);
+  if (coded) {
+    const [, modifier, sign, rawDate, qualifier, secondSign, rawSecond] = coded;
+    const formatPart = (partSign: string, digits: string): string | null => {
+      const y = Number(digits.slice(0, 4)), m = Number(digits.slice(4, 6)), d = Number(digits.slice(6, 8));
+      if (!y) return null;
+      const yearText = partSign === "-" ? `${y} a. C.` : String(y);
+      if (m === 0) return yearText;
+      if (m > 12) return null;
+      if (d === 0) return new Intl.DateTimeFormat("es-MX", { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, 1)));
+      if (d > 31) return null;
+      const date = new Date(Date.UTC(y, m - 1, d));
+      if (date.getUTCMonth() !== m - 1 || date.getUTCDate() !== d) return null;
+      return new Intl.DateTimeFormat("es-MX", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(date);
+    };
+    const first = formatPart(sign, rawDate);
+    const second = formatPart(secondSign, rawSecond);
+    if (!first || (qualifier && qualifier !== "A") || (rawSecond !== "00000000" && !second)) return value;
+    const qualifierText = qualifier === "A" ? "aprox. " : "";
+    if (modifier === "B") return `${qualifierText}antes de ${first}`;
+    if (modifier === "A") return `${qualifierText}después de ${first}`;
+    if ((modifier === "R" || modifier === "S" || rawSecond !== "00000000") && second) return `${qualifierText}entre ${first} y ${second}`;
+    return `${qualifierText}${first}`;
+  }
+  const december = value.match(/^DEC\s+(\d{1,4})$/i);
+  if (december) return `diciembre de ${december[1]}`;
+  return value;
 };
 export const life = (p: Person) => (p.birth || p.death ? `${p.birth ? displayDate(p.birth) : "?"} – ${p.death ? displayDate(p.death) : "?"}` : "");
 
