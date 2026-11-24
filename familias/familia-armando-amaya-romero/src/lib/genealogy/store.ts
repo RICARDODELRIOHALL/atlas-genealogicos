@@ -231,3 +231,97 @@ export function applyPimentelGeneration20(saved: Dataset): { dataset: Dataset; c
   return { dataset, changed: true };
 }
 
+const ARM_G22_UPDATE = "familysearch-ancestors-through-generation-22-2026-11-24";
+const ARM_G22_SOURCE_ID = "FamilySearch: vista horizontal del árbol de Armando Amaya Romero G21-G22 (transcripción visual, 2026-11-24)";
+
+/** Add the visible FamilySearch ancestors and couples through the requested G22 view. */
+export function applyAncestorsThroughGeneration22(saved: Dataset): { dataset: Dataset; changed: boolean } {
+  if ((saved.meta.appliedUpdates ?? []).includes(ARM_G22_UPDATE)) return { dataset: saved, changed: false };
+  const dataset = structuredClone(saved) as Dataset;
+  const treeUrl = "https://www.familysearch.org/es/tree/pedigree/landscape/PX7L-M8G";
+  const profiles: Array<{ fsId: string; name: string; sex: "M" | "F"; birth: string; death: string }> = [
+    { fsId: "P35C-54S", name: "Rodrigo Afonso Pimentel, O Braganção", sex: "M", birth: "1310", death: "" },
+    { fsId: "KC3R-727", name: "Lourença Vasques da Fonseca", sex: "F", birth: "1328", death: "1370" },
+    { fsId: "L15Q-6ZJ", name: "Martim Afonso Telo de Menezes", sex: "M", birth: "1310", death: "1356" },
+    { fsId: "GMTQ-LYG", name: "Aldonça Annes de Vasconcellos", sex: "F", birth: "1310", death: "1370" },
+    { fsId: "GSM1-S13", name: "Fadrique de Castilla Guzmán, infante de Castilla y Maestre de la Orden de Santiago", sex: "M", birth: "1333", death: "1358" },
+    { fsId: "LT84-KP1", name: "Yonati «Paloma» bat Gedaliah ibn Yahya", sex: "F", birth: "1335", death: "1429" },
+    { fsId: "GNWP-195", name: "Pedro González de Mendoza Orozco, I Señor de Hita y de Buitrago", sex: "M", birth: "1335", death: "1385" },
+    { fsId: "GT2B-TGS", name: "Aldonza Fernández de Ayala", sex: "F", birth: "1337", death: "1404" },
+    { fsId: "LT8C-WDN", name: "Gedalia ben Shlomo ibn Yaḥyā", sex: "M", birth: "1295", death: "1385" },
+    { fsId: "GZPW-4W7", name: "Tamar Bat Ibn Yahya Maria Benveniste", sex: "F", birth: "1315", death: "1385" },
+    { fsId: "G6Z3-WTF", name: "Don Pedro Núñez de Guzmán y Girón", sex: "M", birth: "1280", death: "1338" },
+    { fsId: "G2B7-M3F", name: "Doña Juana Ponce de León y Meneses", sex: "F", birth: "1276", death: "" },
+    { fsId: "L15M-MKC", name: "Shlomo Ha-Zaken ben Yosef ben Yahya", sex: "M", birth: "1245", death: "1299" },
+    { fsId: "GZPW-GDT", name: "Reyna Abravanel", sex: "F", birth: "1260", death: "" },
+  ];
+  const byFsId = new Map(dataset.persons.filter((person) => person.fsId).map((person) => [person.fsId, person]));
+  let nextId = Math.max(0, ...dataset.persons.map((person) => Number(person.id.slice(1)) || 0)) + 1;
+  let changed = false;
+  for (const profile of profiles) {
+    if (byFsId.has(profile.fsId)) continue;
+    const person = {
+      id: `P${nextId++}`, ...profile, altNames: [], marriage: "", baptism: "", burial: "",
+      notes: ["Perfil y relaciones transcritos de la vista horizontal del árbol de Armando Amaya Romero en FamilySearch."],
+      sources: [ARM_G22_SOURCE_ID], verification: "familysearch" as const,
+      originals: [{ source: ARM_G22_SOURCE_ID, record: {
+        familySearchId: profile.fsId,
+        familySearchPerson: `https://www.familysearch.org/es/tree/person/${profile.fsId}`,
+        name: profile.name, birth: profile.birth, death: profile.death, familySearchTree: treeUrl,
+      } }],
+    };
+    dataset.persons.push(person);
+    byFsId.set(profile.fsId, person);
+    changed = true;
+  }
+
+  const parentPairs: Array<[string, string, string]> = [
+    ["P35C-GVN", "P35C-54S", "padre"], ["P35C-GVN", "KC3R-727", "madre"],
+    ["LKMQ-LWD", "L15Q-6ZJ", "padre"], ["LKMQ-LWD", "GMTQ-LYG", "madre"],
+    ["L8BR-9FP", "GSM1-S13", "padre"], ["L8BR-9FP", "LT84-KP1", "madre"],
+    ["LTT1-ZXM", "GNWP-195", "padre"], ["LTT1-ZXM", "GT2B-TGS", "madre"],
+    ["GSM1-S13", "M6FB-J43", "padre"], ["GSM1-S13", "GG1T-CBH", "madre"],
+    ["LT84-KP1", "LT8C-WDN", "padre"], ["LT84-KP1", "GZPW-4W7", "madre"],
+    ["KC3R-727", "G6Z3-WTF", "padre"], ["KC3R-727", "G2B7-M3F", "madre"],
+    ["LT8C-WDN", "L15M-MKC", "padre"], ["LT8C-WDN", "GZPW-GDT", "madre"],
+  ];
+  for (const [childFsId, parentFsId, role] of parentPairs) {
+    const child = byFsId.get(childFsId);
+    const parent = byFsId.get(parentFsId);
+    if (!child || !parent || dataset.links.some((link) => link.child === child.id && link.parent === parent.id)) continue;
+    dataset.links.push({ child: child.id, parent: parent.id, role: role as "padre" | "madre", sources: [ARM_G22_SOURCE_ID] });
+    changed = true;
+  }
+
+  const marriages = [
+    { a: "GNWP-195", b: "GT2B-TGS", marriage: "1360", place: "" },
+    { a: "LT8C-WDN", b: "GZPW-4W7", marriage: "1330", place: "Portugal" },
+    { a: "G6Z3-WTF", b: "G2B7-M3F", marriage: "1300", place: "" },
+    { a: "L15M-MKC", b: "GZPW-GDT", marriage: "antes de 1278", place: "Lisboa, Portugal" },
+  ];
+  dataset.unions ??= [];
+  for (const couple of marriages) {
+    const a = byFsId.get(couple.a);
+    const b = byFsId.get(couple.b);
+    if (!a || !b || dataset.unions.some((union) => (union.a === a.id && union.b === b.id) || (union.a === b.id && union.b === a.id))) continue;
+    dataset.unions.push({
+      id: `FS-${couple.a}-${couple.b}`, a: a.id, b: b.id, children: [], marriage: couple.marriage,
+      marriagePlace: couple.place, sources: [ARM_G22_SOURCE_ID],
+      originalRecord: { source: ARM_G22_SOURCE_ID, spouses: [couple.a, couple.b], dateText: couple.marriage, placeText: couple.place },
+    });
+    changed = true;
+  }
+
+  dataset.meta.sources ??= [];
+  if (!dataset.meta.sources.some((source) => source.id === ARM_G22_SOURCE_ID)) {
+    dataset.meta.sources.push({
+      id: ARM_G22_SOURCE_ID, file: treeUrl, kind: "Vista horizontal del árbol familiar de FamilySearch",
+      note: "Vista del árbol de Armando Amaya Romero; perfiles visibles en generaciones G21 y G22 y relaciones familiares mostradas en esa rama.",
+    });
+    changed = true;
+  }
+  if (!changed) return { dataset: saved, changed: false };
+  dataset.meta.appliedUpdates = [...(dataset.meta.appliedUpdates ?? []), ARM_G22_UPDATE];
+  return { dataset, changed: true };
+}
+
