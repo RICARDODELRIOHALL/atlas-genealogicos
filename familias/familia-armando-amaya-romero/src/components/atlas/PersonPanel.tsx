@@ -51,9 +51,9 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
         <div>
           <div className="text-xs uppercase tracking-[0.2em] text-gold">{lines["Generación"] || "Sin generación"} · {lines["Rama"] || "Sin rama"}</div>
           <h2 className="mt-1 font-serif text-2xl font-semibold leading-tight">{p.name || "Sin nombre registrado"}</h2>
-          <a href={fsUrl(p.fsId)} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 font-mono text-xs text-muted-foreground hover:text-gold">
+          {p.fsId ? <a href={fsUrl(p.fsId)} target="_blank" rel="noreferrer" className="mt-1 inline-flex items-center gap-1 font-mono text-xs text-muted-foreground hover:text-gold">
             FamilySearch {p.fsId} <ExternalLink className="h-3 w-3" />
-          </a>
+          </a> : <div className="mt-1 font-mono text-xs text-muted-foreground">Sin ID de FamilySearch</div>}
         </div>
         <Button variant="ghost" size="icon" onClick={onClose} aria-label="Cerrar ficha"><X className="h-4 w-4" /></Button>
       </div>
@@ -126,3 +126,4 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
     </aside>
   );
 }
+
