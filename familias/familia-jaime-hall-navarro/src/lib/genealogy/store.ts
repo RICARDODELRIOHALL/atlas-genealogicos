@@ -181,6 +181,8 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
     applied.add(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID);
   }
 
+  if (!applied.has(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID) && next.meta.root !== "person-root") applied.add(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID);
+
   const personIds = new Set(next.persons.map((person) => person.id));
   const addedIds = new Set<string>();
   for (const person of PF1L_ROUTE_PERSONS) {
