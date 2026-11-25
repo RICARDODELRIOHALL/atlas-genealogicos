@@ -230,6 +230,7 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
       for (const field of ["totalRelationships", "includedRelationships", "includedParentLinkRecords"]) {
         if (typeof audit[field] === "number") audit[field] = (audit[field] as number) + addedParentLinks;
       }
+      if (typeof audit["includedUnionRecords"] === "number") audit["includedUnionRecords"] = (audit["includedUnionRecords"] as number) + addedUnions;
     }
     applied.add(LHWP_BRANCH_UPDATE_ID);
   }
