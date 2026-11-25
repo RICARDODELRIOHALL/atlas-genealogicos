@@ -11,6 +11,7 @@ export const PUBLISHED_UPDATE_ID = PF1L_ROUTE_UPDATE_ID;
 export const HALL_BRANCH_UPDATE_ID = "jaime-hall-huidobro-shared-ancestors-v1";
 export const HALL_ROUTES_UPDATE_ID = "jaime-hall-royal-routes-v1";
 export const FAMILYSEARCH_IDS_UPDATE_ID = "jaime-familysearch-ids-v1";
+export const ALICE_BOOTH_PARENT_PAIR_UPDATE_ID = "jaime-hall-alice-booth-parent-pair-v1";
 
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -48,7 +49,7 @@ export async function seedDataset(): Promise<Dataset> {
 /** Merge this release's additive route update into older browser databases without replacing local edits. */
 export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> {
   const existingUpdates = current.meta.appliedUpdates ?? [];
-  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(HALL_ROUTES_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID) && existingUpdates.includes(FAMILYSEARCH_IDS_UPDATE_ID)) return current;
+  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(HALL_ROUTES_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID) && existingUpdates.includes(FAMILYSEARCH_IDS_UPDATE_ID) && existingUpdates.includes(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID)) return current;
   const next = structuredClone(current);
   const applied = new Set(next.meta.appliedUpdates ?? []);
   if (!applied.has(FAMILYSEARCH_IDS_UPDATE_ID)) {
@@ -129,6 +130,55 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
     }
     (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit = structuredClone((target.meta as typeof target.meta & { generationAudit?: Record<string, unknown> }).generationAudit!);
     applied.add(HALL_ROUTES_UPDATE_ID);
+  }
+
+  if (!applied.has(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID) && next.meta.root === "person-root") {
+    const targetModule = await import("@/data/atlas.json");
+    const target = (targetModule.default ?? targetModule) as unknown as Dataset;
+    const alice = target.persons.find((person) => person.fsId === "G88R-D2R");
+    const father = target.persons.find((person) => person.fsId === "LRSD-ML7");
+    const mother = target.persons.find((person) => person.fsId === "LDBB-8WN");
+    if (alice && father && mother) {
+      let addedLinks = 0;
+      const parents = target.links.filter((link) => link.child === alice.id && [father.id, mother.id].includes(link.parent));
+      for (const link of parents) {
+        const existingIndex = next.links.findIndex((item) => {
+          if (item.child !== alice.id) return false;
+          if (item.parent === link.parent) return true;
+          const existingParent = next.persons.find((person) => person.id === item.parent);
+          return link.parent === father.id && existingParent?.fsId === "G91F-ZVY";
+        });
+        if (existingIndex >= 0) {
+          const existing = next.links[existingIndex]!;
+          next.links[existingIndex] = {
+            ...existing,
+            parent: link.parent,
+            role: link.role,
+            sources: [...new Set([...(existing.sources ?? []), ...(link.sources ?? []), "FamilySearch merge G91F-ZVY to LRSD-ML7"])],
+          };
+        } else {
+          next.links.push(structuredClone(link));
+          addedLinks++;
+        }
+      }
+
+      next.unions ??= [];
+      const targetUnion = (target.unions ?? []).find((union) => [union.a, union.b].includes(father.id) && [union.a, union.b].includes(mother.id));
+      const currentUnion = next.unions.find((union) => [union.a, union.b].sort().join("+") === [father.id, mother.id].sort().join("+"));
+      if (currentUnion) currentUnion["children"] = [...new Set([...(currentUnion["children"] as string[] ?? []), alice.id])];
+      else if (targetUnion) next.unions.push(structuredClone({ ...targetUnion, children: [...new Set([...(targetUnion["children"] as string[] ?? []), alice.id])] }));
+
+      const audit = (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit;
+      const targetAudit = (target.meta as typeof target.meta & { generationAudit?: Record<string, unknown> }).generationAudit;
+      if (audit && targetAudit) {
+        for (const field of ["totalRelationships", "includedRelationships", "includedParentLinkRecords"]) {
+          const currentCount = audit[field];
+          const targetCount = targetAudit[field];
+          if (typeof targetCount === "number") audit[field] = typeof currentCount === "number" && currentCount > targetCount ? currentCount + addedLinks : targetCount;
+        }
+      }
+    }
+    applied.add(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID);
   }
 
   const personIds = new Set(next.persons.map((person) => person.id));
