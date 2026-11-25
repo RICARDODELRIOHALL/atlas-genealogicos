@@ -27,14 +27,14 @@ describe("Generated genealogy application", () => {
     const ds = await seedDataset();
     const mod = await import("@/data/atlas.json");
     const base = structuredClone((mod.default ?? mod) as unknown as Dataset);
-    expect(ds.persons).toHaveLength(base.persons.length + 2);
-    expect(ds.links).toHaveLength(base.links.length + 2);
+    expect(ds.persons).toHaveLength(base.persons.length + 18);
+    expect(ds.links).toHaveLength(base.links.length + 18);
     expect(ds.persons.map((person) => person.id)).toContain("route-pf1l-ltb");
     expect(ds.persons.map((person) => person.id)).toContain("route-pf1l-ccp");
     expect(ds.links).toContainEqual({ child: "ancestor-1266", parent: "route-pf1l-ltb", role: "", sources: [] });
     expect(ds.links).toContainEqual({ child: "ancestor-1266", parent: "route-pf1l-ccp", role: "", sources: [] });
     expect(ds.meta.appliedUpdates).toContain(PUBLISHED_UPDATE_ID);
-    expect((ds.meta as typeof ds.meta & { generationAudit: Record<string, unknown> }).generationAudit).toMatchObject({ totalPersons: 5896, includedPersons: 1865, directAncestorsExcludingRoot: 1861, includedParentLinkRecords: 1982, includedUnionRecords: 1540 });
+    expect((ds.meta as typeof ds.meta & { generationAudit: Record<string, unknown> }).generationAudit).toMatchObject({ totalPersons: 5912, includedPersons: 1881, directAncestorsExcludingRoot: 1877, includedParentLinkRecords: 1998, includedUnionRecords: 1548 });
     expect(ds.persons.find((person) => person.id === "ancestor-0003")?.name).toBe("Jaime Rafael Hall Huidobro");
     expect(ds.persons.map((person) => person.name)).not.toContain("Ricardo del Río Hall");
     const ancestors = ancestorsOf(derive(ds), ds.meta.root);
