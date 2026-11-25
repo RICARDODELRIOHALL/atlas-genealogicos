@@ -1,7 +1,7 @@
 import type { ParentLink, Person, UnionRecord } from "@/lib/genealogy/types";
 
 export const LHWP_BRANCH_UPDATE_ID = "jaime-familysearch-lhwp-6yx-branch-v1";
-const source = "FamilySearch, árbol colaborativo; ruta de parentesco consultada desde LHWP-6YX";
+const source = "FamilySearch, árbol colaborativo; ruta de parentesco consultada desde LHWP-6YX: https://www.familysearch.org/es/tree/person/details/LHWP-6YX";
 
 const person = (fsId: string, name: string, sex: "M" | "F", birth = "", death = ""): Person => ({
   id: `lhwp-${fsId.toLowerCase()}`, fsId, name, altNames: [], sex, birth, death,
@@ -46,6 +46,9 @@ export const LHWP_BRANCH_LINKS: ParentLink[] = LHWP_BRANCH_PARENT_PAIRS.flatMap(
 
 export const LHWP_BRANCH_UNIONS: UnionRecord[] = LHWP_BRANCH_PARENT_PAIRS.map(({ childFsId, fatherFsId, motherFsId }) => ({
   a: `lhwp-${fatherFsId.toLowerCase()}`, b: `lhwp-${motherFsId.toLowerCase()}`,
-  children: [`lhwp-${childFsId.toLowerCase()}`], marriage: "", sources: [source],
+  children: [`lhwp-${childFsId.toLowerCase()}`],
+  marriage: childFsId === "LTKH-4WK" ? "D.+12340529..+00000000.." : "",
+  marriagePlace: childFsId === "LTKH-4WK" ? "Sens, Burgundy, France (Kingdom of France)" : "",
+  sources: [source],
 }));
 
