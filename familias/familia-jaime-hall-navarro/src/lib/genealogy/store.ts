@@ -219,7 +219,7 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
       const b = remap.get(union.b) ?? union.b;
       const children = (union.children as string[]).map((id) => remap.get(id) ?? id);
       const existing = next.unions.find((item) => [item.a, item.b].sort().join("+") === [a, b].sort().join("+"));
-      if (existing) existing.children = [...new Set([...(existing.children as string[] ?? []), ...children])];
+      if (existing) existing["children"] = [...new Set([...(existing["children"] as string[] ?? []), ...children])];
       else { next.unions.push({ ...structuredClone(union), a, b, children }); addedUnions++; }
     }
     const audit = (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit;
