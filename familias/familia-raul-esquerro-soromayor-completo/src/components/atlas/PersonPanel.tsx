@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import type { Derived } from "@/lib/genealogy/types";
 import { branchPdf, download, fsUrl, personLines, personPdf } from "@/lib/genealogy/exporters";
 import { describeStep } from "@/lib/genealogy/derive";
+import { formatGenealogyDate } from "@/lib/genealogy/date-format";
 import { useState } from "react";
 
 type Actions = { anc: (id: string) => void; desc: (id: string) => void; toRoot: (id: string) => void; path: (a: string, b: string) => string[] | null; setRoot?: (id: string) => void; rootId?: string };
@@ -65,8 +66,8 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
           )}
           <section>
             <Field k="Nombres alternativos" v={lines["Nombres alternativos"]} />
-            <Field k="Nacimiento" v={p.birth} /><Field k="Lugar de nacimiento" v={p.birthPlace} /><Field k="Bautizo" v={p.baptism} />
-            <Field k="Fallecimiento" v={p.death} /><Field k="Lugar de fallecimiento" v={p.deathPlace} /><Field k="Entierro" v={p.burial} />
+            <Field k="Nacimiento" v={formatGenealogyDate(p.birth)} /><Field k="Lugar de nacimiento" v={p.birthPlace} /><Field k="Bautizo" v={formatGenealogyDate(p.baptism)} />
+            <Field k="Fallecimiento" v={formatGenealogyDate(p.death)} /><Field k="Lugar de fallecimiento" v={p.deathPlace} /><Field k="Entierro" v={formatGenealogyDate(p.burial)} />
             <Field k="Matrimonio" v={p.marriage} /><Field k="Lugar de matrimonio" v={p.marriagePlace} />
             <Field k="Sexo" v={p.sex === "M" ? "Hombre" : p.sex === "F" ? "Mujer" : ""} />
             <Field k="Apariciones" v={`${appCount} en el lienzo`} />
@@ -99,3 +100,4 @@ export function PersonPanel({ d, id, appCount, onClose, goTo, actions, pathFrom,
     </aside>
   );
 }
+

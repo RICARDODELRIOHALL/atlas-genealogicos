@@ -1,15 +1,15 @@
 // @ts-nocheck -- strict indexed-access checks relaxed for genealogy graph code
 import type { Derived } from "./types";
 
-export const CARD_W = 410, CARD_H = 66, COL_W = 480;
+export const CARD_W = 440, CARD_H = 92, COL_W = 510;
 const TIGHT = 6, GAP = 18;
 
 export function personCardSize(name: string) {
   const text = name || "Sin nombre registrado";
-  const width = Math.min(CARD_W, Math.max(250, Math.ceil(text.length * 8.2 + 28)));
+  const width = Math.min(CARD_W, Math.max(270, Math.ceil(text.length * 8.2 + 28)));
   const charsPerLine = Math.max(18, Math.floor((width - 30) / 8.2));
   const lines = Math.max(1, Math.ceil(text.length / charsPerLine));
-  return { width, height: Math.max(CARD_H, 16 + lines * 18 + 27) };
+  return { width, height: Math.max(CARD_H, 24 + lines * 20 + 28) };
 }
 
 export interface Appearance {

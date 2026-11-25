@@ -64,12 +64,12 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
 
   const hl = useMemo(() => new Set(mode.kind === "none" ? [] : mode.ids), [mode]);
   const baseNodes = useMemo<Node[]>(() => {
-    const n: Node[] = layout.apps.map((a) => ({
+    const n: Node[] = layout.apps.filter((a) => !a.isRef).map((a) => ({
       id: a.key, type: "person", position: { x: a.x, y: a.y - a.height / 2 }, width: a.width, height: a.height, draggable: false, connectable: false,
       data: { p: d.byId.get(a.personId)!, isRef: a.isRef, branch: appBranch.get(a.key)!, color: BRANCH_COLORS[appBranch.get(a.key)!] } satisfies PersonNodeData,
     }));
     for (const u of layout.unions) n.push({ id: u.key, type: "union", position: { x: u.x - 4, y: u.y - 4 }, draggable: false, selectable: false, data: {} });
-    for (const a of layout.apps) if (a.depth === 2 && a.group === "main") {
+    for (const a of layout.apps) if (!a.isRef && a.depth === 2 && a.group === "main") {
       const branch = appBranch.get(a.key)!;
       n.push({
         id: `b${a.key}`, type: "blabel",
@@ -175,7 +175,7 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
         setDs={setDs} selected={selected} />
       {ds.persons.length === 0 && <EmptyState onImport={() => document.getElementById("atlas-import-input")?.click()} />}
       {selected && d.byId.has(selected) && (
-        <PersonPanel d={d} id={selected} appCount={layout.byPerson.get(selected)?.length ?? 0} onClose={() => { setSelected(null); setSelApp(null); }}
+        <PersonPanel d={d} id={selected} appCount={layout.byPerson.get(selected)?.filter((a) => !a.isRef).length ?? 0} onClose={() => { setSelected(null); setSelApp(null); }}
           goTo={goTo} actions={actions} pathFrom={pathFrom} setPathFrom={setPathFrom} />
       )}
     </div>
