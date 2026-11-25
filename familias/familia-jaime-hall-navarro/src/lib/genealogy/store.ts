@@ -1,6 +1,7 @@
 import type { Dataset } from "./types";
 import { APP_CONFIG, databaseNameFor } from "@/lib/app-config";
 import { PF1L_ROUTE_LINKS, PF1L_ROUTE_PERSONS, PF1L_ROUTE_UPDATE_ID } from "@/data/jaime-pf1l-route";
+import { LHWP_BRANCH_LINKS, LHWP_BRANCH_PERSONS, LHWP_BRANCH_UNIONS, LHWP_BRANCH_UPDATE_ID } from "@/data/familysearch-lhwp-6yx-branch";
 
 // A fresh database name keeps this independent copy empty even if the Lovable
 // template was previously opened in the same browser profile.
@@ -12,6 +13,7 @@ export const HALL_BRANCH_UPDATE_ID = "jaime-hall-huidobro-shared-ancestors-v1";
 export const HALL_ROUTES_UPDATE_ID = "jaime-hall-royal-routes-v1";
 export const FAMILYSEARCH_IDS_UPDATE_ID = "jaime-familysearch-ids-v1";
 export const ALICE_BOOTH_PARENT_PAIR_UPDATE_ID = "jaime-hall-alice-booth-parent-pair-v1";
+export { LHWP_BRANCH_UPDATE_ID };
 
 function open(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -49,7 +51,7 @@ export async function seedDataset(): Promise<Dataset> {
 /** Merge this release's additive route update into older browser databases without replacing local edits. */
 export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> {
   const existingUpdates = current.meta.appliedUpdates ?? [];
-  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(HALL_ROUTES_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID) && existingUpdates.includes(FAMILYSEARCH_IDS_UPDATE_ID) && existingUpdates.includes(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID)) return current;
+  if (existingUpdates.includes(HALL_BRANCH_UPDATE_ID) && existingUpdates.includes(HALL_ROUTES_UPDATE_ID) && existingUpdates.includes(PUBLISHED_UPDATE_ID) && existingUpdates.includes(FAMILYSEARCH_IDS_UPDATE_ID) && existingUpdates.includes(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID) && existingUpdates.includes(LHWP_BRANCH_UPDATE_ID)) return current;
   const next = structuredClone(current);
   const applied = new Set(next.meta.appliedUpdates ?? []);
   if (!applied.has(FAMILYSEARCH_IDS_UPDATE_ID)) {
@@ -182,6 +184,55 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
   }
 
   if (!applied.has(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID) && next.meta.root !== "person-root") applied.add(ALICE_BOOTH_PARENT_PAIR_UPDATE_ID);
+
+  if (!applied.has(LHWP_BRANCH_UPDATE_ID) && next.meta.root === "person-root") {
+    const idsByFsId = new Map(next.persons.filter((person) => person.fsId).map((person) => [person.fsId, person.id]));
+    const remap = new Map<string, string>();
+    let addedPeople = 0;
+    for (const person of LHWP_BRANCH_PERSONS) {
+      const existingId = idsByFsId.get(person.fsId);
+      if (existingId) { remap.set(person.id, existingId); continue; }
+      const sameId = next.persons.find((item) => item.id === person.id);
+      const id = sameId ? `${person.id}-new` : person.id;
+      next.persons.push({ ...structuredClone(person), id });
+      idsByFsId.set(person.fsId, id);
+      remap.set(person.id, id);
+      addedPeople++;
+    }
+    // Include existing endpoint IDs in the remap so every new link attaches to the existing tree.
+    for (const person of next.persons) if (person.fsId) remap.set(`lhwp-${person.fsId.toLowerCase()}`, person.id);
+    const linkKeys = new Set(next.links.map((link) => `${link.child}>${link.parent}`));
+    let addedParentLinks = 0;
+    for (const link of LHWP_BRANCH_LINKS) {
+      const child = remap.get(link.child) ?? link.child;
+      const parent = remap.get(link.parent) ?? link.parent;
+      const key = `${child}>${parent}`;
+      if (linkKeys.has(key)) continue;
+      next.links.push({ ...structuredClone(link), child, parent });
+      linkKeys.add(key);
+      addedParentLinks++;
+    }
+    next.unions ??= [];
+    for (const union of LHWP_BRANCH_UNIONS) {
+      const a = remap.get(union.a) ?? union.a;
+      const b = remap.get(union.b) ?? union.b;
+      const children = (union.children as string[]).map((id) => remap.get(id) ?? id);
+      const existing = next.unions.find((item) => [item.a, item.b].sort().join("+") === [a, b].sort().join("+"));
+      if (existing) existing.children = [...new Set([...(existing.children as string[] ?? []), ...children])];
+      else next.unions.push({ ...structuredClone(union), a, b, children });
+    }
+    const audit = (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit;
+    if (audit) {
+      for (const field of ["totalPersons", "includedPersons", "directAncestorsExcludingRoot", "ancestorsIncludingRoot"]) {
+        if (typeof audit[field] === "number") audit[field] = (audit[field] as number) + addedPeople;
+      }
+      for (const field of ["totalRelationships", "includedRelationships", "includedParentLinkRecords"]) {
+        if (typeof audit[field] === "number") audit[field] = (audit[field] as number) + addedParentLinks;
+      }
+    }
+    applied.add(LHWP_BRANCH_UPDATE_ID);
+  }
+  if (!applied.has(LHWP_BRANCH_UPDATE_ID) && next.meta.root !== "person-root") applied.add(LHWP_BRANCH_UPDATE_ID);
 
   const personIds = new Set(next.persons.map((person) => person.id));
   const addedIds = new Set<string>();
