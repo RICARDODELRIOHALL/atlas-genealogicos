@@ -213,13 +213,14 @@ export async function applyPublishedUpdates(current: Dataset): Promise<Dataset> 
       addedParentLinks++;
     }
     next.unions ??= [];
+    let addedUnions = 0;
     for (const union of LHWP_BRANCH_UNIONS) {
       const a = remap.get(union.a) ?? union.a;
       const b = remap.get(union.b) ?? union.b;
       const children = (union.children as string[]).map((id) => remap.get(id) ?? id);
       const existing = next.unions.find((item) => [item.a, item.b].sort().join("+") === [a, b].sort().join("+"));
       if (existing) existing.children = [...new Set([...(existing.children as string[] ?? []), ...children])];
-      else next.unions.push({ ...structuredClone(union), a, b, children });
+      else { next.unions.push({ ...structuredClone(union), a, b, children }); addedUnions++; }
     }
     const audit = (next.meta as typeof next.meta & { generationAudit?: Record<string, unknown> }).generationAudit;
     if (audit) {
