@@ -10,7 +10,7 @@ import { computeLayout, CARD_H, CARD_W } from "@/lib/genealogy/layout";
 import { loadDataset, saveDataset, seedDataset } from "@/lib/genealogy/store";
 import type { Dataset } from "@/lib/genealogy/types";
 import { APP_CONFIG } from "@/lib/app-config";
-import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, GENERATION_LABEL_W, GENERATION_LABEL_H, type PersonNodeData } from "./nodes";
+import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, GEN_LABEL_H, type PersonNodeData } from "./nodes";
 import { PersonPanel } from "./PersonPanel";
 import { Toolbar } from "./Toolbar";
 
@@ -79,13 +79,10 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
       });
     }
     for (const c of layout.columns) n.push({
-      id: `gen${c.gen}`, type: "genlabel",
-      position: {
-        x: c.x + CARD_W / 2 - GENERATION_LABEL_W / 2,
-        y: c.minY - CARD_H / 2 - GENERATION_LABEL_H - 120,
-      },
-      width: GENERATION_LABEL_W, height: GENERATION_LABEL_H, draggable: false, selectable: false,
-      data: { label: `G${c.gen}` },
+      id: `g${c.gen}`, type: "glabel",
+      position: { x: c.x, y: layout.bounds.minY - GEN_LABEL_H - 80 },
+      width: CARD_W, height: GEN_LABEL_H, draggable: false, selectable: false,
+      data: { gen: c.gen, count: c.count },
     });
     return n;
   }, [layout, d, appBranch, BRANCH_COLORS]);
@@ -134,8 +131,10 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
     if (ds.meta.root) setTimeout(() => goTo(ds.meta.root), 50);
   }, [ds.meta.root, goTo]);
   const goGen = useCallback((g: number) => {
-    const c = layout.columns.find((c) => c.gen === g); if (!c) return;
-    rf.fitBounds({ x: c.x - 40, y: c.minY - 400, width: CARD_W + 80, height: c.maxY - c.minY + 800 }, { duration: 900, padding: 0.05 });
+    const column = layout.columns.find((c) => c.gen === g); if (!column) return;
+    const people = layout.apps.filter((a) => a.group === "main" && a.gen === g && !a.isRef).sort((a, b) => a.y - b.y);
+    const target = people[Math.floor((people.length - 1) / 2)]; if (!target) return;
+    rf.setCenter(target.x + target.width / 2, target.y, { zoom: 0.75, duration: 900 });
   }, [layout, rf]);
 
   const onInit = useCallback(() => {
