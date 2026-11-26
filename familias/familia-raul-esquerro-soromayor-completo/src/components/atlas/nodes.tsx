@@ -7,6 +7,8 @@ import { formatGenealogyDate } from "@/lib/genealogy/date-format";
 export type PersonNodeData = { p: Person; isRef: boolean; branch: string; color?: string };
 export const BRANCH_LABEL_W = 3200;
 export const BRANCH_LABEL_H = 700;
+export const GENERATION_LABEL_W = 460;
+export const GENERATION_LABEL_H = 180;
 const life = (p: Person) => (p.birth || p.death ? `${formatGenealogyDate(p.birth) || "¿?"} – ${formatGenealogyDate(p.death) || "¿?"}` : "Sin fechas registradas");
 
 export const PersonNode = memo(function PersonNode({ data }: NodeProps<Node<PersonNodeData>>) {
@@ -37,5 +39,9 @@ export const BranchLabelNode = memo(function BranchLabelNode({ data }: NodeProps
   return <div className="blabel" style={{ color: data.color }}><span>{data.label}</span></div>;
 });
 
-export const nodeTypes = { person: PersonNode, union: UnionNode, blabel: BranchLabelNode };
+export const GenerationLabelNode = memo(function GenerationLabelNode({ data }: NodeProps<Node<{ label: string }>>) {
+  return <div className="generation-label"><span>{data.label}</span></div>;
+});
+
+export const nodeTypes = { person: PersonNode, union: UnionNode, blabel: BranchLabelNode, genlabel: GenerationLabelNode };
 

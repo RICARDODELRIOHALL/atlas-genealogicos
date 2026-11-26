@@ -105,6 +105,14 @@ export function Toolbar(props: {
           </DropdownMenu>
           <input id="atlas-import-input" ref={fileRef} type="file" accept=".json,.csv" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.target.value = ""; }} />
         </div>
+        <nav aria-label="Columnas de generaciones" className="pointer-events-auto order-last flex w-full items-center overflow-x-auto rounded-md border border-border bg-card/85 px-1 py-1 shadow-sm backdrop-blur">
+          {layout.columns.map((c) => (
+            <button key={c.gen} type="button" onClick={() => props.goGen(c.gen)} aria-label={`Ir a la columna G${c.gen}`}
+              className="min-w-[26px] flex-1 rounded px-0.5 py-1 text-center font-serif text-[10px] font-bold leading-none text-gold hover:bg-secondary focus-visible:outline focus-visible:outline-1 focus-visible:outline-gold">
+              G{c.gen}
+            </button>
+          ))}
+        </nav>
       </header>
       {props.mode.kind !== "none" && (
         <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold/50 bg-card/95 px-4 py-1.5 text-sm text-gold shadow-lg max-md:bottom-auto max-md:top-28">

@@ -10,7 +10,7 @@ import { computeLayout, CARD_H, CARD_W } from "@/lib/genealogy/layout";
 import { loadDataset, saveDataset, seedDataset } from "@/lib/genealogy/store";
 import type { Dataset } from "@/lib/genealogy/types";
 import { APP_CONFIG } from "@/lib/app-config";
-import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, type PersonNodeData } from "./nodes";
+import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, GENERATION_LABEL_W, GENERATION_LABEL_H, type PersonNodeData } from "./nodes";
 import { PersonPanel } from "./PersonPanel";
 import { Toolbar } from "./Toolbar";
 
@@ -78,6 +78,15 @@ function Atlas({ ds, setDs }: { ds: Dataset; setDs: (d: Dataset) => Promise<void
         data: { label: branch, color: BRANCH_COLORS[branch] ?? "var(--branch-other)" },
       });
     }
+    for (const c of layout.columns) n.push({
+      id: `gen${c.gen}`, type: "genlabel",
+      position: {
+        x: c.x + CARD_W / 2 - GENERATION_LABEL_W / 2,
+        y: c.minY - CARD_H / 2 - GENERATION_LABEL_H - 120,
+      },
+      width: GENERATION_LABEL_W, height: GENERATION_LABEL_H, draggable: false, selectable: false,
+      data: { label: `G${c.gen}` },
+    });
     return n;
   }, [layout, d, appBranch, BRANCH_COLORS]);
   const baseEdges = useMemo<Edge[]>(() => {

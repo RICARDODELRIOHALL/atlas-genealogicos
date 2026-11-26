@@ -163,5 +163,8 @@
 .blabel { width: 3200px; height: 700px; display: flex; align-items: center; justify-content: flex-end; font-family: var(--font-serif); font-size: 700px; line-height: 1; letter-spacing: 0; white-space: nowrap; pointer-events: none; opacity: 0.85; }
 .blabel > span { visibility: hidden; }
 [data-zoom="far"] .blabel > span { visibility: visible; }
+.generation-label { width: 100%; height: 100%; display: grid; place-items: center; pointer-events: none; }
+.generation-label > span { color: var(--gold); border: 1px solid color-mix(in oklab, var(--gold) 48%, transparent); border-radius: 999px; background: color-mix(in oklab, var(--canvas) 88%, transparent); padding: 18px 48px; font-family: var(--font-serif); font-size: 160px; font-weight: 700; line-height: 1; letter-spacing: 14px; white-space: nowrap; }
+[data-zoom="far"] .react-flow__node-genlabel { opacity: 0; }
 .union-dot { width: 8px; height: 8px; border-radius: 999px; background: var(--connector); }
 
