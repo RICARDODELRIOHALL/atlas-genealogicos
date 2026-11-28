@@ -13,6 +13,12 @@
         "file": "https://www.familysearch.org/es/tree/pedigree/landscape/PX7L-M8G",
         "kind": "Transcripción visual de una rama de FamilySearch",
         "note": "Relaciones y datos copiados de la vista del árbol solicitada por el usuario; no constituyen verificación documental independiente."
+      },
+      {
+        "id": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "file": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "kind": "FamilySearch: perfiles y relaciones familiares visibles",
+        "note": "Rama transcrita para enlazar a Fernando I y Sancha con la pareja Fernando IV de Castilla y Constança de Portugal ya presente en el Atlas. Relaciones observadas en las fichas indicadas; sin cotejo de documentos originales."
       }
     ],
     "conversion": {
@@ -200,6 +206,25 @@
         "PXXX-6MR",
         "PX7L-M8G",
         "PXXX-27V"
+      ]
+    },
+    "fernandoIMagnoBranchUpdate": {
+      "date": "2026-11-27",
+      "rootFsId": "PX7L-M8G",
+      "startingCouple": [
+        "L1MT-98D",
+        "9WM2-1CW"
+      ],
+      "existingEndpointCouple": [
+        "L19Q-KTX",
+        "L8TT-XFX"
+      ],
+      "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+      "profilesAdded": 20,
+      "unionsAdded": 10,
+      "endpointExistingPersonIds": [
+        "P2429",
+        "P2434"
       ]
     }
   },
@@ -122235,6 +122260,646 @@
           }
         }
       ]
+    },
+    {
+      "id": "P2435",
+      "fsId": "L1MT-98D",
+      "name": "Fernando I \"el Magno\" de Pamplona, Rey y Conde de León y Castilla",
+      "sex": "M",
+      "birth": "1016",
+      "death": "1065",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "L1MT-98D",
+            "name": "Fernando I \"el Magno\" de Pamplona, Rey y Conde de León y Castilla",
+            "birthText": "1016",
+            "deathText": "1065",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/L1MT-98D",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2436",
+      "fsId": "9WM2-1CW",
+      "name": "Sancha Alfónsez de Castilla Regina consort de León",
+      "sex": "F",
+      "birth": "1018",
+      "death": "1067",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "9WM2-1CW",
+            "name": "Sancha Alfónsez de Castilla Regina consort de León",
+            "birthText": "1018",
+            "deathText": "1067",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/9WM2-1CW",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2437",
+      "fsId": "L8T2-WP2",
+      "name": "Rey Alfonso VI \"el Bravo\" de León y Castilla, Galicia Asturias et Nájera, Imperator Totius Hispaniæ",
+      "sex": "M",
+      "birth": "1040",
+      "death": "1109",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "L8T2-WP2",
+            "name": "Rey Alfonso VI \"el Bravo\" de León y Castilla, Galicia Asturias et Nájera, Imperator Totius Hispaniæ",
+            "birthText": "1040",
+            "deathText": "1109",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/L8T2-WP2",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2438",
+      "fsId": "LQR2-NXQ",
+      "name": "Constance de Bourgogne Regina consort de Galliciæ et Hispaniarum.",
+      "sex": "F",
+      "birth": "1046",
+      "death": "1093",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "LQR2-NXQ",
+            "name": "Constance de Bourgogne Regina consort de Galliciæ et Hispaniarum.",
+            "birthText": "1046",
+            "deathText": "1093",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/LQR2-NXQ",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2439",
+      "fsId": "9SZ5-9W1",
+      "name": "Reina Urraca I “La Temeraria” de León y Castilla",
+      "sex": "F",
+      "birth": "1081",
+      "death": "1126",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "9SZ5-9W1",
+            "name": "Reina Urraca I “La Temeraria” de León y Castilla",
+            "birthText": "1081",
+            "deathText": "1126",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/9SZ5-9W1",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2440",
+      "fsId": "LDSM-WYF",
+      "name": "Raymond de Bourgogne, comte de Galice",
+      "sex": "M",
+      "birth": "1065",
+      "death": "1107",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "LDSM-WYF",
+            "name": "Raymond de Bourgogne, comte de Galice",
+            "birthText": "1065",
+            "deathText": "1107",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/LDSM-WYF",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2441",
+      "fsId": "L8WY-7RQ",
+      "name": "Rey Alfonso VII \"El emperador\" Rey de Castilla, León, Galicia y Toledo, Imperator Totius Hispaniæ",
+      "sex": "M",
+      "birth": "1105",
+      "death": "1157",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "L8WY-7RQ",
+            "name": "Rey Alfonso VII \"El emperador\" Rey de Castilla, León, Galicia y Toledo, Imperator Totius Hispaniæ",
+            "birthText": "1105",
+            "deathText": "1157",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/L8WY-7RQ",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2442",
+      "fsId": "L1H7-X4B",
+      "name": "Regina Consortis de León y Castilla Berenguela de Barcelona",
+      "sex": "F",
+      "birth": "1110",
+      "death": "1148",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "L1H7-X4B",
+            "name": "Regina Consortis de León y Castilla Berenguela de Barcelona",
+            "birthText": "1110",
+            "deathText": "1148",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/L1H7-X4B",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2443",
+      "fsId": "M1JV-6Z9",
+      "name": "Rey Sancho III de Castilla \"el Deseado\"",
+      "sex": "M",
+      "birth": "1133",
+      "death": "1158",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "M1JV-6Z9",
+            "name": "Rey Sancho III de Castilla \"el Deseado\"",
+            "birthText": "1133",
+            "deathText": "1158",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/M1JV-6Z9",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2444",
+      "fsId": "9QZ9-FMB",
+      "name": "Blanca Garcés de Pamplona Reina consorte de Castilla",
+      "sex": "F",
+      "birth": "1133",
+      "death": "1156",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "9QZ9-FMB",
+            "name": "Blanca Garcés de Pamplona Reina consorte de Castilla",
+            "birthText": "1133",
+            "deathText": "1156",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/9QZ9-FMB",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2445",
+      "fsId": "LZ1V-VZ8",
+      "name": "Alfonso VIII \"El noble, El de las navas\" Rey de Castilla, Toledo et Extremadura.",
+      "sex": "M",
+      "birth": "1155",
+      "death": "1214",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "LZ1V-VZ8",
+            "name": "Alfonso VIII \"El noble, El de las navas\" Rey de Castilla, Toledo et Extremadura.",
+            "birthText": "1155",
+            "deathText": "1214",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/LZ1V-VZ8",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2446",
+      "fsId": "LZ1V-V82",
+      "name": "Eleanor of England Reina Consorte de Castilla",
+      "sex": "F",
+      "birth": "1162",
+      "death": "1214",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "LZ1V-V82",
+            "name": "Eleanor of England Reina Consorte de Castilla",
+            "birthText": "1162",
+            "deathText": "1214",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/LZ1V-V82",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2447",
+      "fsId": "9CZS-WBY",
+      "name": "Berenguela \"la Grande\", Reina Consorte de León et Regente de Castilla.",
+      "sex": "F",
+      "birth": "1180",
+      "death": "1246",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "9CZS-WBY",
+            "name": "Berenguela \"la Grande\", Reina Consorte de León et Regente de Castilla.",
+            "birthText": "1180",
+            "deathText": "1246",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/9CZS-WBY",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2448",
+      "fsId": "L8W6-C4W",
+      "name": "Rey de León Alfonso IX, \"El Baboso o el babeante\"",
+      "sex": "M",
+      "birth": "1171",
+      "death": "1230",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "L8W6-C4W",
+            "name": "Rey de León Alfonso IX, \"El Baboso o el babeante\"",
+            "birthText": "1171",
+            "deathText": "1230",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/L8W6-C4W",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2449",
+      "fsId": "9CZS-WBG",
+      "name": "Rey de Castilla y León Fernando III \"el Santo\"",
+      "sex": "M",
+      "birth": "1201",
+      "death": "1252",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "9CZS-WBG",
+            "name": "Rey de Castilla y León Fernando III \"el Santo\"",
+            "birthText": "1201",
+            "deathText": "1252",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/9CZS-WBG",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2450",
+      "fsId": "KNXP-KM1",
+      "name": "Elisabeth \"Beatrix, die Jüngere\" von Schwaben",
+      "sex": "F",
+      "birth": "1205",
+      "death": "1235",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "KNXP-KM1",
+            "name": "Elisabeth \"Beatrix, die Jüngere\" von Schwaben",
+            "birthText": "1205",
+            "deathText": "1235",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/KNXP-KM1",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2451",
+      "fsId": "93MZ-1FQ",
+      "name": "Rey Alfonso X de Castilla y León \"el Sabio\"",
+      "sex": "M",
+      "birth": "1221",
+      "death": "1284",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "93MZ-1FQ",
+            "name": "Rey Alfonso X de Castilla y León \"el Sabio\"",
+            "birthText": "1221",
+            "deathText": "1284",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/93MZ-1FQ",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2452",
+      "fsId": "G4PQ-Y57",
+      "name": "Violante d’Aragón Reina Consorte De Castilla",
+      "sex": "F",
+      "birth": "1236",
+      "death": "1301",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "G4PQ-Y57",
+            "name": "Violante d’Aragón Reina Consorte De Castilla",
+            "birthText": "1236",
+            "deathText": "1301",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/G4PQ-Y57",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2453",
+      "fsId": "LD7M-FNW",
+      "name": "Rey Sancho IV \"El Bravo\" De Castilla y León",
+      "sex": "M",
+      "birth": "1258",
+      "death": "1295",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "LD7M-FNW",
+            "name": "Rey Sancho IV \"El Bravo\" De Castilla y León",
+            "birthText": "1258",
+            "deathText": "1295",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/LD7M-FNW",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
+    },
+    {
+      "id": "P2454",
+      "fsId": "LBNR-1LP",
+      "name": "María \"de Molina\" Alfonso de Meneses regina consort de Castilla y León",
+      "sex": "F",
+      "birth": "1264",
+      "death": "1321",
+      "altNames": [],
+      "marriage": "",
+      "baptism": "",
+      "burial": "",
+      "birthPlace": "",
+      "deathPlace": "",
+      "marriagePlace": "",
+      "notes": [],
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ],
+      "originals": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "record": {
+            "fsId": "LBNR-1LP",
+            "name": "María \"de Molina\" Alfonso de Meneses regina consort de Castilla y León",
+            "birthText": "1264",
+            "deathText": "1321",
+            "profileUrl": "https://www.familysearch.org/es/tree/person/details/LBNR-1LP",
+            "note": "Fechas de encabezados y relaciones familiares visibles en FamilySearch; no cotejadas aquí con documentos originales."
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -189831,6 +190496,166 @@
       "sources": [
         "confirmación del usuario (2026-11-27)"
       ]
+    },
+    {
+      "child": "P2437",
+      "parent": "P2435",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2437",
+      "parent": "P2436",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2439",
+      "parent": "P2437",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2439",
+      "parent": "P2438",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2441",
+      "parent": "P2439",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2441",
+      "parent": "P2440",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2443",
+      "parent": "P2441",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2443",
+      "parent": "P2442",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2445",
+      "parent": "P2443",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2445",
+      "parent": "P2444",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2447",
+      "parent": "P2445",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2447",
+      "parent": "P2446",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2449",
+      "parent": "P2448",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2449",
+      "parent": "P2447",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2451",
+      "parent": "P2449",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2451",
+      "parent": "P2450",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2453",
+      "parent": "P2451",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2453",
+      "parent": "P2452",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2429",
+      "parent": "P2453",
+      "role": "padre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "child": "P2429",
+      "parent": "P2454",
+      "role": "madre",
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
     }
   ],
   "pendingRefs": [],
@@ -226386,6 +227211,353 @@
       },
       "sources": [
         "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
+      ]
+    },
+    {
+      "id": "FS-L1MT98D-9WM21CW",
+      "a": "P2435",
+      "b": "P2436",
+      "children": [
+        "P2437"
+      ],
+      "marriage": "1032",
+      "marriagePlace": "",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "1032",
+          "placeText": ""
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "L1MT-98D",
+          "9WM2-1CW"
+        ],
+        "familySearchChildIds": [
+          "L8T2-WP2"
+        ],
+        "visibleMarriage": {
+          "date": "1032"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-L8T2WP2-LQR2NXQ",
+      "a": "P2437",
+      "b": "P2438",
+      "children": [
+        "P2439"
+      ],
+      "marriage": "antes de mayo de 1080",
+      "marriagePlace": "",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "antes de mayo de 1080",
+          "placeText": ""
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "L8T2-WP2",
+          "LQR2-NXQ"
+        ],
+        "familySearchChildIds": [
+          "9SZ5-9W1"
+        ],
+        "visibleMarriage": {
+          "date": "antes de mayo de 1080"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-9SZ59W1-LDSMWYF",
+      "a": "P2439",
+      "b": "P2440",
+      "children": [
+        "P2441"
+      ],
+      "marriage": "antes de 1094",
+      "marriagePlace": "Toledo, Toledo, Castilla-La Mancha, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "antes de 1094",
+          "placeText": "Toledo, Toledo, Castilla-La Mancha, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "9SZ5-9W1",
+          "LDSM-WYF"
+        ],
+        "familySearchChildIds": [
+          "L8WY-7RQ"
+        ],
+        "visibleMarriage": {
+          "date": "antes de 1094",
+          "place": "Toledo, Toledo, Castilla-La Mancha, España"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-L8WY7RQ-L1H7X4B",
+      "a": "P2441",
+      "b": "P2442",
+      "children": [
+        "P2443"
+      ],
+      "marriage": "noviembre de 1128",
+      "marriagePlace": "Castillo de Saldaña, Saldaña, Palencia, Castilla y León, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "noviembre de 1128",
+          "placeText": "Castillo de Saldaña, Saldaña, Palencia, Castilla y León, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "L8WY-7RQ",
+          "L1H7-X4B"
+        ],
+        "familySearchChildIds": [
+          "M1JV-6Z9"
+        ],
+        "visibleMarriage": {
+          "date": "noviembre de 1128",
+          "place": "Castillo de Saldaña, Saldaña, Palencia, Castilla y León, España"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-M1JV6Z9-9QZ9FMB",
+      "a": "P2443",
+      "b": "P2444",
+      "children": [
+        "P2445"
+      ],
+      "marriage": "1151-01-30",
+      "marriagePlace": "Calahorra, La Rioja, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "1151-01-30",
+          "placeText": "Calahorra, La Rioja, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "M1JV-6Z9",
+          "9QZ9-FMB"
+        ],
+        "familySearchChildIds": [
+          "LZ1V-VZ8"
+        ],
+        "visibleMarriage": {
+          "date": "1151-01-30",
+          "place": "Calahorra, La Rioja, España"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-LZ1VVZ8-LZ1VV82",
+      "a": "P2445",
+      "b": "P2446",
+      "children": [
+        "P2447"
+      ],
+      "marriage": "1174-09-27",
+      "marriagePlace": "Tarazona, Zaragoza, Aragón, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "1174-09-27",
+          "placeText": "Tarazona, Zaragoza, Aragón, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "LZ1V-VZ8",
+          "LZ1V-V82"
+        ],
+        "familySearchChildIds": [
+          "9CZS-WBY"
+        ],
+        "visibleMarriage": {
+          "date": "1174-09-27",
+          "place": "Tarazona, Zaragoza, Aragón, España"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-L8W6C4W-9CZSWBY",
+      "a": "P2448",
+      "b": "P2447",
+      "children": [
+        "P2449"
+      ],
+      "marriage": "hacia 1197",
+      "marriagePlace": "",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "hacia 1197",
+          "placeText": ""
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "L8W6-C4W",
+          "9CZS-WBY"
+        ],
+        "familySearchChildIds": [
+          "9CZS-WBG"
+        ],
+        "visibleMarriage": {
+          "date": "hacia 1197"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-9CZSWBG-KNXPKM1",
+      "a": "P2449",
+      "b": "P2450",
+      "children": [
+        "P2451"
+      ],
+      "marriage": "1219-11-30",
+      "marriagePlace": "Burgos, Burgos, Castilla y León, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "1219-11-30",
+          "placeText": "Burgos, Burgos, Castilla y León, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "9CZS-WBG",
+          "KNXP-KM1"
+        ],
+        "familySearchChildIds": [
+          "93MZ-1FQ"
+        ],
+        "visibleMarriage": {
+          "date": "1219-11-30",
+          "place": "Burgos, Burgos, Castilla y León, España"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-93MZ1FQ-G4PQY57",
+      "a": "P2451",
+      "b": "P2452",
+      "children": [
+        "P2453"
+      ],
+      "marriage": "1249-01-29",
+      "marriagePlace": "Valladolid, Valladolid, Castilla y León, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "1249-01-29",
+          "placeText": "Valladolid, Valladolid, Castilla y León, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "93MZ-1FQ",
+          "G4PQ-Y57"
+        ],
+        "familySearchChildIds": [
+          "LD7M-FNW"
+        ],
+        "visibleMarriage": {
+          "date": "1249-01-29",
+          "place": "Valladolid, Valladolid, Castilla y León, España"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
+      ]
+    },
+    {
+      "id": "FS-LD7MFNW-LBNR1LP",
+      "a": "P2453",
+      "b": "P2454",
+      "children": [
+        "P2429"
+      ],
+      "marriage": "1282-07",
+      "marriagePlace": "Toledo, Castilla-La Mancha, España",
+      "sourceMarriageRecords": [
+        {
+          "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+          "dateText": "1282-07",
+          "placeText": "Toledo, Castilla-La Mancha, España"
+        }
+      ],
+      "originalRecord": {
+        "source": "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)",
+        "familySearchPersonIds": [
+          "LD7M-FNW",
+          "LBNR-1LP"
+        ],
+        "familySearchChildIds": [
+          "L19Q-KTX"
+        ],
+        "visibleMarriage": {
+          "date": "1282-07",
+          "place": "Toledo, Castilla-La Mancha, España"
+        },
+        "note": "Pareja y filiación observadas en la ficha de Familia de FamilySearch."
+      },
+      "sources": [
+        "FamilySearch:familia-Fernando-I-L1MT-98D (relaciones visibles, 2026-11-27)"
       ]
     }
   ]
