@@ -53,7 +53,7 @@ export function Toolbar(props: {
         <div className="pointer-events-auto mr-2 hidden rounded-md border border-border bg-card/90 px-3 py-1.5 backdrop-blur lg:block">
           <div className="font-serif text-lg font-semibold leading-none text-gold">{APP_CONFIG.appName}</div>
         </div>
-        <div className="pointer-events-auto relative w-full max-w-sm flex-1 sm:w-80 sm:flex-none">
+        <div className="pointer-events-auto relative w-full min-w-0 flex-1 basis-full">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Nombre, apellido, ID o «G12»" className="bg-card/90 pl-8 backdrop-blur" aria-label="Buscar persona" />
           {results.length > 0 && (
