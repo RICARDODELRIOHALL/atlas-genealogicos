@@ -222,6 +222,74 @@ export function mergePublishedRootSiblings(saved: Dataset, seed: Dataset): { dat
   return { dataset, changed: true };
 }
 
+/** Add Fernando I's published branch to saved copies while preserving local edits. */
+export function mergePublishedFernandoIMagnoBranch(saved: Dataset, seed: Dataset): { dataset: Dataset; changed: boolean } {
+  const audit = (seed.meta as any).fernandoIMagnoBranchUpdate;
+  if (!Array.isArray(audit?.profilesFsIds) || !Array.isArray(audit?.parentLinksFs) || !Array.isArray(audit?.couplesFsIds)) {
+    return { dataset: saved, changed: false };
+  }
+
+  const dataset = structuredClone(saved) as Dataset;
+  const seedByFsId = new Map(seed.persons.filter((person) => person.fsId).map((person) => [person.fsId, person]));
+  const savedByFsId = new Map(dataset.persons.filter((person) => person.fsId).map((person) => [person.fsId, person]));
+  const savedById = new Map(dataset.persons.map((person) => [person.id, person]));
+  let nextId = Math.max(0, ...dataset.persons.map((person) => Number(person.id.slice(1)) || 0)) + 1;
+  let changed = false;
+
+  for (const fsId of audit.profilesFsIds as string[]) {
+    if (savedByFsId.has(fsId)) continue;
+    const sourcePerson = seedByFsId.get(fsId);
+    if (!sourcePerson) continue;
+    const person = structuredClone(sourcePerson);
+    if (savedById.has(person.id)) person.id = `P${nextId++}`;
+    dataset.persons.push(person);
+    savedByFsId.set(fsId, person);
+    savedById.set(person.id, person);
+    changed = true;
+  }
+
+  for (const item of audit.parentLinksFs as Array<{ childFsId: string; parentFsId: string; role: "padre" | "madre" }>) {
+    const child = savedByFsId.get(item.childFsId);
+    const parent = savedByFsId.get(item.parentFsId);
+    if (!child || !parent || dataset.links.some((link) => link.child === child.id && link.parent === parent.id)) continue;
+    const seedChild = seedByFsId.get(item.childFsId);
+    const seedParent = seedByFsId.get(item.parentFsId);
+    const sourceLink = seed.links.find((link) => link.child === seedChild?.id && link.parent === seedParent?.id);
+    dataset.links.push(sourceLink
+      ? { ...structuredClone(sourceLink), child: child.id, parent: parent.id }
+      : { child: child.id, parent: parent.id, role: item.role, sources: [audit.source] });
+    changed = true;
+  }
+
+  dataset.unions ??= [];
+  for (const [aFsId, bFsId] of audit.couplesFsIds as Array<[string, string]>) {
+    const a = savedByFsId.get(aFsId);
+    const b = savedByFsId.get(bFsId);
+    if (!a || !b || dataset.unions.some((union) => (union.a === a.id && union.b === b.id) || (union.a === b.id && union.b === a.id))) continue;
+    const seedA = seedByFsId.get(aFsId);
+    const seedB = seedByFsId.get(bFsId);
+    const sourceUnion = seed.unions?.find((union) => (union.a === seedA?.id && union.b === seedB?.id) || (union.a === seedB?.id && union.b === seedA?.id));
+    if (!sourceUnion) continue;
+    const union = structuredClone(sourceUnion);
+    union.a = a.id;
+    union.b = b.id;
+    const seedChildren = Array.isArray(union["children"]) ? union["children"] as string[] : [];
+    union["children"] = seedChildren.map((id: string) => {
+      const sourceChild = seedByFsId.get(seed.persons.find((person) => person.id === id)?.fsId ?? "");
+      return sourceChild ? savedByFsId.get(sourceChild.fsId)?.id : undefined;
+    }).filter((id: string | undefined): id is string => Boolean(id));
+    dataset.unions.push(union);
+    changed = true;
+  }
+
+  if (!changed) return { dataset: saved, changed: false };
+  dataset.meta.sources ??= [];
+  const sourceIds = new Set(dataset.meta.sources.map((source) => source.id));
+  for (const source of seed.meta.sources ?? []) if (!sourceIds.has(source.id)) dataset.meta.sources.push(structuredClone(source));
+  (dataset.meta as any).fernandoIMagnoBranchUpdate = structuredClone(audit);
+  return { dataset, changed: true };
+}
+
 const PIMENTEL_G20_UPDATE = "familysearch-pimentel-parents-of-lypr-ssp-2026-11-24";
 const PIMENTEL_SOURCE_ID = "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)";
 const PIMENTEL_TREE_URL = "https://www.familysearch.org/es/tree/pedigree/landscape/PX7L-M8G";
