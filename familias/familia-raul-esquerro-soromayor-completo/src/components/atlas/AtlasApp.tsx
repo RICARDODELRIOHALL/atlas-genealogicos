@@ -25,6 +25,10 @@ export default function AtlasApp() {
       try {
         let d = await loadDataset();
         if (!d) { d = await seedDataset(); await saveDataset(d); }
+        else if (d.persons.some((p) => p.id === "SIB03" && p.name === "Mario Oliva Esquerro Sotomayor")) {
+          d = { ...d, persons: d.persons.map((p) => p.id === "SIB03" && p.name === "Mario Oliva Esquerro Sotomayor" ? { ...p, name: "Maria Oliva Esquerro" } : p) };
+          await saveDataset(d);
+        }
         setDs(d);
       } catch (e) { setErr(String(e)); }
     })();
