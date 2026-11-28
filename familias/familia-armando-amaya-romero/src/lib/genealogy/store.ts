@@ -160,6 +160,68 @@ export function mergePublishedBranch(saved: Dataset, seed: Dataset): { dataset: 
   return { dataset, changed: true };
 }
 
+/** Apply the user's sibling correction to older local copies while preserving edits to other relationships. */
+export function mergePublishedRootSiblings(saved: Dataset, seed: Dataset): { dataset: Dataset; changed: boolean } {
+  const audit = (seed.meta as any).rootSiblingIntegrationAudit;
+  if (!audit?.rootFsId || !Array.isArray(audit.siblings) || !Array.isArray(audit.orderedSiblings)) return { dataset: saved, changed: false };
+
+  const dataset = structuredClone(saved) as Dataset;
+  const savedByFsId = new Map(dataset.persons.map((person) => [person.fsId, person]));
+  const seedByFsId = new Map(seed.persons.map((person) => [person.fsId, person]));
+  const seedById = new Map(seed.persons.map((person) => [person.id, person]));
+  const savedById = new Map(dataset.persons.map((person) => [person.id, person]));
+  const root = savedByFsId.get(audit.rootFsId);
+  const seedRoot = seedByFsId.get(audit.rootFsId);
+  if (!root || !seedRoot) return { dataset: saved, changed: false };
+  const rootParentFsIds = seed.links.filter((link) => link.child === seedRoot.id)
+    .map((link) => seedById.get(link.parent)?.fsId).filter(Boolean).sort();
+  if (!rootParentFsIds.length) return { dataset: saved, changed: false };
+
+  let changed = false;
+  const migratedIds = new Set<string>();
+  for (const entry of audit.siblings) {
+    const person = savedByFsId.get(entry.fsId);
+    const seedPerson = seedByFsId.get(entry.fsId);
+    if (!person || !seedPerson) continue;
+    const currentParentFsIds = dataset.links.filter((link) => link.child === person.id)
+      .map((link) => savedById.get(link.parent)?.fsId).filter(Boolean).sort();
+    const priorParentFsIds = [...(entry.priorParentFsIds ?? [])].sort();
+    const alreadyUpdated = currentParentFsIds.length === rootParentFsIds.length
+      && currentParentFsIds.every((id, index) => id === rootParentFsIds[index]);
+    const matchesPrior = currentParentFsIds.length === priorParentFsIds.length
+      && currentParentFsIds.every((id, index) => id === priorParentFsIds[index]);
+    if (alreadyUpdated || !matchesPrior) continue;
+
+    dataset.links = dataset.links.filter((link) => link.child !== person.id);
+    for (const sourceLink of seed.links.filter((link) => link.child === seedPerson.id)) {
+      const parentFsId = seedById.get(sourceLink.parent)?.fsId;
+      const parent = parentFsId ? savedByFsId.get(parentFsId) : null;
+      if (!parent) continue;
+      dataset.links.push({ ...structuredClone(sourceLink), child: person.id, parent: parent.id,
+        sources: ["confirmación del usuario (2026-11-27)"] });
+    }
+    migratedIds.add(person.id);
+    changed = true;
+  }
+
+  if (!changed) return { dataset, changed: false };
+  const rootParents = dataset.links.filter((link) => link.child === root.id).map((link) => link.parent).sort();
+  const targetUnion = (dataset.unions ?? []).find((union) => [union.a, union.b].sort().every((id, index) => id === rootParents[index]));
+  if (targetUnion) {
+    const orderedIds = audit.orderedSiblings.map((fsId: string) => savedByFsId.get(fsId)?.id).filter(Boolean);
+    const currentChildren = Array.isArray(targetUnion["children"]) ? targetUnion["children"] as string[] : [];
+    const otherChildren = currentChildren.filter((id: string) => !migratedIds.has(id) && !orderedIds.includes(id));
+    targetUnion["children"] = [...orderedIds, ...otherChildren];
+    targetUnion.sources = [...new Set([...(targetUnion.sources ?? []), "confirmación del usuario (2026-11-27)"])];
+  }
+  for (const union of dataset.unions ?? []) {
+    if (union === targetUnion) continue;
+    const currentChildren = Array.isArray(union["children"]) ? union["children"] as string[] : [];
+    union["children"] = currentChildren.filter((id: string) => !migratedIds.has(id));
+  }
+  return { dataset, changed: true };
+}
+
 const PIMENTEL_G20_UPDATE = "familysearch-pimentel-parents-of-lypr-ssp-2026-11-24";
 const PIMENTEL_SOURCE_ID = "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)";
 const PIMENTEL_TREE_URL = "https://www.familysearch.org/es/tree/pedigree/landscape/PX7L-M8G";
@@ -324,4 +386,3 @@ export function applyAncestorsThroughGeneration22(saved: Dataset): { dataset: Da
   dataset.meta.appliedUpdates = [...(dataset.meta.appliedUpdates ?? []), ARM_G22_UPDATE];
   return { dataset, changed: true };
 }
-

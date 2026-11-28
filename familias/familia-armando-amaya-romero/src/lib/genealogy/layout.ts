@@ -12,7 +12,7 @@ export function personCardSize(name: string) {
 
 export interface Appearance {
   key: string; personId: string; gen: number; depth: number; isRef: boolean;
-  childKey: string | null; parentKeys: string[]; x: number; y: number; width: number; height: number; group: "main" | "pending";
+  childKey: string | null; parentKeys: string[]; x: number; y: number; width: number; height: number; group: "main" | "pending"; isSibling?: boolean;
 }
 export interface LayoutResult {
   apps: Appearance[]; byPerson: Map<string, Appearance[]>;
@@ -98,13 +98,46 @@ export function computeLayout(d: Derived, root: string): LayoutResult {
   };
   for (const r of roots) placeRoot(r, true);
 
+  // Include the root's siblings in the same generation and column.
+  const rootAppearance = byPerson.get(root)?.[0];
+  const rootParentIds = (d.parents.get(root) ?? []).map((link) => link.parent).sort();
+  if (rootAppearance && rootParentIds.length) {
+    const peers = [...d.byId.values()].filter((person) => {
+      if (person.id === root) return true;
+      const parentIds = (d.parents.get(person.id) ?? []).map((link) => link.parent).sort();
+      return parentIds.length === rootParentIds.length && parentIds.every((id, index) => id === rootParentIds[index]);
+    }).sort((a, b) => {
+      const dateOrder = (a.birth || "9999").localeCompare(b.birth || "9999");
+      return dateOrder || a.name.localeCompare(b.name, "es");
+    });
+    const rootIndex = peers.findIndex((person) => person.id === root);
+    let previous = rootAppearance;
+    for (let i = rootIndex - 1; i >= 0; i--) {
+      const person = peers[i]; const size = personCardSize(person.name);
+      const sibling: Appearance = { key: `a${seq++}`, personId: person.id, gen: 1, depth: 0, isRef: false,
+        childKey: null, parentKeys: [...rootAppearance.parentKeys], x: 0,
+        y: previous.y - previous.height / 2 - GAP - size.height / 2, group: "main", isSibling: true, ...size };
+      apps.set(sibling.key, sibling); (byPerson.get(person.id) ?? byPerson.set(person.id, []).get(person.id)!).push(sibling);
+      previous = sibling;
+    }
+    previous = rootAppearance;
+    for (let i = rootIndex + 1; i < peers.length; i++) {
+      const person = peers[i]; const size = personCardSize(person.name);
+      const sibling: Appearance = { key: `a${seq++}`, personId: person.id, gen: 1, depth: 0, isRef: false,
+        childKey: null, parentKeys: [...rootAppearance.parentKeys], x: 0,
+        y: previous.y + previous.height / 2 + GAP + size.height / 2, group: "main", isSibling: true, ...size };
+      apps.set(sibling.key, sibling); (byPerson.get(person.id) ?? byPerson.set(person.id, []).get(person.id)!).push(sibling);
+      previous = sibling;
+    }
+  }
+
   const list = [...apps.values()];
   const unions: LayoutResult["unions"] = [];
   for (const a of list) {
     if (!a.parentKeys.length) continue;
     const ps = a.parentKeys.map((k) => apps.get(k)!);
     const ys = ps.map((p) => p.y);
-    unions.push({ key: `j${a.key}`, x: (a.depth + 1) * COL_W - 34, y: (Math.min(...ys) + Math.max(...ys)) / 2, childKey: a.key, parentKeys: a.parentKeys });
+    unions.push({ key: `j${a.key}`, x: (a.depth + 1) * COL_W - 34, y: a.isSibling ? a.y : (Math.min(...ys) + Math.max(...ys)) / 2, childKey: a.key, parentKeys: a.parentKeys });
   }
   const cols = new Map<number, LayoutResult["columns"][number]>();
   for (const a of list) {
@@ -121,4 +154,3 @@ export function computeLayout(d: Derived, root: string): LayoutResult {
     bounds: { minX: Math.min(...xs), minY: Math.min(...topEdges) - CARD_H / 2, maxX: Math.max(...rightEdges), maxY: Math.max(...bottomEdges) + CARD_H / 2 },
   };
 }
-

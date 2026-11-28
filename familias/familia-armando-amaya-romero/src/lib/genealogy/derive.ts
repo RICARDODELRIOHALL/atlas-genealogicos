@@ -97,6 +97,15 @@ export function derive(ds: Dataset): Derived {
     }
     for (const [k, s] of gsets) generation.set(k, [...s].sort((a, b) => a - b));
   }
+  const rootParentIds = (parents.get(root) ?? []).map((link) => link.parent).sort();
+  const rootPeers = new Set<string>();
+  if (rootParentIds.length) for (const person of ds.persons) {
+    const parentIds = (parents.get(person.id) ?? []).map((link) => link.parent).sort();
+    if (parentIds.length === rootParentIds.length && parentIds.every((id, index) => id === rootParentIds[index])) {
+      rootPeers.add(person.id);
+      generation.set(person.id, [1]);
+    }
+  }
   // Ramas por cuadrante de abuelos
   const branches = new Map<string, string[]>();
   const bsets = new Map<string, Set<string>>();
@@ -111,6 +120,7 @@ export function derive(ds: Dataset): Derived {
   }
   for (const p of ds.persons) {
     if (p.id === root) branches.set(p.id, ["Central"]);
+    else if (rootPeers.has(p.id)) branches.set(p.id, ["Central"]);
     else if ((parents.get(root) ?? []).some((l) => l.parent === p.id)) branches.set(p.id, ["Padres"]);
     else branches.set(p.id, [...(bsets.get(p.id) ?? [])].sort());
     const gs = generation.get(p.id);

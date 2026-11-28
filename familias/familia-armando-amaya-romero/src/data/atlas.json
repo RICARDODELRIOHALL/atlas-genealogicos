@@ -168,6 +168,39 @@
         }
       ],
       "independentlyVerified": false
+    },
+    "rootSiblingIntegrationAudit": {
+      "confirmedByUser": "2026-11-27",
+      "rootFsId": "PX7L-M8G",
+      "siblings": [
+        {
+          "fsId": "PXXX-X32",
+          "priorParentFsIds": [
+            "GDD5-9P2",
+            "GDDP-NKQ"
+          ]
+        },
+        {
+          "fsId": "PXXX-6MR",
+          "priorParentFsIds": [
+            "GDD5-9P2",
+            "GDDP-NKQ"
+          ]
+        },
+        {
+          "fsId": "PXXX-27V",
+          "priorParentFsIds": [
+            "GDD5-9P2",
+            "GDDP-NKQ"
+          ]
+        }
+      ],
+      "orderedSiblings": [
+        "PXXX-X32",
+        "PXXX-6MR",
+        "PX7L-M8G",
+        "PXXX-27V"
+      ]
     }
   },
   "persons": [
@@ -122296,60 +122329,6 @@
       ]
     },
     {
-      "child": "P8",
-      "parent": "P4",
-      "role": "padre",
-      "sources": [
-        "generador:AMAYA_conectados_LOVABLE.json",
-        "F3"
-      ]
-    },
-    {
-      "child": "P8",
-      "parent": "P5",
-      "role": "madre",
-      "sources": [
-        "generador:AMAYA_conectados_LOVABLE.json",
-        "F3"
-      ]
-    },
-    {
-      "child": "P9",
-      "parent": "P4",
-      "role": "padre",
-      "sources": [
-        "generador:AMAYA_conectados_LOVABLE.json",
-        "F3"
-      ]
-    },
-    {
-      "child": "P9",
-      "parent": "P5",
-      "role": "madre",
-      "sources": [
-        "generador:AMAYA_conectados_LOVABLE.json",
-        "F3"
-      ]
-    },
-    {
-      "child": "P10",
-      "parent": "P4",
-      "role": "padre",
-      "sources": [
-        "generador:AMAYA_conectados_LOVABLE.json",
-        "F3"
-      ]
-    },
-    {
-      "child": "P10",
-      "parent": "P5",
-      "role": "madre",
-      "sources": [
-        "generador:AMAYA_conectados_LOVABLE.json",
-        "F3"
-      ]
-    },
-    {
       "child": "P6",
       "parent": "P20",
       "role": "padre",
@@ -189804,6 +189783,54 @@
       "sources": [
         "FamilySearch: vista horizontal de armando amaya romero (transcripción visual, 2026-11-24)"
       ]
+    },
+    {
+      "child": "P9",
+      "parent": "P2",
+      "role": "padre",
+      "sources": [
+        "confirmación del usuario (2026-11-27)"
+      ]
+    },
+    {
+      "child": "P9",
+      "parent": "P3",
+      "role": "madre",
+      "sources": [
+        "confirmación del usuario (2026-11-27)"
+      ]
+    },
+    {
+      "child": "P10",
+      "parent": "P2",
+      "role": "padre",
+      "sources": [
+        "confirmación del usuario (2026-11-27)"
+      ]
+    },
+    {
+      "child": "P10",
+      "parent": "P3",
+      "role": "madre",
+      "sources": [
+        "confirmación del usuario (2026-11-27)"
+      ]
+    },
+    {
+      "child": "P8",
+      "parent": "P2",
+      "role": "padre",
+      "sources": [
+        "confirmación del usuario (2026-11-27)"
+      ]
+    },
+    {
+      "child": "P8",
+      "parent": "P3",
+      "role": "madre",
+      "sources": [
+        "confirmación del usuario (2026-11-27)"
+      ]
     }
   ],
   "pendingRefs": [],
@@ -190157,14 +190184,18 @@
       "a": "P2",
       "b": "P3",
       "children": [
-        "P1"
+        "P9",
+        "P10",
+        "P1",
+        "P8"
       ],
       "marriage": "",
       "marriagePlace": "",
       "sourceMarriageRecords": [],
       "sources": [
         "generador:AMAYA_conectados_LOVABLE.json",
-        "F1"
+        "F1",
+        "Relación de hermanos confirmada por el usuario (2026-11-27)"
       ],
       "originalRecord": {
         "id": "F1",
@@ -190193,10 +190224,7 @@
       "a": "P4",
       "b": "P5",
       "children": [
-        "P3",
-        "P8",
-        "P9",
-        "P10"
+        "P3"
       ],
       "marriage": "",
       "marriagePlace": "",

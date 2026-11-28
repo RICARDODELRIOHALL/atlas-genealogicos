@@ -7,7 +7,7 @@ import { Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { derive, ancestorsOf, descendantsOf, findPath } from "@/lib/genealogy/derive";
 import { computeLayout, CARD_H, CARD_W } from "@/lib/genealogy/layout";
-import { applyAncestorsThroughGeneration22, applyConfirmedVirginiaParents, applyPimentelGeneration20, loadDataset, mergePublishedBranch, saveDataset, seedDataset } from "@/lib/genealogy/store";
+import { applyAncestorsThroughGeneration22, applyConfirmedVirginiaParents, applyPimentelGeneration20, loadDataset, mergePublishedBranch, mergePublishedRootSiblings, saveDataset, seedDataset } from "@/lib/genealogy/store";
 import type { Dataset } from "@/lib/genealogy/types";
 import { APP_CONFIG } from "@/lib/app-config";
 import { nodeTypes, BRANCH_LABEL_W, BRANCH_LABEL_H, GEN_LABEL_H, type PersonNodeData } from "./nodes";
@@ -31,6 +31,9 @@ export default function AtlasApp() {
           d = upgraded.dataset;
           if (upgraded.changed) await saveDataset(d);
         }
+        const siblingsUpgrade = mergePublishedRootSiblings(d, seed);
+        d = siblingsUpgrade.dataset;
+        if (siblingsUpgrade.changed) await saveDataset(d);
         const confirmedParents = applyConfirmedVirginiaParents(d);
         d = confirmedParents.dataset;
         if (confirmedParents.changed) await saveDataset(d);
@@ -228,4 +231,3 @@ function EmptyState({ onImport }: { onImport: () => void }) {
     </div>
   );
 }
-
